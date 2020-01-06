@@ -85,10 +85,11 @@
                     <a href="{{ action('EvaluationController@evaluation', $column->id)}}" class="hover1" style="text-decoration:none;">
                         <li class="table-row">
                             <div class="col col-1">{{$column->year}}</div>
-                            <div class="col col-1">承認済み ー＞ 評価報告</div>
+                            <div class="col col-1">承認済み ▶ 評価報告</div>
                             <div class="col col-1"></div>
                             <div class="col col-1">{{$boss1_dep->name}}</div>
-                            <div class="col col-2">{{$boss2_dep->name}}</div>
+                            <div class="col col-1">{{$boss2_dep->name}}</div>
+                            <div class="col col-2"></div>
                             <div class="col col-1">{{$column->updated_at->format('Y/m/d')}}</div>
                         </li>
                     </a>
