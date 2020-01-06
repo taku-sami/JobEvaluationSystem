@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
             'class' => 'システム管理者',
             'auth' => 'admin',
             'email_verified_at' => Carbon::now(),
-            'password' => bcrypt('password'),
+            'password' => Hash::make('password'),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

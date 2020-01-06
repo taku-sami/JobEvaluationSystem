@@ -416,24 +416,30 @@ class EvaluationController extends Controller
         $bosses = User::where('auth','boss1')
             ->orwhere('auth','boss2')
             ->get();
-        $year = Category::orderBy('year','desc')->first()->year;
-        $departments = Department::all();
-
-        foreach($bosses as $boss){
-            $columns[] = Evaluation::where('department',$boss->department)
-                ->where('year',$year)
-                ->get();
+        if(Category::all() === !null)
+        {
+            $year = Category::orderBy('year','desc')->first()->year;
+            foreach($bosses as $boss){
+                $columns[] = Evaluation::where('department',$boss->department)
+                    ->where('year',$year)
+                    ->get();
+            }
+        }else{
+            $columns = null;
+            $year = null;
         }
+
+        $departments = Department::all();
         $categories = Category::all();
         $logs = Log::all();
-            return view('admin/main',[
-                'columns' => $columns,
-                'departments' => $departments,
-                'bosses' => $bosses,
-                'year' => $year,
-                'categories' => $categories,
-                'logs' => $logs,
-            ]);
+        return view('admin/main',[
+            'columns' => $columns,
+            'departments' => $departments,
+            'bosses' => $bosses,
+            'year' => $year,
+            'categories' => $categories,
+            'logs' => $logs,
+        ]);
     }
     public function show_for_admin_selected(Request $request)
     {
