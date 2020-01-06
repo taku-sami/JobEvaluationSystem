@@ -1,10 +1,10 @@
 @extends('layouts.admin')
-
+@php@endphp
 @section('content')
 
     <div class="row mt-4">
         <h4 class="col-10 mb-0">考課マスタ</h4>
-        <a href="/add_category" type="button" class="btn-pill col-1 py-2"><i class="fas fa-plus-circle"></i> 新規登録</a>
+        <a href="/add_category" type="button" class="btn-pill col-1 py-2 hover1" style="text-decoration: none"><i class="fas fa-plus-circle"></i> 新規登録</a>
     </div>
     <hr>
 
@@ -22,6 +22,8 @@
             <div class="col col-1.5">考課（３）</div>
             <div class="col col-1.5">評価基準（３）</div>
         </li>
+        @if(count($columns) === 0)
+        @else
         @foreach( $columns as $column)
             <input type="hidden" value="{{$n++}}">
             <li class="table-row">
@@ -44,8 +46,11 @@
                 </div>
             </li>
         @endforeach
-        @if($columns === !null )
-            <a href="/copy_create" type="button" class=""><i class="fas fa-plus-circle fa-3x"></i></a>
+        @endif
+        @if(count($columns) === 0)
+        @else
+
+        <a href="/copy_create" type="button" class="hover1"><i class="fas fa-plus-circle fa-3x"></i></a>
         @endif
     </ul>
 

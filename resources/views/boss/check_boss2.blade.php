@@ -6,24 +6,24 @@
 
     <div class="row mt-4">
         @if((int)$root == 7)
-            <h4 class="col-10 mb-0">サンプルさん の評価 {{$evaluation->year}}年</h4>
+            <h4 class="col-10 mb-0">{{$evaluation->user->name}} さんの評価 {{$evaluation->year}}年</h4>
             <br>
             <br>
             <div class="col-12 mb-0 alert alert-success h4 text-center" role="alert">
                 <strong>評価済み</strong>
             </div>
         @elseif((int)$root == 6)
-            <h4 class="col-10 mb-0">サンプルさん の評価 {{$evaluation->year}}年</h4>
+            <h4 class="col-10 mb-0">{{$evaluation->user->name}} さんの評価 {{$evaluation->year}}年</h4>
 
         @elseif((int)$root >= 4)
-            <h4 class="col-10 mb-0">サンプルさん の目標 {{$evaluation->year}}年</h4>
+            <h4 class="col-10 mb-0">{{$evaluation->user->name}} さんの目標 {{$evaluation->year}}年</h4>
             <br>
             <br>
             <div class="col-12 mb-0 alert alert-success h4 text-center" role="alert">
                 <strong>承認済み</strong>
             </div>
         @elseif((int)$root < 4)
-            <h4 class="col-10 mb-0">サンプルさん の目標 {{$evaluation->year}}年</h4>
+            <h4 class="col-10 mb-0">{{$evaluation->user->name}} さんの目標 {{$evaluation->year}}年</h4>
         @endif
     </div>
     <hr>
@@ -35,12 +35,13 @@
             <div>社員番号：{{$evaluation->user->id}}</div>
             <div>氏名：{{$evaluation->user->name}}</div>
             <div>部署：{{$evaluation->user->department}}</div>
+            <div>役職：{{$evaluation->user->class}}</div>
             <div>メールアドレス：{{$evaluation->user->email}}</div>
         </div>
     </div>
     <hr>
     <div class="row">
-        <h4 class="col-10">目標 / 評価</h4>
+        <h4 class="col-10">@if((int)$root >=5)評価@else目標@endif</h4>
     </div>
         <div class="form-group">
             <table class="roundedCorners text-center">
@@ -67,12 +68,33 @@
                     </td>
                     <td>
                         <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option selected>{{$evaluation->boss1_eva1}}</option>
+                            @if($evaluation->boss1_eva1 == 1 )
+                                <option selected>C</option>
+                            @elseif($evaluation->boss1_eva1 == 2 )
+                                <option selected>B</option>
+                            @elseif($evaluation->boss1_eva1 == 3 )
+                                <option selected>A</option>
+                            @elseif($evaluation->boss1_eva1 == 4 )
+                                <option selected>S</option>
+                            @elseif($evaluation->boss1_eva1 == 5 )
+                                <option selected>SS</option>
+                            @endif
+
                         </select>
                     </td>
                     <td>
                         <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option selected>{{$evaluation->boss2_eva1}}</option>
+                            @if($evaluation->boss2_eva1 == 1 )
+                                <option selected>C</option>
+                            @elseif($evaluation->boss2_eva1 == 2 )
+                                <option selected>B</option>
+                            @elseif($evaluation->boss2_eva1 == 3 )
+                                <option selected>A</option>
+                            @elseif($evaluation->boss2_eva1 == 4 )
+                                <option selected>S</option>
+                            @elseif($evaluation->boss2_eva1 == 5 )
+                                <option selected>SS</option>
+                            @endif
                         </select>
                     </td>
                 </tr>
@@ -91,12 +113,32 @@
                     </td>
                     <td>
                         <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option selected>{{$evaluation->boss1_eva2}}</option>
+                            @if($evaluation->boss1_eva2 == 1 )
+                                <option selected>C</option>
+                            @elseif($evaluation->boss1_eva2 == 2 )
+                                <option selected>B</option>
+                            @elseif($evaluation->boss1_eva2 == 3 )
+                                <option selected>A</option>
+                            @elseif($evaluation->boss1_eva2 == 4 )
+                                <option selected>S</option>
+                            @elseif($evaluation->boss1_eva2 == 5 )
+                                <option selected>SS</option>
+                            @endif
                         </select>
                     </td>
                     <td>
                         <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option selected>{{$evaluation->boss2_eva2}}</option>
+                            @if($evaluation->boss2_eva2 == 1 )
+                                <option selected>C</option>
+                            @elseif($evaluation->boss2_eva2 == 2 )
+                                <option selected>B</option>
+                            @elseif($evaluation->boss2_eva2 == 3 )
+                                <option selected>A</option>
+                            @elseif($evaluation->boss2_eva2 == 4 )
+                                <option selected>S</option>
+                            @elseif($evaluation->boss2_eva2 == 5 )
+                                <option selected>SS</option>
+                            @endif
                         </select>
                     </td>
                 </tr>
@@ -116,12 +158,32 @@
                     </td>
                     <td>
                         <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option selected>{{$evaluation->boss1_eva3}}</option>
+                            @if($evaluation->boss1_eva2 == 1 )
+                                <option selected>C</option>
+                            @elseif($evaluation->boss1_eva1 == 2 )
+                                <option selected>B</option>
+                            @elseif($evaluation->boss1_eva1 == 3 )
+                                <option selected>A</option>
+                            @elseif($evaluation->boss1_eva1 == 4 )
+                                <option selected>S</option>
+                            @elseif($evaluation->boss1_eva1 == 5 )
+                                <option selected>SS</option>
+                            @endif
                         </select>
                     </td>
                     <td>
                         <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option selected>{{$evaluation->boss2_eva3}}</option>
+                            @if($evaluation->boss1_eva2 == 1 )
+                                <option selected>C</option>
+                            @elseif($evaluation->boss1_eva1 == 2 )
+                                <option selected>B</option>
+                            @elseif($evaluation->boss1_eva1 == 3 )
+                                <option selected>A</option>
+                            @elseif($evaluation->boss1_eva1 == 4 )
+                                <option selected>S</option>
+                            @elseif($evaluation->boss1_eva1 == 5 )
+                                <option selected>SS</option>
+                            @endif
                         </select>
                     </td>
                 </tr>
@@ -135,7 +197,7 @@
                             <form action="/denial" method="post" class="d-inline">
                                 @csrf
                                 <input type="hidden" name="id" value="{{$evaluation->id}}">
-                                <button type="submit" class="btn-pill col-1 py-2 m-3">差戻</button>
+                                <button type="submit" class="btn btn-outline-secondary col-1 py-2 m-3">差戻</button>
                             </form>
                             <form action="/approval" method="post" class="d-inline">
                                 @csrf
@@ -144,7 +206,7 @@
                                 <input type="hidden" name="target_name" value="{{$evaluation->user->name}}">
                                 <input type="hidden" name="class" value="{{$user->class}}">
                                 <input type="hidden" name="year" value="{{$evaluation->year}}">
-                                <button type="submit" class="btn-pill col-1 py-2 m-3">承認</button>
+                                <button type="submit" class="btn btn-outline-secondary col-1 py-2 m-3">承認</button>
                             </form>
                         </td>
                     @endif

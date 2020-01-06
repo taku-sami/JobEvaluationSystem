@@ -16,6 +16,14 @@ class EvaluationController extends Controller
     {
         $categories = Category::all();
         $array_num =0;
+        $user_dep = Auth::user()->department;
+        $boss1_dep = User::where('department',$user_dep)
+            ->where('auth','boss1')
+            ->first();
+        $boss2_dep = User::where('department',$user_dep)
+            ->where('auth','boss2')
+            ->first();
+
         foreach($categories as $category) {
 
             $check = $category->evaluation()->where('user_id', Auth::id())->first();
@@ -30,6 +38,8 @@ class EvaluationController extends Controller
         }
         return view('staff/staff',[
             'columns' => $columns,
+            'boss1_dep' => $boss1_dep,
+            'boss2_dep' => $boss2_dep,
         ]);
     }
     public function regist($year)
@@ -114,16 +124,15 @@ class EvaluationController extends Controller
         $num4 = 0;
         $num5 = 0;
         $num6 = 0;
-        $num7 = 0;
         foreach($columns as $column){
             if($column->progress == null){$num1++;}
             elseif($column->progress == 1){$num1++;}
             elseif($column->progress == 2){$num2++;}
-            elseif($column->progress == 3){$num3++;}
-            elseif($column->progress == 4){$num4++;}
-            elseif($column->progress == 5){$num5++;}
-            elseif($column->progress == 6){$num6++;}
-            elseif($column->progress == 7){$num7++;}
+            elseif($column->progress == 3){$num2++;}
+            elseif($column->progress == 4){$num3++;}
+            elseif($column->progress == 5){$num4++;}
+            elseif($column->progress == 6){$num5++;}
+            elseif($column->progress == 7){$num6++;}
         }
         $none = 0;
         $count_ss = 0;
@@ -156,7 +165,6 @@ class EvaluationController extends Controller
                 'num4' => $num4,
                 'num5' => $num5,
                 'num6' => $num6,
-                'num7' => $num7,
                 'none' => $none,
                 'count_ss' => $count_ss,
                 'count_s' => $count_s,
@@ -175,7 +183,6 @@ class EvaluationController extends Controller
                 'num4' => $num4,
                 'num5' => $num5,
                 'num6' => $num6,
-                'num7' => $num7,
                 'none' => $none,
                 'count_ss' => $count_ss,
                 'count_s' => $count_s,
@@ -211,16 +218,15 @@ class EvaluationController extends Controller
         $num4 = 0;
         $num5 = 0;
         $num6 = 0;
-        $num7 = 0;
         foreach($columns as $column){
             if($column->progress == null){$num1++;}
             elseif($column->progress == 1){$num1++;}
             elseif($column->progress == 2){$num2++;}
-            elseif($column->progress == 3){$num3++;}
-            elseif($column->progress == 4){$num4++;}
-            elseif($column->progress == 5){$num5++;}
-            elseif($column->progress == 6){$num6++;}
-            elseif($column->progress == 7){$num7++;}
+            elseif($column->progress == 3){$num2++;}
+            elseif($column->progress == 4){$num3++;}
+            elseif($column->progress == 5){$num4++;}
+            elseif($column->progress == 6){$num5++;}
+            elseif($column->progress == 7){$num6++;}
         }
         $none = 0;
         $count_ss = 0;
@@ -252,7 +258,6 @@ class EvaluationController extends Controller
                 'num4' => $num4,
                 'num5' => $num5,
                 'num6' => $num6,
-                'num7' => $num7,
                 'none' => $none,
                 'count_ss' => $count_ss,
                 'count_s' => $count_s,
@@ -271,7 +276,6 @@ class EvaluationController extends Controller
                 'num4' => $num4,
                 'num5' => $num5,
                 'num6' => $num6,
-                'num7' => $num7,
                 'none' => $none,
                 'count_ss' => $count_ss,
                 'count_s' => $count_s,
@@ -370,6 +374,29 @@ class EvaluationController extends Controller
             $evaluation->boss2_eva3 =$request->boss2_eva3;
             $evaluation->progress = 7;
             $evaluation->save();
+
+
+            $count =$evaluation->boss1_eva1+
+                $evaluation->boss1_eva2+
+                $evaluation->boss1_eva3+
+                $evaluation->boss2_eva1+
+                $evaluation->boss2_eva2+
+                $evaluation->boss2_eva3;
+
+            if($count>= 28){
+                $evaluation->evaluation = "SS";
+            }elseif($count>= 21){
+                $evaluation->evaluation = "S";
+            }elseif($count>= 14){
+                $evaluation->evaluation = "A";
+            }elseif($count>= 7){
+                $evaluation->evaluation = "B";
+            }elseif($count <= 6){
+                $evaluation->evaluation = "C";
+            }
+            $evaluation->point = $count;
+            $evaluation->save();
+
         }
         return redirect('/boss');
 

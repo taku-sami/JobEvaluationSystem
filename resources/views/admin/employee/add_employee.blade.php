@@ -29,7 +29,7 @@
                     <div class="col-md-10 mx-auto">
                         <label for="email" class="">所属部署</label>
                         <select class="form-control md-form" name="department" id="">
-                            <option value="">所属部署を選択してくだい</option>
+                            <option value="" selected disabled>所属部署を選択してくだい</option>
                             @foreach($departments as $department)
                                 <option value="{{$department->dep_name}}">{{$department->dep_name}}</option>
                             @endforeach
@@ -40,7 +40,7 @@
                     <div class="col-md-10 mx-auto">
                         <label for="email" class="">役職</label>
                         <select class="form-control md-form" name="class" id="">
-                            <option value="">役職を選択してください</option>
+                            <option value="" selected disabled>役職を選択してください</option>
                             @foreach($classes as $class)
                             <option value="{{$class->class_name}}">{{$class->class_name}}</option>
                             @endforeach

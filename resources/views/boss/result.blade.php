@@ -25,7 +25,7 @@
     </div>
     <ul class="responsive-table text-center m-auto ">
         <li class="table-header">
-            <div class="col col-1.5">職員番号</div>
+            <div class="col col-1.5">社員番号</div>
             <div class="col col-1.5">氏名</div>
             <div class="col col-1.5">所属</div>
             <div class="col col-1.5">役職</div>
@@ -34,7 +34,7 @@
         <div class="overflow-auto" style="height: 500px;">
             @if(!$users->isEmpty())
             @foreach($users as $user)
-                    <a href="{{ action('EvaluationController@show_staff', $user->id)}}" class="">
+                    <a href="{{ action('EvaluationController@show_staff', $user->id)}}" class="hover1" style="text-decoration: none">
                 <li class="table-row">
                         <div class="col col-1.5">{{$user->id}}</div>
                         <div class="col col-1.5">{{$user->name}}</div>

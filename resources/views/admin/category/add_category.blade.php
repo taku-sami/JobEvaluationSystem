@@ -7,7 +7,6 @@
     </div>
     <hr>
     <div class="col-md-6 bg-light border mx-auto" style="border-radius: 30px;">
-        <div class="">
             <form method="POST" action="/addcategory">
                 @csrf
                 <div class="form-group row ">
@@ -55,11 +54,9 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6 mx-auto text-center">
-                        <button type="submit" class="btn-pill border py-2 px-4" style="background-color: #E3FBFF;">登録</button>
+                        <button type="submit" class="btn-pill border py-2 px-4 hover1" style="background-color: #E3FBFF;">登録</button>
                     </div>
                 </div>
             </form>
         </div>
-    </div>
-
 @endsection

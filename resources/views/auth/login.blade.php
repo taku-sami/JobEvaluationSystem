@@ -40,7 +40,7 @@
                             <div class="form-group row">
                                 <div class="col-md-6 mx-auto text-center">
 
-                                <button type="submit" class="btn-pill border py-2 px-4" style="background-color: #E3FBFF;">ログイン</button>
+                                <button type="submit" class="btn-pill border py-2 px-4 hover1" style="background-color: #E3FBFF;">ログイン</button>
                             </div>
                             </div>
 

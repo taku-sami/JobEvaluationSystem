@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @php
-@endphp
+    @endphp
 @section('content')
 
     <div class="row mt-4">
@@ -31,7 +31,11 @@
                         <select class="form-control md-form" name="department" id="">
                             <option value="">所属部署を選択してくだい</option>
                             @foreach($departments as $department)
-                                <option value="{{$department->dep_name}}">{{$department->dep_name}}</option>
+                                @if($user->department == $department->dep_name)
+                                    <option value="{{$department->dep_name}}" selected>{{$department->dep_name}}</option>
+                                @else
+                                    <option value="{{$department->dep_name}}">{{$department->dep_name}}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div>
@@ -42,7 +46,11 @@
                         <select class="form-control md-form" name="class" id="">
                             <option value="">役職を選択してください</option>
                             @foreach($classes as $class)
-                            <option value="{{$class->class_name}}">{{$class->class_name}}</option>
+                                @if($user->class == $class->class_name)
+                                    <option value="{{$class->class_name}}" selected>{{$class->class_name}}</option>
+                                @else
+                                    <option value="{{$class->class_name}}">{{$class->class_name}}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div>

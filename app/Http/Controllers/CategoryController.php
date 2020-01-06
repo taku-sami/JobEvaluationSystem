@@ -40,7 +40,6 @@ class CategoryController extends Controller
     public function index()
     {
         $columns = Category::all();
-
         return view('/admin/category/categories',[
             'columns' => $columns,
         ]);

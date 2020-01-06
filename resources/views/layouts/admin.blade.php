@@ -57,14 +57,14 @@
             <!-- Sidebar -->
             <div class="border-right" id="sidebar-wrapper" style="background-color: #E3FBFF;">
                 <div class="list-group list-group-flush ">
-                    <a href="/main" class="list-group-item list-group-item-action" style="background-color: #E3FBFF;">TOP</a>
-                    <a href="/department" class="list-group-item list-group-item-action" style="background-color: #E3FBFF;">所属マスタ</a>
-                    <a href="/classes" class="list-group-item list-group-item-action" style="background-color: #E3FBFF;">役職マスタ</a>
-                    <a href="/employees" class="list-group-item list-group-item-action" style="background-color: #E3FBFF;">社員マスタ</a>
-                    <a href="/categories" class="list-group-item list-group-item-action" style="background-color: #E3FBFF;">考課マスタ</a>
-                    <a href="#" class="list-group-item list-group-item-action" style="background-color: #E3FBFF;">CSV</a>
+                    <a href="/main" class="list-group-item list-group-item-action navbar-brand text-secondary h5" style="background-color: #E3FBFF;"><i class="fas fa-home fa-fw"></i> TOP</a>
+                    <a href="/department" class="list-group-item list-group-item-action navbar-brand text-secondary h5" style="background-color: #E3FBFF;"><i class="fas fa-building fa-fw"></i> 所属マスタ</a>
+                    <a href="/classes" class="list-group-item list-group-item-action navbar-brand text-secondary h5" style="background-color: #E3FBFF;"><i class="fas fa-sitemap"></i> 役職マスタ</a>
+                    <a href="/employees" class="list-group-item list-group-item-action navbar-brand text-secondary h5" style="background-color: #E3FBFF;"><i class="fas fa-address-book fa-fw"></i> 社員マスタ</a>
+                    <a href="/categories" class="list-group-item list-group-item-action navbar-brand text-secondary h5" style="background-color: #E3FBFF;"><i class="fas fa-tasks fa-fw"></i> 考課マスタ</a>
+                    <a href="#" class="list-group-item list-group-item-action navbar-brand text-secondary h5" style="background-color: #E3FBFF;">CSV</a>
                     <a href="{{ route('logout') }}"　onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();" class="list-group-item list-group-item-action" style="background-color: #E3FBFF;">ログアウト</a>
+                                                     document.getElementById('logout-form').submit();" class="list-group-item list-group-item-action navbar-brand text-secondary h5" style="background-color: #E3FBFF;">ログアウト</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>

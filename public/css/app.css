@@ -6,6 +6,17 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+.hover1{
+    text-decoration:none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    display: block;
+}
+.hover1:hover {
+    border-bottom-color: transparent;
+    transform: translateY(0.1875em);
+}
+
 .full-page {
     width: 100vw;
     height: 100vh;

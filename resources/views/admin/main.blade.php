@@ -7,7 +7,7 @@
     <hr>
     <div class="row">
         <div class="form-group w-25 col-2">
-            <label for="" class="">評価期間</label>
+            <label for="" class="h5">評価期間</label>
             {{-- TODO セレクトのデザイン変更 --}}
             <form action="/main" method="post">
                 @csrf

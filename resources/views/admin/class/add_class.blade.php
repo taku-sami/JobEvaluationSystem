@@ -23,7 +23,7 @@
                             <div class="col-md-10 mx-auto">
                                 <label for="password" class="">権限</label>
                                 <select class="form-control md-form" name="class_auth" id="">
-                                    <option value="">権限を選択してください</option>
+                                    <option value="" selected disabled>権限を選択してください</option>
                                     <option value="staff">被評価者</option>
                                     <option value="boss1">１次評価者</option>
                                     <option value="boss2">２次評価者</option>

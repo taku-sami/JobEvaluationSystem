@@ -4,14 +4,11 @@
 
             <div class="row mt-4">
             <h4 class="col-10 mb-0">社員マスタ</h4>
-                <a href="/add_employee" type="button" class="btn-pill col-1 py-2"><i class="fas fa-plus-circle"></i> 新規登録</a>
+                <a href="/add_employee" type="button" class="btn-pill col-1 py-2 hover1" style="text-decoration: none"><i class="fas fa-plus-circle"></i> 新規登録</a>
             </div>
             <hr>
-
             <ul class="responsive-table text-center m-auto">
-                @php
-                    $n =0;
-                @endphp
+
                 <li class="table-header">
                     <div class="col col-1">社員番号</div>
                     <div class="col col-2">氏名</div>
@@ -22,7 +19,6 @@
                     <div class="col col-1"></div>
                 </li>
                 @foreach( $columns as $column)
-                    <input type="hidden" value="{{$n++}}">
                 <li class="table-row">
                     @if($column->auth === 'staff')
                         @php
@@ -41,7 +37,7 @@
                             $auth = "システム管理者";
                         @endphp
                     @endif
-                    <div class="col col-1" >{{$n}}</div>
+                    <div class="col col-1" >{{$column->id}}</div>
                     <div class="col col-2">{{$column->name}}</div>
                     <div class="col col-2">{{$column->department}}</div>
                     <div class="col col-2">{{$column->class}}</div>

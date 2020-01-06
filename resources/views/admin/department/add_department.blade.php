@@ -14,7 +14,7 @@
                             <div class="col-md-10 mx-auto">
                               <div class=" h5 my-4">所属新規登録</div>
                                 <label for="email" class="">所属名</label>
-                                <input type="text" class="form-control md-form" name="dep_name" value="{{ old('class_name') }}" required placeholder="役職名を入力してください">
+                                <input type="text" class="form-control md-form" name="dep_name" value="{{ old('class_name') }}" required placeholder="所属名を入力してください">
                             </div>
                         </div>
                         <div class="form-group row">

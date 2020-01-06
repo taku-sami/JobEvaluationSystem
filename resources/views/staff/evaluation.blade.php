@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="row mt-4">
-        <h4 class="col-10 mb-0">サンプルさん の目標 / 評価 {{$evaluation->year}}年</h4>
+        <h4 class="col-10 mb-0">{{$user->name}} さんの評価 {{$evaluation->year}}年</h4>
     </div>
     <hr>
     <div class="row ml-2">
@@ -16,6 +16,7 @@
             <div>社員番号：{{$user->id}}</div>
             <div>氏名：{{$user->name}}</div>
             <div>部署：{{$user->department}}</div>
+            <div>役職：{{$user->class}}</div>
             <div>メールアドレス：{{$user->email}}</div>
         </div>
     </div>
@@ -128,8 +129,8 @@
                 </tr>
                 <tr>
                     <td colspan="6" class="text-center">
-                        <a href="/staff" class="btn-pill col-1 py-2 m-3">戻る</a>
-                        <button type="submit" class="btn-pill col-1 py-2 m-3">登録する</button>
+                        <a href="/staff" class="btn btn-outline-secondary col-1 py-2 m-3">戻る</a>
+                        <button type="submit" class="btn btn-outline-secondary col-1 py-2 m-3">登録する</button>
                     </td>
                 </tr>
             </table>

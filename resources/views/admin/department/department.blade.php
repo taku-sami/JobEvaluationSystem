@@ -3,7 +3,7 @@
 @section('content')
             <div class="row mt-4">
                 <h4 class="col-10 mb-0">所属マスタ</h4>
-                <a href="/add_department" type="button" class="btn-pill col-1 py-2"><i class="fas fa-plus-circle"></i> 新規登録</a>
+                <a href="/add_department" type="button" class="btn-pill col-1 py-2 hover1" style="text-decoration: none;"><i class="fas fa-plus-circle"></i> 新規登録</a>
             </div>
             <hr>
 
