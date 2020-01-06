@@ -1,5 +1,4 @@
 @extends('layouts.admin')
-@php@endphp
 @section('content')
 
     <div class="row mt-4">
