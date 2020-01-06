@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
             'department' => "システム管理者",
             'class' => 'システム管理者',
             'auth' => 'admin',
-            'password' => Hash::make('password'),
+            'password' => md5('password'),
         ]);
     }
 }
