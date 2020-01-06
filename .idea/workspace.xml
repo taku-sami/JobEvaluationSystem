@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e788081-e540-4514-a63a-9ad147eda4db" name="Default Changelist" comment="" />
+    <list default="true" id="4e788081-e540-4514-a63a-9ad147eda4db" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/JobEvaluationSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JobEvaluationSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,7 +185,7 @@
       <workItem from="1578021155307" duration="30475000" />
       <workItem from="1578114126259" duration="6653000" />
       <workItem from="1578128827407" duration="21489000" />
-      <workItem from="1578193902083" duration="31487000" />
+      <workItem from="1578193902083" duration="31803000" />
     </task>
     <servers />
   </component>
