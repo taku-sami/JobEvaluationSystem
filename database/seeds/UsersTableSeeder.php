@@ -16,15 +16,13 @@ class UsersTableSeeder extends Seeder
     {
 
         DB::table('users')->insert([
-            'id' => 1,
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'department' => "システム管理者",
             'class' => 'システム管理者',
             'auth' => 'admin',
-            'email_verified_at' => 'admin',
+            'email_verified_at' => Carbon::now(),
             'password' => bcrypt('password'),
-            'remember_token' => "",
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
