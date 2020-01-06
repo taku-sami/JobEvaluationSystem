@@ -1,4 +1,6 @@
 <?php
+
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -13,11 +15,12 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'boss2',
-            'email' => 'boss2@gmail.com',
-            'department' => 'dev',
-            'class' => 'boss2',
-            'password' => bcrypt('password'),
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'department' => "システム管理者",
+            'class' => 'システム管理者',
+            'auth' => 'admin',
+            'password' => Hash::make('password'),
         ]);
     }
 }
