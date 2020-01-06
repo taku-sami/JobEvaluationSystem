@@ -31,7 +31,7 @@ class CreateEvaluationsTable extends Migration
             $table->integer('user_id');
             $table->string('department');
             $table->integer('progress')->default(1);
-            $table->integer('evaluation')->default('末評価');
+            $table->string('evaluation')->default('末評価');
 
 
             $table->timestamps();
