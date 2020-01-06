@@ -49,30 +49,20 @@ $user = Auth::user();
                     </td>
                     <td>
                         <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option></option>
+
                         </select>
 
                     </td>
                     <td>
                         <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option></option>
+
                         </select>
                     </td>
                     <td>
                         <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option></option>
                         </select>
                     </td>
                 </tr>
@@ -84,30 +74,18 @@ $user = Auth::user();
                     </td>
                     <td>
                         <select class="form-control " id="exampleFormControlSelect1" disabled>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option></option>
                         </select>
 
                     </td>
                     <td>
                         <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option></option>
                         </select>
                     </td>
                     <td>
                         <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option></option>
                         </select>
                     </td>
                 </tr>
@@ -119,30 +97,18 @@ $user = Auth::user();
                     </td>
                     <td>
                         <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option></option>
                         </select>
 
                     </td>
                     <td>
                         <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option></option>
                         </select>
                     </td>
                     <td>
                         <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option></option>
                         </select>
                     </td>
                 </tr>

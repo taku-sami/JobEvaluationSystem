@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4e788081-e540-4514-a63a-9ad147eda4db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/categories.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_02_075835_create_evaluations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_02_075835_create_evaluations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/staff/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/staff/detail.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +186,7 @@
       <workItem from="1578114126259" duration="6653000" />
       <workItem from="1578128827407" duration="21489000" />
       <workItem from="1578193902083" duration="37483000" />
-      <workItem from="1578321519080" duration="16038000" />
+      <workItem from="1578321519080" duration="16388000" />
     </task>
     <servers />
   </component>

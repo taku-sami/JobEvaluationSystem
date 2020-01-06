@@ -32,7 +32,7 @@ class CreateEvaluationsTable extends Migration
             $table->string('department');
             $table->integer('progress')->default(1);
             $table->integer('evaluation')->default('0');
-            $table->integer('point');
+            $table->integer('point')->nullable();
 
 
             $table->timestamps();
