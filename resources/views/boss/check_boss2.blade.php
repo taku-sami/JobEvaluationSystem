@@ -29,11 +29,12 @@
     <hr>
     <div class="row ml-2">
         <div class="">
-            @if($image_url)
-                <img class="d-flex mr-3" src="/{{ $image_url }}" style="width: 128px;height: 128px;">
+            @if($image)
+                <img class="d-flex mr-3" src="data:image/png;base64,<?= $image ?>" style="width: 128px;height: 128px;">
             @else
-                <img class="d-flex mr-3" src="/storage/images/user.jpg" style="width: 128px;height: 128px;">
-            @endif        </div>
+                <img class="d-flex mr-3" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style="width: 128px;height: 128px;">
+            @endif
+        </div>
         <div class=" my-auto">
             <div>社員番号：{{$evaluation->user->id}}</div>
             <div>氏名：{{$evaluation->user->name}}</div>
