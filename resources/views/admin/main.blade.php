@@ -98,10 +98,10 @@
                 <div class="col-3" style="flex: 0 0 20%;">
                     <div>{{$log->created_at->format('Y/m/d H:i:s')}}</div>
                 </div>
-                <div class="col-2">
+                <div class="col-3">
                     <div>{{$log->class}}　{{$log->name}} さん</div>
                 </div>
-                <div class="col-6">
+                <div class="col-5">
                     <div>{{$log->progress}}（{{$log->year}}年）　　@if($log->target_name == !null)対象者　▶︎▶︎▶︎　{{$log->target_name}}@endif</div>
                 </div>
             </div>

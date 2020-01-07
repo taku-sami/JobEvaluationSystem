@@ -57,7 +57,6 @@ class EvaluationController extends Controller
         return view('staff/check',[
             'evaluation' => $evaluation,
             'image_url' => str_replace('public/', 'storage/', Auth::user()->image_url),
-
         ]);
     }
     public function evaluation($id)
