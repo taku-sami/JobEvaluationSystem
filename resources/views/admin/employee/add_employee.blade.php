@@ -50,7 +50,7 @@
                 <div class="form-group row">
                     <div class="col-md-10 mx-auto">
                         <label for="picture" class="">顔写真</label>
-                        <input type="file" class="form-control　md-form" name="image_url">
+                        <input type="file" class="form-control　md-form" name="image">
                         {{ csrf_field() }}
                     </div>
                 </div>
