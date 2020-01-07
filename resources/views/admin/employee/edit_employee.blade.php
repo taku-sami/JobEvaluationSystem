@@ -56,6 +56,13 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <div class="col-md-10 mx-auto">
+                        <label for="picture" class="">顔写真 <span class="small">※変更がない場合は未入力</span></label>
+                        <input type="file" value="{{$class->image_url}}"class="form-control　md-form" name="image_url">
+                        {{ csrf_field() }}
+                    </div>
+                </div>
+                <div class="form-group row">
                     <div class="col-md-6 mx-auto text-center">
                         <button type="submit" class="btn-pill border py-2 px-4" style="background-color: #E3FBFF;">登録</button>
                     </div>

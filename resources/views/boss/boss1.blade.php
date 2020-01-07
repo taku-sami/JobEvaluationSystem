@@ -87,12 +87,12 @@
             @foreach($columns as $column)
                 <li class="table-row">
                     @if($column->progress == null)
-                        <div class="col col-1.5"><i class="fas fa-user-circle fa-1x"></i>{{$column->name}}</div>
+                        <div class="col col-1.5">{{$column->name}}</div>
                         <div class="col col-1.5">{{$column->department}}</div>
                         <div class="col col-1.5">{{$column->class}}</div>
                     @elseif($column->progress >= 1)
 
-                        <div class="col col-1.5"><i class="fas fa-user-circle fa-1x"></i>{{$column->user->name}}</div>
+                        <div class="col col-1.5">{{$column->user->name}}</div>
                         <div class="col col-1.5">{{$column->user->department}}</div>
                         <div class="col col-1.5">{{$column->user->class}}</div>
                     @endif

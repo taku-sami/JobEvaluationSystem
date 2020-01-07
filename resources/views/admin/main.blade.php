@@ -102,7 +102,7 @@
                     <div>{{$log->class}}　{{$log->name}} さん</div>
                 </div>
                 <div class="col-6">
-                    <div>{{$log->progress}}（{{$log->year}}年）　　@if($log->target_name == !null)対象者　▶▶▶︎　{{$log->target_name}}@endif</div>
+                    <div>{{$log->progress}}（{{$log->year}}年）　　@if($log->target_name == !null)対象者　▶︎▶︎▶︎　{{$log->target_name}}@endif</div>
                 </div>
             </div>
         <hr class="mt-0">

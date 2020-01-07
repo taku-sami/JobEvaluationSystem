@@ -10,7 +10,12 @@
     <hr>
     <div class="row ml-2">
         <div class="">
-            <img class="d-flex mr-3" src="https://2.bp.blogspot.com/-k8YyzamaaDU/V6iIXvAN1jI/AAAAAAAA9BI/0fBlVeSqQYc4dRQymfckGd93WmdDqrrkQCLcB/s800/syoumeisyashin_man.png" style="width: 128px;height: 128px;">
+            @if($image_url)
+                <img class="d-flex mr-3" src="/{{ $image_url }}" style="width: 128px;height: 128px;">
+            @else
+                <img class="d-flex mr-3" src="/storage/images/user.jpg" style="width: 128px;height: 128px;">
+            @endif
+
         </div>
         <div class=" my-auto">
             <div>社員番号：{{$user->id}}</div>
@@ -34,17 +39,29 @@
         <div class="overflow-auto" style="height: 440px;">
             @foreach($columns as $column)
                 @if($column->progress == null)
-                    <a href="{{ action('EvaluationController@regist', $column->year)}}" class="hover1" style="text-decoration:none;">
+                    @if($boss1_dep ==null)
                         <li class="table-row">
                             <div class="col col-1">{{$column->year}}</div>
                             <div class="col col-1">未登録</div>
                             <div class="col col-1"></div>
-                            <div class="col col-1">{{$boss1_dep->name}}</div>
-                            <div class="col col-1">{{$boss2_dep->name}}</div>
+                            <div class="col col-1"></div>
+                            <div class="col col-1"></div>
                             <div class="col col-2"></div>
                             <div class="col col-1"></div>
                         </li>
-                    </a>
+                    @else
+                        <a href="{{ action('EvaluationController@regist', $column->year)}}" class="hover1" style="text-decoration:none;">
+                            <li class="table-row">
+                                <div class="col col-1">{{$column->year}}</div>
+                                <div class="col col-1">未登録</div>
+                                <div class="col col-1"></div>
+                                <div class="col col-1">{{$boss1_dep->name}}</div>
+                                <div class="col col-1">{{$boss2_dep->name}}</div>
+                                <div class="col col-2"></div>
+                                <div class="col col-1"></div>
+                            </li>
+                        </a>
+                    @endif
                 @elseif($column->progress == 1)
                     <a href="{{ action('EvaluationController@regist', $column->year)}}" class="hover1" style="text-decoration:none;">
                         <li class="table-row">

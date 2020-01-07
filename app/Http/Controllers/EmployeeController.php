@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\User;
 use App\StaffClass;
@@ -21,6 +22,10 @@ class EmployeeController extends Controller
         $class_auth = StaffClass::where('class_name',$request->class)->first();
         $user->auth = $class_auth->class_auth;
         $user->password = Hash::make($request->password);
+        if($request->image_url)
+        {
+            $user->image_url = $request->image_url->storeAs('public/images', Carbon::now() . '_' . $request->name . '.jpg');
+        }
         $user->save();
 
         return redirect('/employees');
@@ -59,6 +64,10 @@ class EmployeeController extends Controller
         $user->class = $request->class;
         $class_auth = StaffClass::where('class_name',$request->class)->first();
         $user->auth = $class_auth->class_auth;
+        if($request->image_url)
+        {
+            $user->image_url = $request->image_url->storeAs('public/images', Carbon::now() . '_' . $request->name . '.jpg');
+        }
         $user->save();
         return redirect('/employees');
 

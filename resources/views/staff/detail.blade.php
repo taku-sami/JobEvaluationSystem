@@ -10,8 +10,11 @@ $user = Auth::user();
     <hr>
     <div class="row ml-2">
         <div class="">
-            <img class="d-flex mr-3" src="https://2.bp.blogspot.com/-k8YyzamaaDU/V6iIXvAN1jI/AAAAAAAA9BI/0fBlVeSqQYc4dRQymfckGd93WmdDqrrkQCLcB/s800/syoumeisyashin_man.png" style="width: 128px;height: 128px;">
-        </div>
+            @if($image_url)
+                <img class="d-flex mr-3" src="/{{ $image_url }}" style="width: 128px;height: 128px;">
+            @else
+                <img class="d-flex mr-3" src="/storage/images/user.jpg" style="width: 128px;height: 128px;">
+            @endif        </div>
         <div class=" my-auto">
             <div>社員番号：{{$user->id}}</div>
             <div>氏名：{{$user->name}}</div>

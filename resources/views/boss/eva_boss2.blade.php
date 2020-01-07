@@ -10,8 +10,11 @@
     <hr>
     <div class="row ml-2">
         <div class="">
-            <img class="d-flex mr-3" src="https://2.bp.blogspot.com/-k8YyzamaaDU/V6iIXvAN1jI/AAAAAAAA9BI/0fBlVeSqQYc4dRQymfckGd93WmdDqrrkQCLcB/s800/syoumeisyashin_man.png" style="width: 128px;height: 128px;">
-        </div>
+            @if($image_url)
+                <img class="d-flex mr-3" src="/{{ $image_url }}" style="width: 128px;height: 128px;">
+            @else
+                <img class="d-flex mr-3" src="/storage/images/user.jpg" style="width: 128px;height: 128px;">
+            @endif        </div>
         <div class=" my-auto">
             <div>社員番号：{{$evaluation->user->id}}</div>
             <div>氏名：{{$evaluation->user->name}}</div>
@@ -52,7 +55,17 @@
                     </td>
                     <td>
                         <select class="form-control" name="" disabled id="exampleFormControlSelect1" >
-                            <option selected >{{$evaluation->boss1_eva1}}</option>
+                            @if($evaluation->boss1_eva1 == 1 )
+                                <option selected>C</option>
+                            @elseif($evaluation->boss1_eva1 == 2 )
+                                <option selected>B</option>
+                            @elseif($evaluation->boss1_eva1 == 3 )
+                                <option selected>A</option>
+                            @elseif($evaluation->boss1_eva1 == 4 )
+                                <option selected>S</option>
+                            @elseif($evaluation->boss1_eva1 == 5 )
+                                <option selected>SS</option>
+                            @endif
                         </select>
                     </td>
                     <td>
@@ -81,7 +94,17 @@
                     </td>
                     <td>
                         <select class="form-control" name="" disabled id="exampleFormControlSelect1" >
-                            <option selected >{{$evaluation->boss1_eva2}}</option>
+                            @if($evaluation->boss1_eva2 == 1 )
+                                <option selected>C</option>
+                            @elseif($evaluation->boss1_eva2 == 2 )
+                                <option selected>B</option>
+                            @elseif($evaluation->boss1_eva2 == 3 )
+                                <option selected>A</option>
+                            @elseif($evaluation->boss1_eva2 == 4 )
+                                <option selected>S</option>
+                            @elseif($evaluation->boss1_eva2 == 5 )
+                                <option selected>SS</option>
+                            @endif
                         </select>
                     </td>
                     <td>
@@ -110,7 +133,17 @@
                     </td>
                     <td>
                         <select class="form-control" disabled name="" id="exampleFormControlSelect1" >
-                            <option selected >{{$evaluation->boss1_eva2}}</option>
+                            @if($evaluation->boss1_eva3 == 1 )
+                                <option selected>C</option>
+                            @elseif($evaluation->boss1_eva3 == 2 )
+                                <option selected>B</option>
+                            @elseif($evaluation->boss1_eva3 == 3 )
+                                <option selected>A</option>
+                            @elseif($evaluation->boss1_eva3 == 4 )
+                                <option selected>S</option>
+                            @elseif($evaluation->boss1_eva3 == 5 )
+                                <option selected>SS</option>
+                            @endif
                         </select>
                     </td>
                     <td>

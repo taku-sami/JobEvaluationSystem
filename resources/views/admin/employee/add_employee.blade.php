@@ -9,7 +9,7 @@
     <hr>
     <div class="col-md-4 bg-light border mx-auto" style="border-radius: 30px;">
         <div class="">
-            <form method="POST" action="/addemployee">
+            <form method="POST" action="/addemployee" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="password" value="password">
                 <div class="form-group row">
@@ -45,6 +45,13 @@
                             <option value="{{$class->class_name}}">{{$class->class_name}}</option>
                             @endforeach
                         </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-10 mx-auto">
+                        <label for="picture" class="">顔写真</label>
+                        <input type="file" class="form-control　md-form" name="image_url">
+                        {{ csrf_field() }}
                     </div>
                 </div>
                 <div class="form-group row">

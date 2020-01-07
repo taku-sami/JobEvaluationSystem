@@ -24,8 +24,8 @@ class EvaluationController extends Controller
             ->where('auth','boss2')
             ->first();
 
+        $columns= array();
         foreach($categories as $category) {
-
             $check = $category->evaluation()->where('user_id', Auth::id())->first();
             if(empty($check) == true)
             {
@@ -38,6 +38,7 @@ class EvaluationController extends Controller
         }
         return view('staff/staff',[
             'columns' => $columns,
+            'image_url' => str_replace('public/', 'storage/', Auth::user()->image_url),
             'boss1_dep' => $boss1_dep,
             'boss2_dep' => $boss2_dep,
         ]);
@@ -47,20 +48,24 @@ class EvaluationController extends Controller
         $category = Category::where('year',$year)->first();
         return view('staff/detail',[
             'category' => $category,
+            'image_url' => str_replace('public/', 'storage/', Auth::user()->image_url),
         ]);
     }
     public function show($id)
     {
         $evaluation = Evaluation::where('id',$id)->first();
         return view('staff/check',[
-            'evaluation' => $evaluation
+            'evaluation' => $evaluation,
+            'image_url' => str_replace('public/', 'storage/', Auth::user()->image_url),
+
         ]);
     }
     public function evaluation($id)
     {
         $evaluation = Evaluation::where('id', $id)->first();
         return view('staff/evaluation', [
-            'evaluation' => $evaluation
+            'evaluation' => $evaluation,
+            'image_url' => str_replace('public/', 'storage/', Auth::user()->image_url),
         ]);
     }
     public function evaluation_regist(Request $request)
@@ -111,7 +116,6 @@ class EvaluationController extends Controller
             if(empty($check) == true)
             {
                 $columns[] = $users[$array_num];
-//                $count[] = $users[$array_num];
             }
             else{
                 $columns[] = $user->eva_with_user()->where('year',$year)->first();
@@ -293,7 +297,8 @@ class EvaluationController extends Controller
 
         return view('boss/check_boss1',[
             'evaluation' => $evaluation,
-            'root' => $root
+            'root' => $root,
+            'image_url' => str_replace('public/', 'storage/', $evaluation->user->image_url),
         ]);
     }
     public function eva_boss1($id)
@@ -303,7 +308,8 @@ class EvaluationController extends Controller
 
         return view('boss/eva_boss1',[
             'evaluation' => $evaluation,
-            'root' => $root
+            'root' => $root,
+            'image_url' => str_replace('public/', 'storage/', $evaluation->user->image_url),
         ]);
     }
     public function check_for_boss2($id)
@@ -313,7 +319,9 @@ class EvaluationController extends Controller
 
         return view('boss/check_boss2',[
             'evaluation' => $evaluation,
-            'root' => $root
+            'root' => $root,
+            'image_url' => str_replace('public/', 'storage/', $evaluation->user->image_url),
+
         ]);
     }
     public function eva_boss2($id)
@@ -323,7 +331,8 @@ class EvaluationController extends Controller
 
         return view('boss/eva_boss2',[
             'evaluation' => $evaluation,
-            'root' => $root
+            'root' => $root,
+            'image_url' => str_replace('public/', 'storage/', $evaluation->user->image_url),
         ]);
     }
     public function approval(Request $request)
@@ -435,9 +444,12 @@ class EvaluationController extends Controller
             }
             $array_num++;
         }
-        return view('boss.staff')->with('user',$user)
-            ->with('columns',$columns);
+        return view('boss.staff',[
+            'user'=> $user,
+            'columns'=> $columns,
+            'image_url' => str_replace('public/', 'storage/', $user->image_url),
 
+        ]);
     }
     public function show_for_admin(){
         $bosses = User::where('auth','boss1')
