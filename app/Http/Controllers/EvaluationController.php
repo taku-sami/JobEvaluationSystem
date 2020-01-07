@@ -48,7 +48,7 @@ class EvaluationController extends Controller
         $category = Category::where('year',$year)->first();
         return view('staff/detail',[
             'category' => $category,
-            'image_url' => str_replace('public/', 'storage/', Auth::user()->image_url),
+            'image' => Auth::user()->image,
         ]);
     }
     public function show($id)
@@ -56,7 +56,7 @@ class EvaluationController extends Controller
         $evaluation = Evaluation::where('id',$id)->first();
         return view('staff/check',[
             'evaluation' => $evaluation,
-            'image_url' => str_replace('public/', 'storage/', Auth::user()->image_url),
+            'image' => Auth::user()->image,
         ]);
     }
     public function evaluation($id)
@@ -64,7 +64,7 @@ class EvaluationController extends Controller
         $evaluation = Evaluation::where('id', $id)->first();
         return view('staff/evaluation', [
             'evaluation' => $evaluation,
-            'image_url' => str_replace('public/', 'storage/', Auth::user()->image_url),
+            'image' => Auth::user()->image,
         ]);
     }
     public function evaluation_regist(Request $request)
@@ -297,7 +297,7 @@ class EvaluationController extends Controller
         return view('boss/check_boss1',[
             'evaluation' => $evaluation,
             'root' => $root,
-            'image_url' => str_replace('public/', 'storage/', $evaluation->user->image_url),
+            'image' => $evaluation->user->image,
         ]);
     }
     public function eva_boss1($id)
@@ -308,7 +308,7 @@ class EvaluationController extends Controller
         return view('boss/eva_boss1',[
             'evaluation' => $evaluation,
             'root' => $root,
-            'image_url' => str_replace('public/', 'storage/', $evaluation->user->image_url),
+            'image' => $evaluation->user->image,
         ]);
     }
     public function check_for_boss2($id)
@@ -319,8 +319,7 @@ class EvaluationController extends Controller
         return view('boss/check_boss2',[
             'evaluation' => $evaluation,
             'root' => $root,
-            'image_url' => str_replace('public/', 'storage/', $evaluation->user->image_url),
-
+            'image' => $evaluation->user->image,
         ]);
     }
     public function eva_boss2($id)
@@ -331,7 +330,7 @@ class EvaluationController extends Controller
         return view('boss/eva_boss2',[
             'evaluation' => $evaluation,
             'root' => $root,
-            'image_url' => str_replace('public/', 'storage/', $evaluation->user->image_url),
+            'image' => $evaluation->user->image,
         ]);
     }
     public function approval(Request $request)
@@ -446,8 +445,7 @@ class EvaluationController extends Controller
         return view('boss.staff',[
             'user'=> $user,
             'columns'=> $columns,
-            'image_url' => str_replace('public/', 'storage/', $user->image_url),
-
+            'image' => $user->image,
         ]);
     }
     public function show_for_admin(){
