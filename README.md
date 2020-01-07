@@ -1,78 +1,100 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+Name
+Web 人事考課システム
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Overview
+社員の人事考課をWeb上で行うことができるシンプルなシステムです。
 
-## About Laravel
+## Description
+このシステムには３種類のユーザーが存在します。
+それぞれの役割は以下のとおりです。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+【システム管理者】
+管理者画面へログインできる。
+管理者画面では主に以下が可能。
+  ・評価者の進捗状況（承認実施）の確認
+  ・システムログの確認
+  ・部署の追加、編集、削除
+  ・役職の追加、編集、削除
+  ・社員の追加、編集、削除
+  ・考課の追加、編集、削除
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+【被評価者】
+社員の個人ページのみログイン可能
+個人ページでは主に以下が可能。
+　・目標の登録
+　・自己評価の登録
+　・評価結果の閲覧
+　・自身の目標・評価の承認進捗状況の確認
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+【評価者（被評価者の上長）】
+評価者には１次承認者と２次承認者がいる。
+それぞれの評価者の個人ページのみログイン可能
+評価者ページでは主に以下が可能。
+　・被評価者の目標の確認、差戻、承認
+　・被評価者の評価
+　・被評価者個別ページの閲覧
+　・目標、評価の進捗状況及び評価結果を数で確認
+  ・社員検索
+ ※被評価者は自身が所属する部署内の社員のみ
+ 
 
-## Learning Laravel
+## Demo
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## VS. 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Requirement
 
-## Laravel Sponsors
+## Usage
+【管理者】
+１　管理者ユーザーでログイン
+　　メールアドレス：takuya062090@gmail.com
+    パスワード：password
+２　必要に応じマスタでデータを操作
+　　初期で以下のユーザー、マスタが保存されているのでデータ操作なしでもすぐ利用できます。
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+【被評価者、承認者】
+３　社員ユーザーでログイン
+　　２で登録した新規ユーザーか初期ユーザーを利用してください。
+  　パスワードの初期値は「password」です。
+４　目標の登録
+　　一覧のセルをクリックすると目標登録画面に遷移します。
+  　それぞれの考課に応じた目標を入力してください。
+５　１次承認者でログイン
+　　４で目標登録をした社員と同じ部署の１次承認者でログインしてください。
+６　１次承認
+　　内容を確認し承認をクリックすれば承認完了です。
+７　２次承認者でログイン
+　　５番同様です。
+８　２次承認
+　　６番同様です。（１次承認者⇒２次承認者という順番のみ承認可能です。）
+  ※６、８で差戻をクリックした場合は４番に戻ります。（社員の目標再登録が必要となります。）
+９　社員ユーザーでログイン
+　　３番同様です。
+10　評価登録　
+　　８番の作業が終了したら社員は目標に対する評価を登録できます。
+　　C(低) → → SS(高)となっています。
+  　なお、社員の評価は最終評価に影響しないので、上長が評価する際の参考としています。
+11  １次承認者でログイン
+　　 5番同様
+12  １次承認
+　　10番と同様に評価してください。
+13  ２次承認者でログイン
+　　７番同様
+14　２次評価
+　　12番同様
+15　評価確定
+　　12番と14番で登録した評価によって最終的な評価が自動的に確定します。
+  　この評価が社員の評価となります。
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
 
-## Contributing
+## Install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Contribution
 
-## Code of Conduct
+## Licence
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
 
-## Security Vulnerabilities
+## Author
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+[tcnksm](https://github.com/tcnksm)
