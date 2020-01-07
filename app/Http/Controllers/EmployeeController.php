@@ -22,7 +22,7 @@ class EmployeeController extends Controller
         $class_auth = StaffClass::where('class_name',$request->class)->first();
         $user->auth = $class_auth->class_auth;
         $user->password = Hash::make($request->password);
-        if($request->image_url)
+        if($request->image)
         {
             $image = base64_encode(file_get_contents($request->image->getRealPath()));
             $user->image = $image;
