@@ -10,9 +10,8 @@
     <hr>
     <div class="row ml-2">
         <div class="">
-            @if($image_url)
-                <img src="data:image/png;base64,<?= image ?>">
-                <img class="d-flex mr-3" src="data:image_url/png;base64,<?= image_url ?>" style="width: 128px;height: 128px;">
+            @if($image)
+                <img class="d-flex mr-3" src="data:image/png;base64,<?= image ?>" style="width: 128px;height: 128px;">
             @else
                 <img class="d-flex mr-3" src="/storage/images/user.jpg" style="width: 128px;height: 128px;">
             @endif        </div>

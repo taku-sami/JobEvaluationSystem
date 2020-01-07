@@ -38,7 +38,7 @@ class EvaluationController extends Controller
         }
         return view('staff/staff',[
             'columns' => $columns,
-            'image_url' => str_replace('public/', 'storage/', Auth::user()->image_url),
+            'image' => Auth::user()->image,
             'boss1_dep' => $boss1_dep,
             'boss2_dep' => $boss2_dep,
         ]);

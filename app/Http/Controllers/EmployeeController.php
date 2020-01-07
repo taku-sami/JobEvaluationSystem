@@ -24,8 +24,8 @@ class EmployeeController extends Controller
         $user->password = Hash::make($request->password);
         if($request->image_url)
         {
-            $image = base64_encode(file_get_contents($request->image_url->getRealPath()));
-            $user->image_url = $image;
+            $image = base64_encode(file_get_contents($request->image->getRealPath()));
+            $user->image = $image;
 //          $user->image_url = $request->image_url->storeAs('public/images', Carbon::now() . '_' . $request->name . '.jpg');
         }
         $user->save();
