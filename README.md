@@ -75,25 +75,25 @@ postgrel
    (1)開発部  
    　　役職：被評価者  
       アドレス：devstaff@gmail.com  
-      役職：被評価者  
+      役職：１次承認者  
       アドレス：devboss1@gmail.com  
-      役職：被評価者  
+      役職：１次承認者    
       アドレス：devboss2@gmail.com  
       
   (2)人事部  
       役職：被評価者  
       アドレス：hrstaff@gmail.com  
-      役職：被評価者  
+      役職：１次承認者    
       アドレス：hrboss1@gmail.com  
-      役職：被評価者  
+      役職：２次承認者    
       アドレス：hrboss2@gmail.com  
 
   (3)営業部  
       役職：被評価者  
       アドレス：salestaff@gmail.com  
-      役職：被評価者  
+      役職：１次承認者   
       アドレス：sallboss1@gmail.com  
-      役職：被評価者  
+      役職：２次承認者   
       アドレス：saleboss2@gmail.com  
 ※パスワードは全て「password」です  
 【被評価者、承認者】  
