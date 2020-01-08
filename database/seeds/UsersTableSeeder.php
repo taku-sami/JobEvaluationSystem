@@ -21,7 +21,6 @@ class UsersTableSeeder extends Seeder
             'department' => "システム管理者",
             'class' => 'システム管理者',
             'auth' => 'admin',
-            'email_verified_at' => Carbon::now(),
             'password' => Hash::make('password'),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),

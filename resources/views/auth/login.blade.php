@@ -49,7 +49,7 @@
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link form-control" href="{{ route('password.request') }}" style="font-size: smaller;">
-                                        >>パスワードを忘れた方はこちら
+                                        >>パスワードを忘れた方、パスワード変更の方はこちら
                                     </a>
                                 @endif
                             </div>

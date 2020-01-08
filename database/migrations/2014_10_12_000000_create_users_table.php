@@ -20,7 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('department');
             $table->string('class');
             $table->string('auth');
+            $table->integer('email_verified')->default(0);
+            $table->string('email_verify_token')->nullable();
             $table->timestamp('email_verified_at')->nullable();
+            $table->integer('status')->default(0);
             $table->string('password');
             $table->text('image')->nullable();;
             $table->rememberToken()->nullable();
@@ -35,6 +38,10 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('email_verified');
+            $table->dropColumn('email_verify_token');
+            $table->dropColumn('status');
+        });
     }
 }
