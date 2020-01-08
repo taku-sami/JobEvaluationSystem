@@ -70,32 +70,32 @@ postgrel
     パスワード：password  
 ２　必要に応じマスタでデータを操作  
 　　初期で以下のユーザー、マスタが保存されているのでデータ操作なしでもすぐ利用できます。  
-   ※現時点ではユーザー新規登録ができません。用意されているユーザーで使用ください。
-　　　最初に用意しているユーザーは以下の通りです。
-   (1)開発部
-   　　役職：被評価者
-      アドレス：devstaff@gmail.com
-      役職：被評価者
-      アドレス：devboss1@gmail.com
-      役職：被評価者
-      アドレス：devboss2@gmail.com
+   ※現時点ではユーザー新規登録ができません。用意されているユーザーで使用ください。  
+　　　最初に用意しているユーザーは以下の通りです。  
+   (1)開発部  
+   　　役職：被評価者  
+      アドレス：devstaff@gmail.com  
+      役職：被評価者  
+      アドレス：devboss1@gmail.com  
+      役職：被評価者  
+      アドレス：devboss2@gmail.com  
       
-  (2)人事部
-      役職：被評価者
+  (2)人事部  
+      役職：被評価者  
       アドレス：hrstaff@gmail.com  
-      役職：被評価者
-      アドレス：hrboss1@gmail.com
-      役職：被評価者
-      アドレス：hrboss2@gmail.com
+      役職：被評価者  
+      アドレス：hrboss1@gmail.com  
+      役職：被評価者  
+      アドレス：hrboss2@gmail.com  
 
   (3)営業部  
-      役職：被評価者
-      アドレス：salestaff@gmail.com
-      役職：被評価者
-      アドレス：sallboss1@gmail.com
-      役職：被評価者
-      アドレス：saleboss2@gmail.com
-※パスワードは全て「password」です
+      役職：被評価者  
+      アドレス：salestaff@gmail.com  
+      役職：被評価者  
+      アドレス：sallboss1@gmail.com  
+      役職：被評価者  
+      アドレス：saleboss2@gmail.com  
+※パスワードは全て「password」です  
 【被評価者、承認者】  
 ３　被評価者でログイン  
 　　２で登録した新規ユーザーか初期ユーザーを利用してください。
