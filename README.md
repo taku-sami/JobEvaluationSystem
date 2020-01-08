@@ -1,7 +1,7 @@
-Name  
+## Name  
 Web 人事考課システム  
 
-Overview  
+## Overview  
 社員の人事考課をWeb上で行うことができるシンプルなシステムです。 
 
 以下アドレスに公開しています。  
@@ -13,7 +13,7 @@ heroku(https://data.heroku.com/)
 DB  
 postgrel  
 
-##　補足事項  
+## 補足事項  
 現時点本番環境で実装できていない機能  
 
 １　メール認証が機能してないことが起因のもの  
