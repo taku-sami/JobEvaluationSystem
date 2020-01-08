@@ -6,6 +6,7 @@ Overview
 
 以下アドレスに公開しています。  
 http://job-evaluation-system.herokuapp.com/  
+※デバックモードをonにしているため、500エラーが起きたらデバック画面が表示されます。　　
 
 使用したCLI  
 heroku(https://data.heroku.com/)  
