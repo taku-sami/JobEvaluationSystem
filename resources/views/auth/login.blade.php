@@ -6,7 +6,7 @@
             <div class="text-center h2 mb-5">Web 人事考課システム</div>
             <div class="row justify-content-center">
                 <div class="col-md-4 bg-light border" style="border-radius: 30px;">
-                    <div class="text-center h5 mt-4">ログイン</div>
+                    <div class="text-center h5 mt-5 mb-4">ログイン</div>
                     <div class="">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
@@ -38,7 +38,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-md-6 mx-auto text-center">
+                                <div class="col-md-6 mx-auto text-center mt-3 mb-2">
 
                                 <button type="submit" class="btn-pill border py-2 px-4 hover1" style="background-color: #E3FBFF;">ログイン</button>
                             </div>

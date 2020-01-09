@@ -22,7 +22,8 @@ class CsvController extends Controller
      */
     public function export()
     {
-        return Excel::download(new EvaluationsExport, 'evaluations.xlsx');
+//        return Excel::download(dd(new EvaluationsExport));
+        return Excel::download(new EvaluationsExport, '考課一覧.csv');
     }
 
     /**

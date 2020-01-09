@@ -88,6 +88,7 @@ class EvaluationController extends Controller
         $evaluation->goal_3 = $request->goal_3;
         $evaluation->progress = 2;
         $evaluation->user_id = $request->id;
+        $evaluation->user_name = $request->name;
         $evaluation->department = $request->department;
         $evaluation->year = $request->year;
         $evaluation->save();
@@ -452,9 +453,12 @@ class EvaluationController extends Controller
         $bosses = User::where('auth','boss1')
             ->orwhere('auth','boss2')
             ->get();
-        if(Category::all() === !null)
+        $count = Category::all()->count();
+//        $count = $category->id()->count;
+
+        if($count >= 1)
         {
-            $year = Category::orderBy('year','desc')->first()->year;
+            $year = Category::orderBy('year')->first()->year;
             foreach($bosses as $boss){
                 $columns[] = Evaluation::where('department',$boss->department)
                     ->where('year',$year)
@@ -467,7 +471,8 @@ class EvaluationController extends Controller
 
         $departments = Department::all();
         $categories = Category::all();
-        $logs = Log::all();
+        $logs = Log::orderby('updated_at','desc')->get();
+
         return view('admin/main',[
             'columns' => $columns,
             'departments' => $departments,
@@ -479,16 +484,21 @@ class EvaluationController extends Controller
     }
     public function show_for_admin_selected(Request $request)
     {
+
         $bosses = User::where('auth','boss1')
             ->orwhere('auth','boss2')
             ->get();
         $year = $request->year;
         $departments = Department::all();
 
-        foreach($bosses as $boss){
-            $columns[] = Evaluation::where('department',$boss->department)
-                ->where('year',$year)
-                ->get();
+        if($bosses === !null){
+            foreach($bosses as $boss){
+                $columns[] = Evaluation::where('department',$boss->department)
+                    ->where('year',$year)
+                    ->get();
+            }
+        }else{
+            $columns = null;
         }
         $categories = Category::all();
         $logs = Log::all();

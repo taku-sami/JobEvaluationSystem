@@ -1,6 +1,5 @@
 @extends('layouts.admin')
-@php
-    @endphp
+
 @section('content')
 
     <h4 class="mt-4">考課残一覧</h4>

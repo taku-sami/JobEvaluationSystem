@@ -15,8 +15,7 @@ class Evaluation extends Model
      */
 
     protected $fillable = [
-        'id', 'year', 'user_id','department','evaluation','self_eva3',
-        'point'
+        'id', 'year', 'user_id','user_name','department','evaluation','point',
     ];
     /**
      * The attributes that should be hidden for arrays.
