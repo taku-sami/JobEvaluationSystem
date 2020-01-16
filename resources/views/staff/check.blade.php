@@ -1,6 +1,7 @@
 @extends('layouts.employee')
 @php
     $user = Auth::user();
+
 @endphp
 @section('content')
 
@@ -26,155 +27,44 @@
     </div>
     <hr>
     <div class="row">
-        <h4 class="col-10">@if($evaluation->progress >=5 )評価@else目標@endif</h4>
+        <h4 class="col-10 py-3">@if($evaluation->progress >=5 )評価確認@else目標確認@endif</h4>
     </div>
     <div class="form-group">
         <table class="roundedCorners text-center">
             <tr>
-                <th>カテゴリー</th>
-                <th>評価基準</th>
-                <th>目標</th>
-                <th>自己評価</th>
-                <th>１次評価</th>
-                <th>２次評価</th>
+                <th style="width: 10%;" >カテゴリー</th>
+                <th style="width: 20%;" >評価基準</th>
+                <th style="width: 20%;" >目標</th>
+                <th style="width: 45%;" colspan="3">評価</th>
             </tr>
-            <tr>
-                <td>１ {{$evaluation->category->category1}}</td>
-                <td>{{$evaluation->category->standard1}}</td>
-                <td>
-                    <div>
-                        {{$evaluation->goal_1}}
-                    </div>
-                </td>
-                <td>
-                    <select class="form-control" id="exampleFormControlSelect1" disabled>
-                        <option selected>{{$evaluation->self_eva1}}</option>
-                    </select>
-                </td>
-                <td>
-                    <select class="form-control" id="exampleFormControlSelect1" disabled>
-                        @if($evaluation->boss1_eva1 == 1 )
-                            <option selected>C</option>
-                        @elseif($evaluation->boss1_eva1 == 2 )
-                            <option selected>B</option>
-                        @elseif($evaluation->boss1_eva1 == 3 )
-                            <option selected>A</option>
-                        @elseif($evaluation->boss1_eva1 == 4 )
-                            <option selected>S</option>
-                        @elseif($evaluation->boss1_eva1 == 5 )
-                            <option selected>SS</option>
-                        @endif
-                    </select>
-                </td>
-                <td>
-                    <select class="form-control" id="exampleFormControlSelect1" disabled>
-                        @if($evaluation->boss2_eva1 == 1 )
-                            <option selected>C</option>
-                        @elseif($evaluation->boss2_eva1 == 2 )
-                            <option selected>B</option>
-                        @elseif($evaluation->boss2_eva1 == 3 )
-                            <option selected>A</option>
-                        @elseif($evaluation->boss2_eva1 == 4 )
-                            <option selected>S</option>
-                        @elseif($evaluation->boss2_eva1 == 5 )
-                            <option selected>SS</option>
-                        @endif
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>２ {{$evaluation->category->category2}}</td>
-                <td>{{$evaluation->category->standard2}}</td>
-                <td>
-                    <div>
-                        {{$evaluation->goal_2}}
-                    </div>
-                </td>
-                <td>
-                    <select class="form-control" id="exampleFormControlSelect1" disabled>
-                        <option selected>{{$evaluation->self_eva2}}</option>
-                    </select>
-                </td>
-                <td>
-                    <select class="form-control" id="exampleFormControlSelect1" disabled>
-                        @if($evaluation->boss1_eva2 == 1 )
-                            <option selected>C</option>
-                        @elseif($evaluation->boss1_eva2 == 2 )
-                            <option selected>B</option>
-                        @elseif($evaluation->boss1_eva2 == 3 )
-                            <option selected>A</option>
-                        @elseif($evaluation->boss1_eva2 == 4 )
-                            <option selected>S</option>
-                        @elseif($evaluation->boss1_eva2 == 5 )
-                            <option selected>SS</option>
-                        @endif                    </select>
-                </td>
-                <td>
-                    <select class="form-control" id="exampleFormControlSelect1" disabled>
-                        @if($evaluation->boss2_eva2 == 1 )
-                            <option selected>C</option>
-                        @elseif($evaluation->boss2_eva2 == 2 )
-                            <option selected>B</option>
-                        @elseif($evaluation->boss2_eva2 == 3 )
-                            <option selected>A</option>
-                        @elseif($evaluation->boss2_eva2 == 4 )
-                            <option selected>S</option>
-                        @elseif($evaluation->boss2_eva2 == 5 )
-                            <option selected>SS</option>
-                        @endif
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>３ {{$evaluation->category->category3}}</td>
-                <td>{{$evaluation->category->standard3}}</td>
-                <td>
-
-                    <div>
-                        {{$evaluation->goal_3}}
-                    </div>
-                </td>
-                <td>
-                    <select class="form-control" id="exampleFormControlSelect1" disabled>
-                        <option selected>{{$evaluation->self_eva3}}</option>
-                    </select>
-                </td>
-                <td>
-                    <select class="form-control" id="exampleFormControlSelect1" disabled>
-                        @if($evaluation->boss1_eva3 == 1 )
-                            <option selected>C</option>
-                        @elseif($evaluation->boss1_eva3 == 2 )
-                            <option selected>B</option>
-                        @elseif($evaluation->boss1_eva3 == 3 )
-                            <option selected>A</option>
-                        @elseif($evaluation->boss1_eva3 == 4 )
-                            <option selected>S</option>
-                        @elseif($evaluation->boss1_eva3 == 5 )
-                            <option selected>SS</option>
-                        @endif
-                    </select>
-                </td>
-                <td>
-                    <select class="form-control" id="exampleFormControlSelect1" disabled>
-                        @if($evaluation->boss2_eva3 == 1 )
-                            <option selected>C</option>
-                        @elseif($evaluation->boss2_eva3 == 2 )
-                            <option selected>B</option>
-                        @elseif($evaluation->boss2_eva3 == 3 )
-                            <option selected>A</option>
-                        @elseif($evaluation->boss2_eva3 == 4 )
-                            <option selected>S</option>
-                        @elseif($evaluation->boss2_eva3 == 5 )
-                            <option selected>SS</option>
-                        @endif
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="6" class="text-center">
-                    <a href="/staff" class="col-1 py-2 m-3 btn btn-outline-secondary">戻る</a>
-                </td>
-            </tr>
+            @php
+                $items = $evaluation->evaluations;
+                $n=0;
+            @endphp
+            @foreach($items as $item)
+                <input type="hidden" value="{{$n++}}">
+                <tr>
+                    <td rowspan="3" style="background-color: #b5dee5;color: white;">{{$n}} {{$item->category->category}}</td>
+                    <td rowspan="3" class="text-left">{{$item->category->standard}}</td>
+                    <td rowspan="3" class="text-left" >{{$item->goal}}</td>
+                    <td style="background-color: #b5dee5;color: white;">被評価者</td>
+                    <td>{{$item->self_eva}}</td>
+                    <td class="p-0 m-0">{{$item->self_comment}}</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #b5dee5;color: white;">１次評価者</td>
+                    <td>{{$item->boss1_eva}}</td>
+                    <td>{{$item->boss1_comment}}</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #b5dee5;color: white;">２次評価者</td>
+                    <td>{{$item->boss2_eva}}</td>
+                    <td>{{$item->boss2_comment}}</td>
+                </tr>
+            @endforeach
         </table>
+        <div class="pb-5 pt-3 text-center">
+            <a href="/staff" class="btn btn-primary col-1 py-2 m-3">戻る</a>
+        </div>
     </div>
 @endsection

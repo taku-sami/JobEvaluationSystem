@@ -1,62 +1,46 @@
-@extends('layouts.admin')
+@extends('layouts.sample')
 
 @section('content')
-
     <div class="row mt-4">
-        <h4 class="col-10 mb-0">考課マスタ</h4>
+        <h4 class="col-10 mb-0">考課新規登録</h4>
     </div>
     <hr>
-    <div class="col-md-6 bg-light border mx-auto" style="border-radius: 30px;">
-            <form method="POST" action="/addcategory">
-                @csrf
-                <div class="form-group row ">
-                    <div class="col-md-10 mx-auto">
-                        <div class=" h5 my-4">考課新規登録</div>
-                        <label for="email" class="">考課年度</label>
-                        <input type="text" class="form-control md-form w-25" name="year" value="{{ old('class_name') }}" required placeholder="yyyy">
-                    </div>
+    <form action="/addcategory" method="post">
+        @csrf
+        <input type="hidden" value="{{$year}}" name="year">
+        <div class="col-md-6  mx-auto" style="border-radius: 15px;">
+            <div id="sample">
+                <div class="h5">{{$year}}年度考課登録</div>
+                <div class="text-right mb-3 mr-3">
+                    <button class="btn btn-success" v-on:click="addNewCategoryForm">New Category</button>
                 </div>
-                <hr>
-                <div class="form-group row">
-                    <div class="col-md-10 mx-auto">
-                        <div class="mb-2"><strong>考課（１）</strong></div>
-                        <div class="col-11">
-                            <label for="password" class="">考課名</label>
-                            <input type="text" class="form-control md-form w-50 mb-3" name="category1" value="{{ old('category1') }}" required placeholder="考課名を入力してください">
-                            <label for="password" class="">評価基準</label>
-                            <input type="text" class="form-control md-form" name="standard1" value="{{ old('standard1') }}" required placeholder="考課基準を入力してください">
+                <div v-for="(category, index) in categories">
+                    <span class="float-right m-3" style="coursor:pointer" v-on:click="deleteCategoryForm(index)">X</span>
+                    <div class="category-form bg-light p-3 border">
+                        <div class="my-4" >考課(@{{index+1}})</div>
+                        <div class="form-group row ">
+                            <label class="col-sm-3 col-form-label text-right ">考課名：</label>
+                            <div class="col-sm-9">
+                                <input type="text" v-bind:name="'name[' + index + ']'" class="form-control" required placeholder="考課名を入力" v-model="category.name">
+                                <p class="alert-warning">@{{category.name}}</p>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label text-right">考課基準：</label>
+                            <div class="col-sm-9">
+                                <input type="text" v-bind:name="'standard[' + index + ']'" class="form-control"  required placeholder="考課基準を入力" v-model="category.standard">
+                                <p class="alert-warning">@{{category.standard}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <hr>
-                <div class="form-group row">
-                    <div class="col-md-10 mx-auto">
-                        <div class="mb-2"><strong>考課（２）</strong></div>
-                        <div class="col-11">
-                            <label for="password" class="">考課名</label>
-                            <input type="text" class="form-control md-form w-50 mb-3" name="category2" value="{{ old('category2') }}" required placeholder="考課名を入力してください">
-                            <label for="password" class="">評価基準</label>
-                            <input type="text" class="form-control md-form" name="standard2" value="{{ old('standard2') }}" required placeholder="考課基準を入力してください">
-                        </div>
-                    </div>
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-success px-3">登 録</button>
                 </div>
-                <hr>
-                <div class="form-group row">
-                    <div class="col-md-10 mx-auto">
-                        <div class="mb-2"><strong>考課（３）</strong></div>
-                        <div class="col-11">
-                            <label for="password" class="">考課名</label>
-                            <input type="text" class="form-control md-form w-50 mb-3" name="category3" value="{{ old('category3') }}" required placeholder="考課名を入力してください">
-                            <label for="password" class="">評価基準</label>
-                            <input type="text" class="form-control md-form" name="standard3" value="{{ old('standard3') }}" required placeholder="考課基準を入力してください">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-6 mx-auto text-center">
-                        <button type="submit" class="btn-pill border py-2 px-4 hover1" style="background-color: #E3FBFF;">登録</button>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
+    </form>
 @endsection
+
+
+

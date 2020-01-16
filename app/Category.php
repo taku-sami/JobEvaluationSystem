@@ -10,9 +10,4 @@ class Category extends Model
         'category1', 'standard1', 'category2','standard2','category3','standard3',
         'year'
     ];
-
-    public function evaluation()
-    {
-        return $this->hasMany('App\Evaluation','year','year');
-    }
 }

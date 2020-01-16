@@ -6,28 +6,11 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"crossorigin="anonymous">
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" >
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-
 </head>
 <body>
-<div id="full-page">
-    <div class="app">
+<div id="">
+    <div class="full-page">
         <div id="" style="background-color: #E3FBFF;" class="text-secondary">
             <nav class="navbar navbar-expand-md navbar-light border-bottom" style="background-color: #E3FBFF;">
                 <div class="container-fluid">
@@ -45,22 +28,22 @@
                             @guest
 
                             @else
-                                <ul class="navbar-nav ml-auto">
-                                    <!-- Authentication Links -->
-                                    <li class="nav-item">
-                                        <a class="nav-link" style="color: #004BB1;">
-                                            こんにちは {{ Auth::user()->name }} さん <span class="caret"></span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" style="color: #004BB1;" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
+                            <ul class="navbar-nav ml-auto">
+                                <!-- Authentication Links -->
+                                <li class="nav-item">
+                                    <a class="nav-link" style="color: #004BB1;">
+                                        こんにちは {{ Auth::user()->name }} さん <span class="caret"></span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="color: #004BB1;" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">{{ __('ログアウト') }}</a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </li>
-                                </ul>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
                             @endguest
                         </ul>
                     </div>
@@ -91,30 +74,7 @@
         </div>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 </body>
 
 </html>
-<script>
-    var app = new Vue ({
-        name:'Sample-app',
-        el:'#sample',
-        data:{
-            categories:[
-                {
-                    name:'',
-                    standard:''
-                }
-            ]
-        },
-        methods:{
-            addNewCategoryForm(){
-                this.categories.push({
-                    name:'',
-                    standard:''
-                })
-            }
-        }
-    })
-</script>

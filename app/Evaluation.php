@@ -39,7 +39,7 @@ class Evaluation extends Model
 
 public function category()
     {
-        return $this->belongsTo('App\Category','year','year');
+        return $this->belongsTo('App\Category');
 
     }
     public function user()

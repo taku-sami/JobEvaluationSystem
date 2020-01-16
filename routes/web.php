@@ -19,6 +19,9 @@ Route::group(['middleware' => 'auth'], function() {
 
         Route::get('/main','EvaluationController@show_for_admin');
         Route::post('/main', 'EvaluationController@show_for_admin_selected');
+    Route::get('/sample', function () {
+        return view('admin/sample');  // ここを編集 (welcome->sample)
+    });
 
 
 //      following is for Department
@@ -52,6 +55,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/edit_category/{id}','CategoryController@show');
     Route::get('/del_category/{id}','CategoryController@delete');
 
+    Route::post('/category_create', 'CategoryController@create');
     Route::post('/addcategory', 'CategoryController@store');
     Route::post('/editcategory', 'CategoryController@update');
 

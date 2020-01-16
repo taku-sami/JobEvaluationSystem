@@ -1,6 +1,6 @@
 @extends('layouts.employee')
 @php
-$user = Auth::user();
+    $user = Auth::user();
 @endphp
 @section('content')
 
@@ -26,7 +26,7 @@ $user = Auth::user();
     </div>
     <hr>
     <div class="row">
-        <h4 class="col-10">目標</h4>
+        <h4 class="col-10 py-3">目標登録</h4>
     </div>
     <form action="/addgoal" method="post">
         @csrf
@@ -38,93 +38,42 @@ $user = Auth::user();
         <div class="form-group">
             <table class="roundedCorners text-center">
                 <tr>
-                    <th>カテゴリー</th>
-                    <th>評価基準</th>
-                    <th>目標</th>
-                    <th>自己評価</th>
-                    <th>１次評価</th>
-                    <th>２次評価</th>
+                    <th style="width: 10%;" >カテゴリー</th>
+                    <th style="width: 20%;" >評価基準</th>
+                    <th style="width: 20%;" >目標</th>
+                    <th style="width: 45%;" colspan="3">評価</th>
                 </tr>
-                <tr>
-                    <td>１ {{$category->category1}}</td>
-                    <td>{{$category->standard1}}</td>
-                    <td>
-                        <textarea class="form-control w-50 mx-auto" name="goal_1" id="" rows="3"></textarea>
-                    </td>
-                    <td>
-                        <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option></option>
-
-                        </select>
-
-                    </td>
-                    <td>
-                        <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option></option>
-
-                        </select>
-                    </td>
-                    <td>
-                        <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option></option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>２ {{$category->category2}}</td>
-                    <td>{{$category->standard2}}</td>
-                    <td>
-                        <textarea class="form-control w-50 mx-auto" name="goal_2" id="" rows="3"></textarea>
-                    </td>
-                    <td>
-                        <select class="form-control " id="exampleFormControlSelect1" disabled>
-                            <option></option>
-                        </select>
-
-                    </td>
-                    <td>
-                        <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option></option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>２ {{$category->category3}}</td>
-                    <td>{{$category->standard3}}</td>
-                    <td>
-                        <textarea class="form-control w-50 mx-auto" name="goal_3" id="" rows="3"></textarea>
-                    </td>
-                    <td>
-                        <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option></option>
-                        </select>
-
-                    </td>
-                    <td>
-                        <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option></option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="6" class="text-center">
-                        <a href="/staff" class="btn btn-outline-secondary col-1 py-2 m-3">戻る</a>
-                        <button type="submit" class="btn btn-outline-secondary col-1 py-2 m-3">登録する</button>
-                    </td>
-                </tr>
+                @php
+                    $category = $category->category;
+                    $n=0;
+                @endphp
+                @foreach($category as $item)
+                    <input type="hidden" value="{{$n++}}">
+                    <tr>
+                        <input type="hidden" name="category_id[{{$n}}]" value="{{$item->id}}">
+                        <td rowspan="3">{{$n}} {{$item->category}}</td>
+                        <td rowspan="3">{{$item->standard}}</td>
+                        <td rowspan="3"><textarea placeholder="ここに目標を入力" name="goal[{{$n}}]]" id="" style="resize: none;width:98%;height: 160px;border: none;color: #6c757d;"></textarea></td>
+                        <td style="background-color: #b5dee5;color: white;">被評価者</td>
+                        <td>{{$item->self_eva}}</td>
+                        <td class="p-0 m-0">{{$item->self_comment}}</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #b5dee5;color: white;">１次評価者</td>
+                        <td>{{$item->boss1_eva}}</td>
+                        <td>{{$item->boss1_comment}}</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #b5dee5;color: white;">２次評価者</td>
+                        <td>{{$item->boss2_eva}}</td>
+                        <td>{{$item->boss2_comment}}</td>
+                    </tr>
+                @endforeach
             </table>
+            <div class="pb-5 pt-3 text-center">
+                <a href="/staff" class="btn btn-primary col-1 py-2 m-3">戻る</a>
+                <button type="submit" class="btn btn-primary col-1 py-2 m-3">登録する</button>
+            </div>
         </div>
     </form>
-
-
 @endsection

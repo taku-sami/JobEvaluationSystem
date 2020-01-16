@@ -1,43 +1,29 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="row mt-4">
-        <h4 class="col-10 mb-0">考課マスタ</h4>
-    </div>
-    <hr>
-    <div class="col-md-6 h5 mx-auto">{{$categories->year}}度年考課編集</div>
-    <div class="col-md-6 bg-light border mx-auto" style="border-radius: 15px;">
-        <form method="POST" action="/addcategory">
-            @csrf
-            @php
-                $categories = $categories->category;
-                $n =0;
-            @endphp
-            @foreach($categories as $category)
-                <div class=" my-4">考課(1)</div>
-                <div class="form-group row">
-                    <label for="email" class="col-sm-3 col-form-label text-right">考課名：</label>
-                    <div class="col-sm-9">
-                        <input type="text" value="{{$category->category}}" name="input[{{$n}}]" class=" form-control">
-                        <input type="hidden" value="{{$category->category}}" name="input[{{$n+1}}]" class="namae form-control">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="email" class="col-sm-3 col-form-label text-right">考課基準：</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" name="textarea[0]" value="{{$category->standard}}" required placeholder="考課基準を入力">
-                    </div>
-                </div>
-                <hr>
-                <input type="hidden" value="{{$n++}}">
-            @endforeach
-            <div class="form-group row">
-                <div class="col-md-6 mx-auto text-center">
-                    <button type="submit" class="btn-pill border py-2 px-4 hover1" style="background-color: #E3FBFF;">登録</button>
-                </div>
-            </div>
-        </form>
-    </div>
+    <!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+<div class="box" data-formno="0" style="border:dashed 1px #ccc">
+    <p class="no">1</p>
+    <p>
+        【名前】<br>
+        <input type="text" name="input[0]" class="namae">
+    </p>
+    <p>
+        【お問い合わせ】<br>
+        <textarea name="textarea[0]" cols="30" rows="10" class="toiawase"></textarea>
+    </p>
+    <a class="deletformbox">削除</a>
+</div>
+<p><a class="addformbox">追加</a></p>
+
+
+
 
     <script type="text/javascript">
         $(function() {
@@ -50,13 +36,12 @@
                 var cloneno = clonecode.attr('data-formno');
                 var cloneno2 = parseInt(cloneno) + 1;
                 var cloneno3 = parseInt(cloneno) + 2;
-                var title = '考課(' + cloneno3 + ')';
 
                 //data属性の数字を＋１
                 clonecode.attr('data-formno',cloneno2);
 
                 //数値
-                clonecode.find('.no').html(title);
+                clonecode.find('.no').html(cloneno3);
 
                 //name属性の数字を+1
                 var namecode = clonecode.find('input.namae').attr('name');
@@ -103,6 +88,4 @@
 
         });
     </script>
-
-
 @endsection

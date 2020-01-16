@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoriesTable extends Migration
+class CreateUserevaluationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('user_evaluations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('year');
-            $table->string('category');
-            $table->string('standard');
+            $table->integer('progress')->default(1);
+            $table->string('evaluation')->default('未評価');
+            $table->integer('user_id');
+            $table->string('user_name');
+            $table->string('department');
+            $table->integer('point')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +33,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('user_evaluations');
     }
 }

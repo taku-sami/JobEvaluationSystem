@@ -38,6 +38,8 @@
         </li>
         <div class="overflow-auto" style="height: 440px;">
             @foreach($columns as $column)
+                @php
+                @endphp
                 @if($column->progress == null)
                     @if($boss1_dep ==null)
                         <li class="table-row">

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClassesTable extends Migration
+class CreateCategoryyearsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateClassesTable extends Migration
      */
     public function up()
     {
-        Schema::create('classes', function (Blueprint $table) {
+        Schema::create('category_years', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('class_name');
-            $table->string('class_auth');
+            $table->integer('year');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateClassesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('classes');
+        Schema::dropIfExists('category_years');
     }
 }

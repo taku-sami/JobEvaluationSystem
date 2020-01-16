@@ -30,117 +30,70 @@
     </div>
     <form action="/evaluation_boss" method="post">
         @csrf
-        <input type="hidden" value="{{$evaluation->id}}" name="id">
+        <input type="hidden" name="user_eva_id" value="{{$evaluation->id}}">
         <div class="form-group">
             <table class="roundedCorners text-center">
                 <tr>
-                    <th>カテゴリー</th>
-                    <th>評価基準</th>
-                    <th>目標</th>
-                    <th>自己評価</th>
-                    <th>１次評価</th>
-                    <th>２次評価</th>
+                    <th style="width: 10%;" >カテゴリー</th>
+                    <th style="width: 20%;" >評価基準</th>
+                    <th style="width: 20%;" >目標</th>
+                    <th style="width: 45%;" colspan="3">評価</th>
                 </tr>
+                @php
+                    $items = $evaluation->evaluations;
+                    $n = 0;
+                @endphp
+                @foreach($items as $item)
+                    <input type="hidden" value="{{$n++}}">
+                    <input type="hidden" name="id[{{$n}}]"value="{{$item->id}}">
                 <tr>
-                    <td>１ {{$evaluation->category->category1}}</td>
-                    <td>{{$evaluation->category->standard1}}</td>
-                    <td>
-                        <div>
-                            {{$evaluation->goal_1}}
-                        </div>
-                    </td>
-                    <td class="w-25">
-                        <select class="form-control" name="" disabled id="exampleFormControlSelect1" >
-                            <option selected >{{$evaluation->self_eva1}}</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select class="form-control" name="boss1_eva1" id="exampleFormControlSelect1" >
-                            <option selected disabled class="">評価を選択してください</option>
-                            <option value="1">C</option>
-                            <option value="2">B</option>
-                            <option value="3">A</option>
-                            <option value="4">S</option>
-                            <option value="5">SS</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option></option>
-
-                        </select>
-                    </td>
+                    <td rowspan="3" style="background-color: #b5dee5;color: white;">{{$n}} {{$item->category->category}}</td>
+                    <td rowspan="3" class="text-left">{{$item->category->standard}}</td>
+                    <td rowspan="3" class="text-left" >{{$item->goal}}</td>
+                    <td style="background-color: #b5dee5;color: white;">被評価者</td>
+                    <td>{{$item->self_eva}}</td>
+                    <td class="p-0 m-0">{{$item->self_comment}}</td>
                 </tr>
-                <tr>
-                    <td>２ {{$evaluation->category->category2}}</td>
-                    <td>{{$evaluation->category->standard2}}</td>
-                    <td>
-                        <div>
-                            {{$evaluation->goal_2}}
-                        </div>
-                    </td>
-                    <td>
-                        <select class="form-control" disabled name="" id="exampleFormControlSelect1" >
-                            <option selected >{{$evaluation->self_eva2}}</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select class="form-control" name="boss1_eva2" id="exampleFormControlSelect1" >
-                            <option selected disabled class="">評価を選択してください</option>
-                            <option value="1">C</option>
-                            <option value="2">B</option>
-                            <option value="3">A</option>
-                            <option value="4">S</option>
-                            <option value="5">SS</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option></option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>２ {{$evaluation->category->category3}}</td>
-                    <td>{{$evaluation->category->standard3}}</td>
-                    <td>
-                        <div>
-                            {{$evaluation->goal_3}}
-                        </div>
-                    </td>
-                    <td>
-                        <select class="form-control" disabled name="" id="exampleFormControlSelect1" >
-                            <option selected >{{$evaluation->self_eva3}}</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select class="form-control" name="boss1_eva3" id="exampleFormControlSelect1" >
-                            <option disabled selected class="">評価を選択してください</option>
-                            <option value="1">C</option>
-                            <option value="2">B</option>
-                            <option value="3">A</option>
-                            <option value="4">S</option>
-                            <option value="5">SS</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select class="form-control" id="exampleFormControlSelect1" disabled>
-                            <option></option>
-                        </select>
-                    </td>
-                </tr>
-                @if($root >=6)
-                    <td colspan="6" class="text-center">
-                        <br>
-                    </td>
-                @else
-                    <td colspan="6" class="text-center">
-                            <button type="submit" class="btn btn-outline-secondary col-1 py-2 m-3">登録する</button>
-                    </td>
-                @endif
+                    <tr>
+                        <td style="background-color: #b5dee5;color: white;">１次評価者</td>
+                        <td>
+                            <div class="radio">
+                                <label><input type="radio" name="boss1_eva[{{$n}}]" value="5">SS</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="boss1_eva[{{$n}}]" value="4">S</label>
+                            </div>
+                            <div class="radio disabled">
+                                <label><input type="radio" name="boss1_eva[{{$n}}]" value="3">A</label>
+                            </div>
+                            <div class="radio disabled">
+                                <label><input type="radio" name="boss1_eva[{{$n}}]" value="2">B</label>
+                            </div>
+                            <div class="radio disabled">
+                                <label><input type="radio" name="boss1_eva[{{$n}}]" value="1">C</label>
+                            </div>
+                        </td>
+                        <td class="p-0 m-0">
+                            <textarea placeholder="ここにコメントを入力" name="boss1_comment[{{$n}}]" id="" style="resize: none;width:98%;height: 160px;border: none;color: #6c757d;"></textarea>
+                        </td>                    </tr>
+                    <tr>
+                        <td style="background-color: #b5dee5;color: white;">２次評価者</td>
+                        <td>未設定</td>
+                        <td>未設定
+                        </td>
+                    </tr>
+                @endforeach
             </table>
+            @if($root >=6)
+                <div class="pb-5 pt-3 text-center">
+                        <a href="/boss" class="btn btn-primary col-1 py-2 m-3">戻る</a>
+                </div>
+                @else
+                <div class="pb-5 pt-3 text-center">
+                    <a href="/boss" class="btn btn-primary col-1 py-2 m-3">戻る</a>
+                    <button type="submit" class="btn btn-primary col-1 py-2 m-3">登録する</button>
+                </div>
+            @endif
         </div>
     </form>
-
-
 @endsection

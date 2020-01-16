@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\CategoryYear;
 use App\Department;
 use App\Evaluation;
 use App\Log;
 use App\User;
+use App\UserEvaluation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,7 +16,7 @@ class EvaluationController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
+        $categories = CategoryYear::all();
         $array_num =0;
         $user_dep = Auth::user()->department;
         $boss1_dep = User::where('department',$user_dep)
@@ -45,7 +47,7 @@ class EvaluationController extends Controller
     }
     public function regist($year)
     {
-        $category = Category::where('year',$year)->first();
+        $category = CategoryYear::where('year',$year)->first();
         return view('staff/detail',[
             'category' => $category,
             'image' => Auth::user()->image,
@@ -53,7 +55,7 @@ class EvaluationController extends Controller
     }
     public function show($id)
     {
-        $evaluation = Evaluation::where('id',$id)->first();
+        $evaluation = UserEvaluation::where('id',$id)->first();
         return view('staff/check',[
             'evaluation' => $evaluation,
             'image' => Auth::user()->image,
@@ -61,7 +63,7 @@ class EvaluationController extends Controller
     }
     public function evaluation($id)
     {
-        $evaluation = Evaluation::where('id', $id)->first();
+        $evaluation = UserEvaluation::where('id', $id)->first();
         return view('staff/evaluation', [
             'evaluation' => $evaluation,
             'image' => Auth::user()->image,
@@ -69,12 +71,21 @@ class EvaluationController extends Controller
     }
     public function evaluation_regist(Request $request)
     {
-        $evaluation = Evaluation::find($request->id);
-        $evaluation->self_eva1 = $request->self_eva1;
-        $evaluation->self_eva2 = $request->self_eva2;
-        $evaluation->self_eva3 = $request->self_eva3;
-        $evaluation->progress = 5;
-        $evaluation->save();
+        $user_evaluation = UserEvaluation::find($request->user_eva_id);
+        $user_evaluation->progress = 5;
+        $user_evaluation->save();
+
+        $id = $request->id;
+        $self_eva = $request->self_eva;
+        $self_comment = $request->self_comment;
+        $n = 1;
+        foreach($id as $item) {
+            $evaluation = Evaluation::find($item);
+            $evaluation->self_eva = $self_eva[$n];
+            $evaluation->self_comment = $self_comment[$n];
+            $evaluation->save();
+            $n++;
+        }
 
         return redirect('/staff');
     }
@@ -82,16 +93,32 @@ class EvaluationController extends Controller
 
     public function store(Request $request)
     {
-        $evaluation = new Evaluation;
-        $evaluation->goal_1 = $request->goal_1;
-        $evaluation->goal_2 = $request->goal_2;
-        $evaluation->goal_3 = $request->goal_3;
-        $evaluation->progress = 2;
-        $evaluation->user_id = $request->id;
-        $evaluation->user_name = $request->name;
-        $evaluation->department = $request->department;
-        $evaluation->year = $request->year;
-        $evaluation->save();
+        $user_eva = new UserEvaluation;
+        $user_eva->year = $request->year;
+        $user_eva->progress = 2;
+        $user_eva->user_id = $request->id;
+        $user_eva->user_name = $request->name;
+        $user_eva->department = $request->department;
+        $user_eva->save();
+
+        $temp = UserEvaluation::where('user_id',$request->id)
+            ->where('year',$request->year)
+            ->first();
+        $user_evaluation_id = $temp->id;
+
+        $goals = $request->goal;
+        $category_id = $request->category_id;
+        $n=1;
+        foreach($goals as $goal) {
+            $evaluation = new Evaluation;
+            $evaluation->goal = $goal;
+            $evaluation->year = $request->year;
+            $evaluation->user_id = $request->id;
+            $evaluation->category_id = $category_id[$n];
+            $evaluation->user_evaluation_id = $user_evaluation_id;
+            $evaluation->save();
+            $n++;
+        }
 
         $log = new Log;
         $log->name = $request->name;
@@ -106,7 +133,7 @@ class EvaluationController extends Controller
     public function show_for_boss()
     {
         $department = Auth::user()->department;
-        $year = Category::orderBy('year','desc')->first()->year;
+        $year = CategoryYear::orderBy('year')->first()->year;
         $users = User::where('department',$department)
             ->where('auth','staff')
             ->get();
@@ -154,7 +181,7 @@ class EvaluationController extends Controller
             elseif($column->evaluation = "未評価"){$none++;}
         }
 
-        $categories = Category::all();
+        $categories = CategoryYear::all();
         $class_check = Auth::user()->auth;
 
         if($class_check == "boss1")
@@ -248,7 +275,7 @@ class EvaluationController extends Controller
             elseif($column->evaluation = "未評価"){$none++;}
         }
 
-        $categories = Category::all();
+        $categories = CategoryYear::all();
         $class_check = Auth::user()->auth;
         if($class_check == "boss1")
         {
@@ -292,7 +319,7 @@ class EvaluationController extends Controller
 
     public function check_for_boss1($id)
     {
-        $evaluation = Evaluation::where('id',$id)->first();
+        $evaluation = UserEvaluation::where('id',$id)->first();
         $root = $evaluation->progress;
 
         return view('boss/check_boss1',[
@@ -303,7 +330,7 @@ class EvaluationController extends Controller
     }
     public function eva_boss1($id)
     {
-        $evaluation = Evaluation::where('id',$id)->first();
+        $evaluation = UserEvaluation::where('id',$id)->first();
         $root = $evaluation->progress;
 
         return view('boss/eva_boss1',[
@@ -314,7 +341,7 @@ class EvaluationController extends Controller
     }
     public function check_for_boss2($id)
     {
-        $evaluation = Evaluation::where('id',$id)->first();
+        $evaluation = UserEvaluation::where('id',$id)->first();
         $root = $evaluation->progress;
 
         return view('boss/check_boss2',[
@@ -325,7 +352,7 @@ class EvaluationController extends Controller
     }
     public function eva_boss2($id)
     {
-        $evaluation = Evaluation::where('id',$id)->first();
+        $evaluation = UserEvaluation::where('id',$id)->first();
         $root = $evaluation->progress;
 
         return view('boss/eva_boss2',[
@@ -336,8 +363,9 @@ class EvaluationController extends Controller
     }
     public function approval(Request $request)
     {
+
         $class = Auth::user()->auth;
-        $evaluation = Evaluation::find($request->id);
+        $evaluation = UserEvaluation::find($request->id);
 
         $log = new Log;
         $log->name = $request->name;
@@ -360,7 +388,7 @@ class EvaluationController extends Controller
     }
     public function denial(Request $request)
     {
-        $evaluation = Evaluation::find($request->id);
+        $evaluation = UserEvaluation::find($request->id);
         $evaluation->progress = 1;
         $evaluation->save();
         return redirect('/boss');
@@ -371,39 +399,60 @@ class EvaluationController extends Controller
         $evaluation = Evaluation::find($request->id);
         if ($class == 'boss1')
         {
-            $evaluation->boss1_eva1 =$request->boss1_eva1;
-            $evaluation->boss1_eva2 =$request->boss1_eva2;
-            $evaluation->boss1_eva3 =$request->boss1_eva3;
-            $evaluation->progress = 6;
-            $evaluation->save();
-        }elseif($class == 'boss2'){
-            $evaluation->boss2_eva1 =$request->boss2_eva1;
-            $evaluation->boss2_eva2 =$request->boss2_eva2;
-            $evaluation->boss2_eva3 =$request->boss2_eva3;
-            $evaluation->progress = 7;
-            $evaluation->save();
+            $user_evaluation = UserEvaluation::find($request->user_eva_id);
+            $user_evaluation->progress = 6;
+            $user_evaluation->save();
 
-
-            $count =$evaluation->boss1_eva1+
-                $evaluation->boss1_eva2+
-                $evaluation->boss1_eva3+
-                $evaluation->boss2_eva1+
-                $evaluation->boss2_eva2+
-                $evaluation->boss2_eva3;
-
-            if($count>= 28){
-                $evaluation->evaluation = "SS";
-            }elseif($count>= 21){
-                $evaluation->evaluation = "S";
-            }elseif($count>= 14){
-                $evaluation->evaluation = "A";
-            }elseif($count>= 7){
-                $evaluation->evaluation = "B";
-            }elseif($count <= 6){
-                $evaluation->evaluation = "C";
+            $id = $request->id;
+            $boss1_eva = $request->boss1_eva;
+            $boss1_comment = $request->boss1_comment;
+            $n = 1;
+            foreach($id as $item) {
+                $evaluation = Evaluation::find($item);
+                $evaluation->boss1_eva = $boss1_eva[$n];
+                $evaluation->boss1_comment = $boss1_comment[$n];
+                $evaluation->save();
+                $n++;
             }
-            $evaluation->point = $count;
-            $evaluation->save();
+        }elseif($class == 'boss2'){
+            $user_evaluation = UserEvaluation::find($request->user_eva_id);
+            $user_evaluation->progress = 7;
+            $user_evaluation->save();
+
+            $id = $request->id;
+            $boss1_eva = $request->boss2_eva;
+            $boss1_comment = $request->boss2_comment;
+            $n = 1;
+            foreach($id as $item) {
+                $evaluation = Evaluation::find($item);
+                $evaluation->boss2_eva = $boss1_eva[$n];
+                $evaluation->boss2_comment = $boss1_comment[$n];
+                $evaluation->save();
+                $n++;
+            }
+            $collect_evaluations = $user_evaluation->evaluations;
+            $datas = array();
+            foreach($collect_evaluations as $collect_evaluation){
+                $datas[] = $collect_evaluation->boss1_eva;
+                $datas[] = $collect_evaluation->boss2_eva;
+            }
+            $result = array_sum($datas)/count($datas);
+            $result_for_point = round($result,2);
+            $user_evaluation->point = $result_for_point;
+
+            $result_for_eva = round($result);
+            if($result_for_eva == 5.0){
+                $user_evaluation->evaluation = "SS";
+            }elseif($result_for_eva == 4.0){
+                $user_evaluation->evaluation = "S";
+            }elseif($result_for_eva == 3.0){
+                $user_evaluation->evaluation = "A";
+            }elseif($result_for_eva == 2.0){
+                $user_evaluation->evaluation = "B";
+            }elseif($result_for_eva == 1.0){
+                $user_evaluation->evaluation = "C";
+            }
+            $user_evaluation->save();
 
         }
         return redirect('/boss');
@@ -429,7 +478,7 @@ class EvaluationController extends Controller
     {
         $user = User::where('id',$id)->first();
 
-        $categories = Category::all();
+        $categories = CategoryYear::all();
         $array_num =0;
         foreach($categories as $category) {
 

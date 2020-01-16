@@ -41,7 +41,7 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
     public function eva_with_user()
     {
-        return $this->hasMany('App\Evaluation');
+        return $this->hasMany('App\UserEvaluation');
 
     }
 }
