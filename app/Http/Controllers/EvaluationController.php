@@ -519,7 +519,7 @@ class EvaluationController extends Controller
         }
 
         $departments = Department::all();
-        $categories = Category::all();
+        $categories = CategoryYear::all();
         $logs = Log::orderby('updated_at','desc')->get();
 
         return view('admin/main',[
@@ -549,7 +549,7 @@ class EvaluationController extends Controller
         }else{
             $columns = null;
         }
-        $categories = Category::all();
+        $categories = CategoryYear::all();
         $logs = Log::all();
         return view('admin/main',[
             'columns' => $columns,
