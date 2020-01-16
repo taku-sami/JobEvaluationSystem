@@ -509,7 +509,7 @@ class EvaluationController extends Controller
         {
             $year = Category::orderBy('year')->first()->year;
             foreach($bosses as $boss){
-                $columns[] = Evaluation::where('department',$boss->department)
+                $columns[] = UserEvaluation::where('department',$boss->department)
                     ->where('year',$year)
                     ->get();
             }
