@@ -38,7 +38,7 @@
                     <div class="col col-2" >{{$boss->name}}</div>
                     <div class="col col-2" >{{$boss->department}}</div>
                     @php
-                        $counts = \App\Evaluation::where('department',$boss->department)
+                        $counts = \App\UserEvaluation::where('department',$boss->department)
                         ->where('year',$year)
                         ->get();
 
