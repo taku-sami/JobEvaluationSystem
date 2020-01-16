@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4e788081-e540-4514-a63a-9ad147eda4db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/email/pre_register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/email/pre_register.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +273,7 @@
       <workItem from="1578796960217" duration="6142000" />
       <workItem from="1578810412823" duration="34963000" />
       <workItem from="1578919020293" duration="48829000" />
-      <workItem from="1579085081870" duration="11380000" />
+      <workItem from="1579085081870" duration="11642000" />
     </task>
     <task id="LOCAL-00001" summary="this is sample commit">
       <created>1579153271356</created>
