@@ -2,8 +2,8 @@
 
 namespace App\Exports;
 
-use App\Evaluation;
 use App\User;
+use App\UserEvaluation;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
@@ -14,7 +14,7 @@ class EvaluationsExport implements FromCollection, WithHeadings
     */
     public function collection()
     {
-        return (Evaluation::all());
+        return (UserEvaluation::all());
     }
 
     public function headings(): array
