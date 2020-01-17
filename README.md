@@ -68,7 +68,7 @@ postgrel(https://www.postgresql.org/)
 ## Usage  
 【管理者】  
 １　管理者ユーザーでログイン  
-　　メールアドレス：admin2@gmail.com  
+　　メールアドレス：admin@gmail.com  
     パスワード：password  
 ２　必要に応じマスタでデータを操作  
 　　初期で以下のユーザー、マスタが保存されているのでデータ操作なしでもすぐ利用できます。  
