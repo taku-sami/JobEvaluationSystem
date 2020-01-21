@@ -53,9 +53,6 @@ class CategoryController extends Controller
     }
     public function create(Request $request)
     {
-//
-
-
         $year = $request->year;
         return view('admin/category/add_category',[
             'year' => $year,
@@ -70,20 +67,25 @@ class CategoryController extends Controller
     }
     public function update(Request $request)
     {
-        $category = CategoryYear::find($request->id);
-        $category->category1 = $request->category1;
-        $category->standard1 = $request->standard1;
-        $category->category2 = $request->category2;
-        $category->standard2 = $request->standard2;
-        $category->category3 = $request->category3;
-        $category->standard3 = $request->standard3;
-        $category->save();
+        $id= $request->id;
+        $categories= $request->category;
+        $standards= $request->standard;
+        $n = 0;
+
+        foreach ($id as $item) {
+            $category = Category::find($item);
+            $category->category = $categories[$n];
+            $category->standard = $standards[$n];
+            $category->save();
+            $n++;
+        }
 
         return redirect('/categories');
     }
     public function delete($id)
     {
-        $category = Category::find($id);
+        $category = CategoryYear::find($id);
+        $category->category()->delete();
         $category->delete();
         return redirect('/categories');
     }

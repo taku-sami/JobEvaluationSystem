@@ -3,7 +3,7 @@
 @section('content')
     <div class="full-page">
         <div class="container-fluid" style=" padding-top:100px;">
-            <div class="text-center h2 mb-5">Web 人事考課システム</div>
+            <div class="text-center h3 mb-5">Web 人事考課システム</div>
             <div class="row justify-content-center">
                 <div class="col-md-4 bg-light border" style="border-radius: 30px;">
                     <div class="text-center h5 mt-5 mb-4">ログイン</div>
@@ -11,48 +11,65 @@
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
-                            <div class="form-group row ">
-                                <div class="col-md-10 mx-auto">
-                                    <label for="email" class="">メールアドレス</label>
-                                    <input id="email" type="email" class="form-control md-form @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            {{--                            <div class="form-group row ">--}}
+                            {{--                                    <input type="text" class="form-control login-field" value="" placeholder="Enter your name" id="login-name">--}}
+                            {{--                                    <label class="login-field-icon fui-user" for="login-name"></label>--}}
+                            {{--                                <div class="col-md-10 mx-auto">--}}
+                            {{--                                    <label for="email" class="">メールアドレス</label>--}}
+                            {{--                                    <input id="email" type="email" class="form-control md-form @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>--}}
 
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
+                            {{--                                    @error('email')--}}
+                            {{--                                    <span class="invalid-feedback" role="alert">--}}
+                            {{--                                        <strong>{{ $message }}</strong>--}}
+                            {{--                                    </span>--}}
+                            {{--                                    @enderror--}}
+                            {{--                                </div>--}}
+                            {{--                            </div>--}}
+                            <div class="form-group w-75 mx-auto my-5">
+
+                                <input type="email" value="{{ old('email') }}" placeholder="メールアドレスを入力してください" name="email" class="form-control border md-form @error('email') is-invalid @enderror" required autocomplete="email" autofocus/>
+                                <span class="form-control-feedback"><i class="fas fa-user"></i></span>
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="form-group w-75 mx-auto mt-5 mb-3">
+
+                                <input type="password" value="" placeholder="パスワードを入力してください" class="form-control border md-form @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"/>
+                                <span class="form-control-feedback"><i class="fas fa-lock"></i></span>
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
 
-                            <div class="form-group row">
 
-                                <div class="col-md-10 mx-auto">
-                                    <label for="password" class="">パスワード</label>
-                                    <input id="password" type="password" class="form-control md-form @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                            {{--                                <div class="col-md-10 mx-auto">--}}
+                            {{--                                    <label for="password" class="">パスワード</label>--}}
+                            {{--                                    <input id="password" type="password" class="form-control md-form @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">--}}
 
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
+                            {{--                                    @error('password')--}}
+                            {{--                                    <span class="invalid-feedback" role="alert">--}}
+                            {{--                                        <strong>{{ $message }}</strong>--}}
+                            {{--                                    </span>--}}
+                            {{--                                    @enderror--}}
+                            {{--                                </div>--}}
+                            {{--                            </div>--}}
                             <div class="form-group row">
                                 <div class="col-md-6 mx-auto text-center mt-3 mb-2">
-
-                                <button type="submit" class="btn-pill border py-2 px-4 hover1" style="background-color: #E3FBFF;">ログイン</button>
+                                    <button type="submit" class=" btn btn-primary btn-embossed btn-lg">ログイン</button>
+                                </div>
                             </div>
-                            </div>
-
+                            <br>
                             <div class="form-group row">
                                 <div class="col-md-10 mx-auto">
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link form-control" href="{{ route('password.request') }}" style="font-size: smaller;">
-                                        >>パスワードを忘れた方、パスワード変更の方はこちら
+                                    <a class="" href="{{ route('password.request') }}" style="font-size: smaller;">
+                                        パスワードを忘れた方、パスワード変更の方はこちら
                                     </a>
-                                @endif
-                            </div>
+                                </div>
                             </div>
                         </form>
                     </div>

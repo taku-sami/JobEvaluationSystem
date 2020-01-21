@@ -13,15 +13,11 @@ class CreateCsvtemplatesTable extends Migration
      */
     public function up()
     {
-        Schema::create('csvtemplates', function (Blueprint $table) {
+        Schema::create('csv_templates', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('category1');
-            $table->string('standard1');
-            $table->string('category2');
-            $table->string('standard2');
-            $table->string('category3');
-            $table->string('standard3');
-            $table->integer('year');
+            $table->string('year');
+            $table->string('category');
+            $table->string('standard');
         });
     }
 
@@ -32,6 +28,6 @@ class CreateCsvtemplatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('csvtemplates');
+        Schema::dropIfExists('csv_templates');
     }
 }

@@ -70,6 +70,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 //    following is for CSV
     Route::get('export', 'CsvController@export')->name('export');
+    Route::get('template_export', 'CsvController@template_export')->name('template_export');
     Route::get('importExportView', 'CsvController@importExportView');
     Route::post('import', 'CsvController@import')->name('import');
 

@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             CategorySeeder::class,
             CategoryYearSeeder::class,
+            CsvTemplateSeeder::class,
         ]);
     }
 }

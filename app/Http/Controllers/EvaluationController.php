@@ -74,7 +74,6 @@ class EvaluationController extends Controller
         $user_evaluation = UserEvaluation::find($request->user_eva_id);
         $user_evaluation->progress = 5;
         $user_evaluation->save();
-
         $id = $request->id;
         $self_eva = $request->self_eva;
         $self_comment = $request->self_comment;
@@ -180,6 +179,18 @@ class EvaluationController extends Controller
             elseif($column->evaluation == "C"){$count_c++;}
             elseif($column->evaluation = "未評価"){$none++;}
         }
+        if ($num1 == 0){$num1 ="-";}
+        if($num2 == 0){$num2 ="-";}
+        if($num3 == 0){$num3 ="-";}
+        if($num4 == 0){$num4 ="-";}
+        if($num5 == 0){$num5 ="-";}
+        if($num6 == 0){$num6 ="-";}
+        if($count_ss == 0){$count_ss ="-";}
+        if ($count_s == 0){$count_s ="-";}
+        if ($count_a == 0){$count_a ="-";}
+        if ($count_b == 0){$count_b ="-";}
+        if ($count_c == 0){$count_c ="-";}
+        if ($none == 0){$none ="-";}
 
         $categories = CategoryYear::all();
         $class_check = Auth::user()->auth;

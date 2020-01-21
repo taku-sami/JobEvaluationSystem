@@ -1,17 +1,12 @@
 @extends('layouts.admin')
 @php
 
-@endphp
+    @endphp
 @section('content')
 
-    <div class="row mt-4">
-        <h4 class="col-10 mb-0">考課マスタ</h4>
-{{--        <a href="/add_category" type="button" class="btn-pill col-1 py-2 hover1" style="text-decoration: none"><i class="fas fa-plus-circle"></i> 新規登録</a>--}}
-        <!-- Button trigger modal -->
-        <a href="" type="button" class="btn-pill col-1 py-2 hover1" data-toggle="modal" data-target="#exampleModal" style="text-decoration: none">
-            <i class="fas fa-plus-circle"></i> 新規登録
-        </a>
-
+    <div class="my-2">
+        <div class="h5">考課マスタ</div>
+    </div>
         <!-- Modal -->
         <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -24,89 +19,108 @@
                     </div>
                     <form action="category_create" method="post">
                         @csrf
-                    <div class="modal-body my-3">
-                        <label for="">年度を選択してください：</label>
-                        <select name="year" id="" class="text-secondary" style="-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	margin-bottom: 20px;
-	padding: 7px 30px 7px 10px;
-	font-size: 93%;
-	line-height: 1.1em;
-	border-radius: 5px;
-	border: none;
-	background-repeat: no-repeat;
-	background-size: 12px 10px;
-	background-position: right 10px center;
-	background-color: lightgray;">
-                            <option value="" selected disabled>年度</option>
-                            <option value="2019">2019</option>
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                        </select>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-                        <button type="submit" class="btn btn-primary">考課登録画面へ</button>
-                    </div>
+                        <div class="modal-body my-3">
+                            <label for="">年度を選択してください：</label>
+                            <select name="year" id="" class="text-secondary" style="-webkit-appearance: none;
+                                -moz-appearance: none;
+                                appearance: none;
+                                margin-bottom: 20px;
+                                padding: 7px 30px 7px 10px;
+                                font-size: 93%;
+                                line-height: 1.1em;
+                                border-radius: 5px;
+                                border: none;
+                                background-repeat: no-repeat;
+                                background-size: 12px 10px;
+                                background-position: right 10px center;
+                                background-color: lightgray;">
+                                <option value="" selected disabled>年度</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                            <button type="submit" class="btn btn-primary">考課登録画面へ</button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
     <hr>
 
-    <ul class="responsive-table text-center m-auto">
-        <li class="table-header">
-            <div class="col col-3">年</div>
-            <div class="col col-3">ステータス</div>
-            <div class="col col-2">考課番号</div>
-            <div class="col col-3">考課名</div>
-            <div class="col col-1"></div>
-        </li>
-        @if(count($columns) === 0)
-        @else
-        @foreach( $columns as $column)
-            @php
-            $categories = $column->category;
-            $n =0;
-            @endphp
-            <li class="table-row">
-                <div class="col col-3">{{$column->year}}</div>
-                <div class="col col-3 text-center">
-                    <p>目標入力期間</p>
-                </div>
-                <div class="col col-2">
-                    @foreach($categories as $category)
-                        <input type="hidden" value="{{$n++}}">
-                        <p>{{$n}}</p>
+    <div class="wrap-table100">
+        <div class="table100 ver1 m-b-110">
+            <div class="table100-head">
+                <table>
+                    <thead>
+                    <tr class="row100 head">
+                        <th class="cell100 dep_column1">所属一覧</th>
+                        <th class="cell100 dep_column2"></th>
+                        <th class="cell100 dep_column2"></th>
+                        <th class="cell100 dep_column5 text-center" style="background-color: #16ad8f">
+                            <button type="button" class="text-light" data-toggle="modal" data-target="#exampleModal" ><i class="fas fa-plus fa-lg"></i></button>
+                        </th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="table100-body js-pscroll py-2" style="background-color: #a1a7ad;">
+                <table >
+                    <tbody >
+                    <tr class="row100 body my-2" >
+                        <th class="cell100 class_column1" style="background-color: #a1a7ad;">年</th>
+                        <th class="cell100 class_column1" style="background-color: #a1a7ad;">ステータス</th>
+                        <th class="cell100 class_column1" style="background-color: #a1a7ad;">考課名</th>
+                        <th class="cell100 class_column1" style="background-color: #a1a7ad;">考課名</th>
+                        <th class="cell100 class_column3" style="background-color: #a1a7ad;"></th>
+                    </tr>
+                </table>
+            </div>
+            @if(count($columns) === 0)
+            @else
+            <div class="table100-body js-pscroll">
+                <table>
+                    <tbody>
+                    @foreach( $columns as $column)
+                        @php
+                            $categories = $column->category;
+                            $n =0;
+                        @endphp
+                        <tr class="row100 body">
+                            <td class="cell100 class_column1">{{$column->year}}</td>
+                            <td class="cell100 class_column1">目標入力期間</td>
+                            <td class="cell100 class_column1">
+                                @foreach($categories as $category)
+                                    <input type="hidden" value="{{$n++}}">
+                                    <p>{{$n}}</p>
+                                @endforeach
+                            </td>
+                            <td class="cell100 class_column1">
+                                @foreach($categories as $category)
+                                    <p>{{$category->category}}</p>
+                                @endforeach
+                            </td>
+                            <td class="cell100 class_column3 text-center p-0">
+                                <a href="{{ action('CategoryController@show', $column->id)}}"><i class="fas fa-edit text-info fa-lg px-2"></i></a>
+                                <a href="{{ action('CategoryController@delete', $column->id)}}"><i class="far fa-trash-alt text-danger fa-lg px-2"></i></a>
+                            </td>
+                        </tr>
                     @endforeach
-                </div>
-                <div class="col col-3 text-center">
-                    @foreach($categories as $category)
-                        <p>{{$category->category}}</p>
-                    @endforeach
-                </div>
-                <div class="col col-1 dropdown d-inline">
-                    <button type="button" class="bg-white border-0" data-toggle="dropdown">
-                        <i class="fas fa-ellipsis-v"></i>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ action('CategoryController@show', $column->id)}}">編集</a>
-                        <a class="dropdown-item" href="{{ action('CategoryController@delete', $column->id)}}">削除</a>
-                    </div>
-                </div>
-            </li>
-        @endforeach
-        @endif
-{{--        @if(count($columns) === 0)--}}
-{{--        @else--}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    @endif
+        {{--        @if(count($columns) === 0)--}}
+        {{--        @else--}}
 
-{{--        <a href="/copy_create" type="button" class="hover1"><i class="fas fa-plus-circle fa-3x"></i></a>--}}
-{{--        @endif--}}
-    </ul>
+        {{--        <a href="/copy_create" type="button" class="hover1"><i class="fas fa-plus-circle fa-3x"></i></a>--}}
+        {{--        @endif--}}
 
 
 

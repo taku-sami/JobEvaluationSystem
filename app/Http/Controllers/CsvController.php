@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\TemplateExport;
 use Illuminate\Http\Request;
 use App\Exports\EvaluationsExport;
 use App\Imports\CategoriesImport;
@@ -22,8 +23,11 @@ class CsvController extends Controller
      */
     public function export()
     {
-//        return Excel::download(dd(new EvaluationsExport));
         return Excel::download(new EvaluationsExport, '考課一覧.csv');
+    }
+    public function template_export()
+    {
+        return Excel::download(new TemplateExport(), '考課登録テンプレート.csv');
     }
 
     /**

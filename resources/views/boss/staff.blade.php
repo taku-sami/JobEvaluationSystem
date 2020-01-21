@@ -4,8 +4,8 @@
     @endphp
 @section('content')
 
-    <div class="row mt-4">
-        <h4 class="col-10 mb-0">社員確認画面</h4>
+    <div class="my-2 ">
+        <div class="h5">社員確認画面</div>
     </div>
     <hr>
     <div class="row ml-2">
@@ -25,88 +25,97 @@
         </div>
     </div>
     <hr>
-    <ul class="responsive-table text-center m-auto ">
-        <li class="table-header">
-            <div class="col col-2">期間</div>
-            <div class="col col-2">ステータス</div>
-            <div class="col col-2">評価シート</div>
-            <div class="col col-2">評価</div>
-            <div class="col col-2">最終更新日</div>
-        </li>
-        <div class="overflow-auto" style="height: 440px;">
-            @foreach($columns as $column)
-                @php
-                    @endphp
-                @if($column->progress == null)
-                    <li class="table-row">
-                        <div class="col col-2">{{$column->year}}</div>
-                        <div class="col col-2">未登録</div>
-                        <div class="col col-2"></div>
-                        <div class="col col-2"></div>
-                        <div class="col col-2"></div>
-                    </li>
-                @elseif($column->progress == 2)
-                    <li class="table-row">
-                        <div class="col col-2">{{$column->year}}</div>
-                        <div class="col col-2">１次承認待ち</div>
-                        <div class="col col-2"><a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
-                                <i class="fas fa-scroll fa-1x"></i>
-                            </a></div>
-                        <div class="col col-2"></div>
-                        <div class="col col-2">{{$column->updated_at->format('Y/m/d')}}</div>
-                    </li>
-                @elseif($column->progress == 3)
-                    <li class="table-row">
-                        <div class="col col-2">{{$column->year}}</div>
-                        <div class="col col-2">２次承認待ち</div>
-                        <div class="col col-2"><a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
-                                <i class="fas fa-scroll fa-1x"></i>
-                            </a></div>
-                        <div class="col col-2"></div>
-                        <div class="col col-2">{{$column->updated_at->format('Y/m/d')}}</div>
-                    </li>
-                @elseif($column->progress == 4)
-                    <li class="table-row">
-                        <div class="col col-2">{{$column->year}}</div>
-                        <div class="col col-2">承認済み ー＞ 評価報告</div>
-                        <div class="col col-2"><a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
-                                <i class="fas fa-scroll fa-1x"></i>
-                            </a></div>
-                        <div class="col col-2"></div>
-                        <div class="col col-2">{{$column->updated_at->format('Y/m/d')}}</div>
-                    </li>
-                @elseif($column->progress == 5)
-                    <li class="table-row">
-                        <div class="col col-2">{{$column->year}}</div>
-                        <div class="col col-2">１次評価待ち</div>
-                        <div class="col col-2"><a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
-                                <i class="fas fa-scroll fa-1x"></i>
-                            </a></div>
-                        <div class="col col-2"></div>
-                        <div class="col col-2">{{$column->updated_at->format('Y/m/d')}}</div>
-                    </li>
-                @elseif($column->progress == 6)
-                    <li class="table-row">
-                        <div class="col col-2">{{$column->year}}</div>
-                        <div class="col col-2">２次評価待ち</div>
-                        <div class="col col-2"><a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
-                                <i class="fas fa-scroll fa-1x"></i>
-                            </a></div>
-                        <div class="col col-2"></div>
-                        <div class="col col-2">{{$column->updated_at->format('Y/m/d')}}</div>
-                    </li>
-                @elseif($column->progress == 7)
-                    <li class="table-row">
-                        <div class="col col-2">{{$column->year}}</div>
-                        <div class="col col-2">評価済み</div>
-                        <div class="col col-2"><a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
-                                <i class="fas fa-scroll fa-1x"></i>
-                            </a></div>
-                        <div class="col col-2">{{$column->evaluation}}({{$column->point}}ポイント)</div>
-                        <div class="col col-2">{{$column->updated_at->format('Y/m/d')}}</div>
-                    </li>
-                @endif
-            @endforeach
+    <div class="wrap-table100">
+        <div class="table100 ver1 m-b-110">
+            <div class="table100-head">
+                <table>
+                    <thead>
+                    <tr class="row100 head">
+                        <th class="cell100 employee_column1" >期間</th>
+                        <th class="cell100 employee_column2" >ステータス</th>
+                        <th class="cell100 employee_column2" >評価シート</th>
+                        <th class="cell100 employee_column2" >評価</th>
+                        <th class="cell100 employee_column2" >最終更新日</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="table100-body js-pscroll">
+                <table>
+                    <tbody>
+                    @foreach($columns as $column)
+                        <tr class="row100 body">
+                            @if($column->progress == null)
+                                <td class="cell100 employee_column1">{{$column->year}}</td>
+                                <td class="cell100 employee_column2">未登録</td>
+                                <td class="cell100 employee_column2"></td>
+                                <td class="cell100 employee_column2"></td>
+                                <td class="cell100 employee_column2"></td>
+                            @elseif($column->progress == 2)
+                                <td class="cell100 employee_column1">{{$column->year}}</td>
+                                <td class="cell100 employee_column2">１次承認待ち</td>
+                                <td class="cell100 employee_column2">
+                                    <a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
+                                        <i class="fas fa-scroll fa-1x"></i>
+                                    </a>
+                                </td>
+                                <td class="cell100 employee_column2"></td>
+                                <td class="cell100 employee_column2">{{$column->updated_at->format('Y/m/d')}}</td>
+                            @elseif($column->progress == 3)
+                                <td class="cell100 employee_column1">{{$column->year}}</td>
+                                <td class="cell100 employee_column2">２次承認待ち</td>
+                                <td class="cell100 employee_column2"><a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
+                                        <i class="fas fa-scroll fa-1x"></i>
+                                    </a>
+                                </td>
+                                <td class="cell100 employee_column2"></td>
+                                <td class="cell100 employee_column2">{{$column->updated_at->format('Y/m/d')}}</td>
+                            @elseif($column->progress == 4)
+                                <td class="cell100 employee_column1">{{$column->year}}</td>
+                                <td class="cell100 employee_column2">評価報告</td>
+                                <td class="cell100 employee_column2">
+                                    <a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
+                                        <i class="fas fa-scroll fa-1x"></i>
+                                    </a>
+                                </td>
+                                <td class="cell100 employee_column2"></td>
+                                <td class="cell100 employee_column2">{{$column->updated_at->format('Y/m/d')}}</td>
+                            @elseif($column->progress == 5)
+                                <td class="cell100 employee_column1">{{$column->year}}</td>
+                                <td class="cell100 employee_column2">１次評価待ち</td>
+                                <td class="cell100 employee_column2">
+                                    <a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
+                                        <i class="fas fa-scroll fa-1x"></i>
+                                    </a>
+                                </td>
+                                <td class="cell100 employee_column2"></td>
+                                <td class="cell100 employee_column2">{{$column->updated_at->format('Y/m/d')}}</td>
+                            @elseif($column->progress == 6)
+                                <td class="cell100 employee_column1">{{$column->year}}</td>
+                                <td class="cell100 employee_column2">２次評価待ち</td>
+                                <td class="cell100 employee_column2">
+                                    <a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
+                                        <i class="fas fa-scroll fa-1x"></i>
+                                    </a>
+                                </td>
+                                <td class="cell100 employee_column2"></td>
+                                <td class="cell100 employee_column2">{{$column->updated_at->format('Y/m/d')}}</td>
+                            @elseif($column->progress == 7)
+                                <td class="cell100 employee_column1">{{$column->year}}</td>
+                                <td class="cell100 employee_column2">評価済み</td>
+                                <td class="cell100 employee_column2">
+                                    <a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
+                                        <i class="fas fa-scroll fa-1x"></i>
+                                    </a>
+                                </td>
+                                <td class="cell100 employee_column2">{{$column->evaluation}}({{$column->point}}ポイント)</td>
+                                <td class="cell100 employee_column2">{{$column->updated_at->format('Y/m/d')}}</td>
+                            @endif
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </ul>
+    </div>
 @endsection
