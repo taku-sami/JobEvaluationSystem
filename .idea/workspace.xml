@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e788081-e540-4514-a63a-9ad147eda4db" name="Default Changelist" comment="this is sample commit">
+      <change afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/employee.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/employee.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sample.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sample.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +215,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -222,8 +226,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/js" />
       <recent name="$PROJECT_DIR$/public/css" />
+      <recent name="$PROJECT_DIR$/public/js" />
       <recent name="$PROJECT_DIR$/resources/views/admin/csv" />
       <recent name="$PROJECT_DIR$/resources/views/staff" />
       <recent name="$PROJECT_DIR$/config" />
@@ -289,7 +293,7 @@
       <workItem from="1579085081870" duration="18850000" />
       <workItem from="1579320192015" duration="36940000" />
       <workItem from="1579395689074" duration="15292000" />
-      <workItem from="1579443345032" duration="32558000" />
+      <workItem from="1579443345032" duration="32984000" />
     </task>
     <task id="LOCAL-00001" summary="this is sample commit">
       <created>1579153271356</created>

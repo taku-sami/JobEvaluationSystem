@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"crossorigin="anonymous">
     <!-- Styles -->
     <link href="{{ asset('css/util.css') }}" rel="stylesheet" >
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" >
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet" >
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" >
     <link href="{{ asset('css/flat-ui.css') }}" rel="stylesheet" >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
