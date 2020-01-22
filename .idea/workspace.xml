@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e788081-e540-4514-a63a-9ad147eda4db" name="Default Changelist" comment="this is sample commit">
-      <change afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/categories.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/employee.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/employee.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sample.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sample.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/staff/sample.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/staff/sample.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,7 +291,8 @@
       <workItem from="1579085081870" duration="18850000" />
       <workItem from="1579320192015" duration="36940000" />
       <workItem from="1579395689074" duration="15292000" />
-      <workItem from="1579443345032" duration="32984000" />
+      <workItem from="1579443345032" duration="33907000" />
+      <workItem from="1579665757470" duration="688000" />
     </task>
     <task id="LOCAL-00001" summary="this is sample commit">
       <created>1579153271356</created>
@@ -404,7 +403,7 @@
     <state x="199" y="58" width="1241" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900/1440.23.1920.1057@0.0.1440.900" timestamp="1579616289842" />
     <state x="200" y="58" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1579589986981" />
     <state x="200" y="58" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.877@0.23.1440.877" timestamp="1579238601444" />
-    <state x="766" y="322" key="com.intellij.ide.util.TipDialog" timestamp="1579483883389">
+    <state x="766" y="322" key="com.intellij.ide.util.TipDialog" timestamp="1579665763461">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="2555" y="383" key="com.intellij.ide.util.TipDialog/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1578568097368" />
@@ -413,7 +412,7 @@
     <state x="766" y="322" key="com.intellij.ide.util.TipDialog/0.23.1440.877/1440.23.1920.1057@0.23.1440.877" timestamp="1579483883389" />
     <state x="2555" y="383" key="com.intellij.ide.util.TipDialog/0.23.1440.877/1440.23.1920.1057@1440.0.1920.1080" timestamp="1578444698459" />
     <state x="2555" y="383" key="com.intellij.ide.util.TipDialog/0.23.1440.877/1440.23.1920.1057@1440.23.1920.1057" timestamp="1578810415569" />
-    <state x="766" y="322" key="com.intellij.ide.util.TipDialog/0.23.1440.877@0.23.1440.877" timestamp="1578021161243" />
+    <state x="766" y="322" key="com.intellij.ide.util.TipDialog/0.23.1440.877@0.23.1440.877" timestamp="1579665763461" />
     <state x="495" y="384" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578799527238">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -426,11 +425,12 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="384" y="209" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1579589796239" />
-    <state x="206" y="198" width="672" height="578" key="search.everywhere.popup" timestamp="1578648520703">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="206" y="216" width="672" height="564" key="search.everywhere.popup" timestamp="1579666632049">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="1715" y="238" width="896" height="694" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1578231624738" />
     <state x="206" y="198" width="672" height="578" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1578648520703" />
     <state x="1714" y="256" width="672" height="678" key="search.everywhere.popup/0.23.1440.877/1440.23.1920.1057@1440.23.1920.1057" timestamp="1577963080758" />
+    <state x="206" y="216" width="672" height="564" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1579666632049" />
   </component>
 </project>
