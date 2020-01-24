@@ -14,7 +14,7 @@ class CategoryController extends Controller
         $categoryyear->year = $request->year;
         $categoryyear->save();
 
-        $names = $request->standard;
+        $names = $request->title;
         $standard = $request->standard;
         $n=0;
         foreach ($names as $item){
@@ -28,22 +28,6 @@ class CategoryController extends Controller
 
         return redirect('/categories');
     }
-//    public function copy_create()
-//    {
-//        $copy_date = Category::orderBy('year','desc')->first();
-//        $category = new Category;
-//        $category->category1 = $copy_date->category1;
-//        $category->standard1 = $copy_date->standard1;
-//        $category->category2 = $copy_date->category2;
-//        $category->standard2 = $copy_date->standard2;
-//        $category->category3 = $copy_date->category3;
-//        $category->standard3 = $copy_date->standard3;
-//        $category->year = $copy_date->year +1;
-//        $category->save();
-//        return redirect('/categories');
-//
-//
-//    }
     public function index()
     {
         $columns = CategoryYear::all();
@@ -54,10 +38,19 @@ class CategoryController extends Controller
     public function create(Request $request)
     {
         $year = $request->year;
-        return view('admin/category/add_category',[
+        return redirect()->route('add_category', ['year' => $year]);
+
+//        return view('admin/category/add_category',[
+//            'year' => $year,
+//        ]);
+    }
+    public function show_add_category($year)
+    {
+        return view('/admin/category/add_category',[
             'year' => $year,
         ]);
     }
+
     public function show($id)
     {
         $categories = CategoryYear::find($id);

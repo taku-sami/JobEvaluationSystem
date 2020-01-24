@@ -17,7 +17,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="category_create" method="post">
+                    <form action="/category_create" method="post">
                         @csrf
                         <div class="modal-body my-3">
                             <label for="">年度を選択してください：</label>
@@ -74,7 +74,7 @@
                     <tr class="row100 body my-2" >
                         <th class="cell100 class_column1" style="background-color: #a1a7ad;">年</th>
                         <th class="cell100 class_column1" style="background-color: #a1a7ad;">ステータス</th>
-                        <th class="cell100 class_column1" style="background-color: #a1a7ad;">考課名</th>
+                        <th class="cell100 class_column1" style="background-color: #a1a7ad;">考課番号</th>
                         <th class="cell100 class_column1" style="background-color: #a1a7ad;">考課名</th>
                         <th class="cell100 class_column3" style="background-color: #a1a7ad;"></th>
                     </tr>
@@ -116,12 +116,4 @@
         </div>
     </div>
     @endif
-        {{--        @if(count($columns) === 0)--}}
-        {{--        @else--}}
-
-        {{--        <a href="/copy_create" type="button" class="hover1"><i class="fas fa-plus-circle fa-3x"></i></a>--}}
-        {{--        @endif--}}
-
-
-
 @endsection

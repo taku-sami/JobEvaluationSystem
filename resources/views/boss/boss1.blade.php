@@ -116,7 +116,7 @@
                                 @endif
                                 @if($column->progress == null || $column->progress < 2)
                                     <td class="cell100 boss_column2">未登録</td>
-                                @elseif($column->progress == 6)
+                                @elseif($column->progress == 5)
                                     <td class="cell100 boss_column2">
                                         <a href="{{ action('EvaluationController@eva_boss1', $column->id)}}">
                                             <i class="fas fa-external-link-alt fa-lg"></i>
@@ -132,7 +132,7 @@
                                 @if($column->progress == null || $column->progress < 7)
                                     <td class="cell100 boss_column2"></td>
                                 @else
-                                    <td class="cell100 boss_column2 text-info">{{$column->evaluation}}({{$column->point}}ポイント)</td>
+                                    <td class="cell100 boss_column2 text-info">{{$column->evaluation}}({{$column->point}}ポイント/5)</td>
                                 @endif
                                 @if($column->progress == null || $column->progress < 2)
                                     <td class="cell100 boss_column2"></td>

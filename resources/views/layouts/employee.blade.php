@@ -27,7 +27,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand  text-left" href="{{ url('/') }}" >Web人事考課システム</a>
+                <a class="navbar-brand  text-left" href="{{ url('/') }}" ><div class="h5">Web人事考課システム</div></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

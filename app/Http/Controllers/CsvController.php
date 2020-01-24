@@ -35,6 +35,9 @@ class CsvController extends Controller
      */
     public function import()
     {
+        $validatedData = request()->validate([
+            'file' => 'required|max:1000|mimes:csv',
+        ]);
         Excel::import(new CategoriesImport,request()->file('file'));
 
         return back();

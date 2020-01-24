@@ -11,9 +11,9 @@
     <div class="row ml-2">
         <div class="">
             @if($image)
-                <img class="d-flex mr-3" src="data:image/png;base64,<?= $image ?>" style="width: 128px;height: 128px;">
+                <img class="d-flex mr-3" src="data:image/png;base64,<?= $image ?>" style="width: 150px;height: 150px;">
             @else
-                <img class="d-flex mr-3" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style="width: 128px;height: 128px;">
+                <img class="d-flex mr-3" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style="width: 150px;height: 150px;">
             @endif
         </div>
         <div class=" my-auto">
@@ -53,19 +53,19 @@
                                 <td class="cell100 employee_column2"></td>
                             @elseif($column->progress == 2)
                                 <td class="cell100 employee_column1">{{$column->year}}</td>
-                                <td class="cell100 employee_column2">１次承認待ち</td>
+                                <td class="cell100 employee_column2 text-warning">１次承認待ち</td>
                                 <td class="cell100 employee_column2">
                                     <a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
-                                        <i class="fas fa-scroll fa-1x"></i>
+                                        <i class="fas fa-external-link-alt fa-lg"></i>
                                     </a>
                                 </td>
                                 <td class="cell100 employee_column2"></td>
                                 <td class="cell100 employee_column2">{{$column->updated_at->format('Y/m/d')}}</td>
                             @elseif($column->progress == 3)
                                 <td class="cell100 employee_column1">{{$column->year}}</td>
-                                <td class="cell100 employee_column2">２次承認待ち</td>
+                                <td class="cell100 employee_column2 text-warning">２次承認待ち</td>
                                 <td class="cell100 employee_column2"><a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
-                                        <i class="fas fa-scroll fa-1x"></i>
+                                        <i class="fas fa-external-link-alt fa-lg"></i>
                                     </a>
                                 </td>
                                 <td class="cell100 employee_column2"></td>
@@ -75,40 +75,40 @@
                                 <td class="cell100 employee_column2">評価報告</td>
                                 <td class="cell100 employee_column2">
                                     <a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
-                                        <i class="fas fa-scroll fa-1x"></i>
+                                        <i class="fas fa-external-link-alt fa-lg"></i>
                                     </a>
                                 </td>
                                 <td class="cell100 employee_column2"></td>
                                 <td class="cell100 employee_column2">{{$column->updated_at->format('Y/m/d')}}</td>
                             @elseif($column->progress == 5)
                                 <td class="cell100 employee_column1">{{$column->year}}</td>
-                                <td class="cell100 employee_column2">１次評価待ち</td>
+                                <td class="cell100 employee_column2 text-warning">１次評価待ち</td>
                                 <td class="cell100 employee_column2">
                                     <a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
-                                        <i class="fas fa-scroll fa-1x"></i>
+                                        <i class="fas fa-external-link-alt fa-lg"></i>
                                     </a>
                                 </td>
                                 <td class="cell100 employee_column2"></td>
                                 <td class="cell100 employee_column2">{{$column->updated_at->format('Y/m/d')}}</td>
                             @elseif($column->progress == 6)
                                 <td class="cell100 employee_column1">{{$column->year}}</td>
-                                <td class="cell100 employee_column2">２次評価待ち</td>
+                                <td class="cell100 employee_column2 text-warning">２次評価待ち</td>
                                 <td class="cell100 employee_column2">
                                     <a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
-                                        <i class="fas fa-scroll fa-1x"></i>
+                                        <i class="fas fa-external-link-alt fa-lg"></i>
                                     </a>
                                 </td>
                                 <td class="cell100 employee_column2"></td>
                                 <td class="cell100 employee_column2">{{$column->updated_at->format('Y/m/d')}}</td>
                             @elseif($column->progress == 7)
                                 <td class="cell100 employee_column1">{{$column->year}}</td>
-                                <td class="cell100 employee_column2">評価済み</td>
+                                <td class="cell100 employee_column2 text-info">評価済み</td>
                                 <td class="cell100 employee_column2">
                                     <a href="{{ action('EvaluationController@check_for_boss1', $column->id)}}" class="hover1">
-                                        <i class="fas fa-scroll fa-1x"></i>
+                                        <i class="fas fa-external-link-alt fa-lg"></i>
                                     </a>
                                 </td>
-                                <td class="cell100 employee_column2">{{$column->evaluation}}({{$column->point}}ポイント)</td>
+                                <td class="cell100 employee_column2 text-info">{{$column->evaluation}}({{$column->point}}ポイント/5)</td>
                                 <td class="cell100 employee_column2">{{$column->updated_at->format('Y/m/d')}}</td>
                             @endif
                         </tr>

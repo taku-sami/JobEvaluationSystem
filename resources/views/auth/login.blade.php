@@ -10,23 +10,7 @@
                     <div class="">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
-
-                            {{--                            <div class="form-group row ">--}}
-                            {{--                                    <input type="text" class="form-control login-field" value="" placeholder="Enter your name" id="login-name">--}}
-                            {{--                                    <label class="login-field-icon fui-user" for="login-name"></label>--}}
-                            {{--                                <div class="col-md-10 mx-auto">--}}
-                            {{--                                    <label for="email" class="">メールアドレス</label>--}}
-                            {{--                                    <input id="email" type="email" class="form-control md-form @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>--}}
-
-                            {{--                                    @error('email')--}}
-                            {{--                                    <span class="invalid-feedback" role="alert">--}}
-                            {{--                                        <strong>{{ $message }}</strong>--}}
-                            {{--                                    </span>--}}
-                            {{--                                    @enderror--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>--}}
                             <div class="form-group w-75 mx-auto my-5">
-
                                 <input type="email" value="{{ old('email') }}" placeholder="メールアドレスを入力してください" name="email" class="form-control border md-form @error('email') is-invalid @enderror" required autocomplete="email" autofocus/>
                                 <span class="form-control-feedback"><i class="fas fa-user"></i></span>
                                 @error('email')
@@ -45,19 +29,6 @@
                                 </span>
                                 @enderror
                             </div>
-
-
-                            {{--                                <div class="col-md-10 mx-auto">--}}
-                            {{--                                    <label for="password" class="">パスワード</label>--}}
-                            {{--                                    <input id="password" type="password" class="form-control md-form @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">--}}
-
-                            {{--                                    @error('password')--}}
-                            {{--                                    <span class="invalid-feedback" role="alert">--}}
-                            {{--                                        <strong>{{ $message }}</strong>--}}
-                            {{--                                    </span>--}}
-                            {{--                                    @enderror--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>--}}
                             <div class="form-group row">
                                 <div class="col-md-6 mx-auto text-center mt-3 mb-2">
                                     <button type="submit" class=" btn btn-primary btn-embossed btn-lg">ログイン</button>
@@ -65,7 +36,7 @@
                             </div>
                             <br>
                             <div class="form-group row">
-                                <div class="col-md-10 mx-auto">
+                                <div class="col-md-10 mx-auto text-center">
                                     <a class="" href="{{ route('password.request') }}" style="font-size: smaller;">
                                         パスワードを忘れた方、パスワード変更の方はこちら
                                     </a>

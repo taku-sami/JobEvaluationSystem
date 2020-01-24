@@ -4,15 +4,15 @@
 @endphp
 @section('content')
     <div class="my-2">
-        <div class="h5">{{$user->name}} さんの目標  {{$category->year}}年</div>
+        <div class="h5">{{$user->name}} さんの人事考課  {{$category->year}}年</div>
     </div>
     <hr>
     <div class="row ml-2">
         <div class="">
             @if($image)
-                <img class="d-flex mr-3" src="data:image/png;base64,<?= $image ?>" style="width: 128px;height: 128px;">
+                <img class="d-flex mr-3" src="data:image/png;base64,<?= $image ?>" style="width: 150px;height: 150px;">
             @else
-                <img class="d-flex mr-3" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style="width: 128px;height: 128px;">
+                <img class="d-flex mr-3" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style="width: 150px;height: 150px;">
             @endif
         </div>
         <div class=" my-auto">
@@ -66,7 +66,10 @@
                                             <td rowspan="" class="cell100 employee_column3">{{$item->category}}</td>
                                             <td rowspan="" class="cell100 employee_column2">{{$item->standard}}</td>
                                             <td rowspan="" class="cell100 employee_column2">
-                                                <textarea placeholder="目標を入力" name="goal[{{$n}}]]" id="" style="resize: none;width:98%;height: 120px;color: #6c757d; border:dimgray 1.5px solid"></textarea>
+                                                @if ($errors->has("goal.$n"))
+                                                    <div class="alert alert-danger">{{$errors->first("goal.$n")}}</div>
+                                                @endif
+                                                <textarea placeholder="目標を入力" name="goal[{{$n}}]]" id="" style="resize: none;width:98%;height: 120px;color: #6c757d; border:dimgray 1.5px solid">{{ old("goal.$n")  }}</textarea>
                                             </td>
                                         </tr>
                                     @endforeach

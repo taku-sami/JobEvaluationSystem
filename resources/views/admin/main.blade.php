@@ -60,7 +60,6 @@
                                         }elseif($count->progress == 5)
                                         {
                                             $count_evaluation++;
-
                                         }
                                     }
                                 }
@@ -79,8 +78,16 @@
                                 }
                             @endphp
                             <td class="cell100 class_column1">{{$boss->class}}</td>
-                            <td class="cell100 class_column1">{{$count_approval}}名</td>
-                            <td class="cell100 class_column1">{{$count_evaluation}}名</td>
+                        @if(($count_approval) >= 1)
+                                <td class="cell100 class_column1 text-danger">{{$count_approval}}名</td>
+                            @else
+                                <td class="cell100 class_column1">{{$count_approval}}名</td>
+                            @endif
+                            @if($count_evaluation >= 1)
+                                <td class="cell100 class_column1 text-danger">{{$count_evaluation}}名</td>
+                            @else
+                                <td class="cell100 class_column1">{{$count_evaluation}}名</td>
+                            @endif
                         </tr>
                     @endforeach
                     </tbody>

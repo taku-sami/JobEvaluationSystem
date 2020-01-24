@@ -71,6 +71,11 @@ class EvaluationController extends Controller
     }
     public function evaluation_regist(Request $request)
     {
+        $validatedData = $request->validate([
+            'self_eva.*' => 'required',
+            'self_comment.*' => 'required|max:120',]
+        );
+
         $user_evaluation = UserEvaluation::find($request->user_eva_id);
         $user_evaluation->progress = 5;
         $user_evaluation->save();
@@ -92,6 +97,10 @@ class EvaluationController extends Controller
 
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'goal.*' => 'required|max:120',
+        ]);
+
         $user_eva = new UserEvaluation;
         $user_eva->year = $request->year;
         $user_eva->progress = 2;
@@ -410,6 +419,10 @@ class EvaluationController extends Controller
         $evaluation = Evaluation::find($request->id);
         if ($class == 'boss1')
         {
+            $validatedData = $request->validate([
+            'boss1_eva.*' => 'required',
+            'boss1_comment.*' => 'required|max:120',
+        ]);
             $user_evaluation = UserEvaluation::find($request->user_eva_id);
             $user_evaluation->progress = 6;
             $user_evaluation->save();
@@ -426,6 +439,10 @@ class EvaluationController extends Controller
                 $n++;
             }
         }elseif($class == 'boss2'){
+            $validatedData = $request->validate([
+                'boss2_eva.*' => 'required',
+                'boss2_comment.*' => 'required|max:120',
+            ]);
             $user_evaluation = UserEvaluation::find($request->user_eva_id);
             $user_evaluation->progress = 7;
             $user_evaluation->save();
@@ -475,9 +492,10 @@ class EvaluationController extends Controller
         $department = Auth::user()->department;
         if(!empty($keyword))
         {
-            $users = User::where('department',$department)
-                ->where('name','like','%'.$keyword.'%')
+            $users = User::where('name','like','%'.$keyword.'%')
                 ->orWhere('email','like','%'.$keyword.'%')
+                ->Where('department',$department)
+                ->Where('auth','staff')
                 ->get();
         }else{
             $users = "";

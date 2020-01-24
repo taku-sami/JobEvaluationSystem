@@ -7,11 +7,14 @@
     </div>
     <hr>
     <div class="card mt-3" >
-        <div class="card-header" style="color: #fff; background-color: #1abc9c;">
+        <div class="card-header" style="color: #fff; background-color: #1abc9c; border-radius: 10px 10px 0px 0px;padding: 18px 40px">
             CSV入出力
         </div>
         <div class="card-body">
             <div class="border p-3">
+                @if ($errors->has('file'))
+                    <div class="alert alert-danger">{{$errors->first('file')}}</div>
+                @endif
                 <p class="text-secondary">考課データインポート</p>
                 <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -19,7 +22,7 @@
                     <button class="btn btn-embossed  btn-warning">CSVデータのインポート</button>
                 </form>
                 <br>
-                <p class="small text-secondary">テンプレートは<a href="{{ route('template_export') }}">こちら</a>からダウンロードできます。</p>
+                <p class="small text-secondary">テンプレートは<a href="{{ route('template_export') }}"><strong>こちら</strong></a>からダウンロードできます。</p>
             </div>
             <br>
             <div class="border p-3">

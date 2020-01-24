@@ -5,15 +5,15 @@
 @section('content')
 
     <div class="my-2">
-        <div class="h5">{{$evaluation->user->name}} さんの評価 {{$evaluation->year}}年</div>
+        <div class="h5">{{$evaluation->user->name}} さんのさんの人事考課 {{$evaluation->year}}年</div>
     </div>
     <hr>
     <div class="row ml-2">
         <div class="">
             @if($image)
-                <img class="d-flex mr-3" src="data:image/png;base64,<?= $image ?>" style="width: 128px;height: 128px;">
+                <img class="d-flex mr-3" src="data:image/png;base64,<?= $image ?>" style="width: 150px;height: 150px;">
             @else
-                <img class="d-flex mr-3" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style="width: 128px;height: 128px;">
+                <img class="d-flex mr-3" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style="width: 150px;height: 150px;">
             @endif
         </div>
         <div class=" my-auto">
@@ -29,15 +29,18 @@
         <div class="h5">
             評価
         </div>
+        @if(count($errors) >= 1)
+            <div class="alert alert-danger">入力内容に誤りがあります。</div>
+        @endif
     </div>
     <form action="/evaluation_boss" method="post">
         @csrf
         <input type="hidden" name="user_eva_id" value="{{$evaluation->id}}">
         <div class="tabs" style="">
             <input id="all" type="radio" name="tab_item" checked>
-            <label class="tab_item m-0" for="all">目標</label>
+            <label class="tab_item m-0" for="all" style="border-radius: 10px 0px 0px 0px ;">目　標</label>
             <input id="programming" type="radio" name="tab_item">
-            <label class="tab_item m-0" for="programming">評価</label>
+            <label class="tab_item m-0" for="programming" style="border-radius: 0px 10px 0px 0px ;">評　価</label>
             <div class="tab_content p-0" id="all_content">
                 <div class="tab_content_description">
                     <div class="wrap-table100">
@@ -46,9 +49,9 @@
                                 <table >
                                     <tbody >
                                     <tr class="row100 body my-2 text-center">
-                                        <th class="cell100 employee_column3" style="background-color: #a1a7ad; font-size: 15px">考課名</th>
-                                        <th class="cell100 employee_column2" style="background-color: #a1a7ad; font-size: 15px">評価基準</th>
-                                        <th class="cell100 employee_column2" style="background-color: #a1a7ad; font-size: 15px">目標</th>
+                                        <th class="cell100 employee_column3" style="background-color: #a1a7ad; font-size: 15px">考 課 名</th>
+                                        <th class="cell100 employee_column2" style="background-color: #a1a7ad; font-size: 15px">評 価 基 準</th>
+                                        <th class="cell100 employee_column2" style="background-color: #a1a7ad; font-size: 15px">目 標</th>
                                     </tr>
                                 </table>
                             </div>
@@ -60,7 +63,7 @@
                                         $n = 0;
                                     @endphp
                                     @foreach($items as $item)
-                                        <tr class="row100 body border-bottom">
+                                        <tr class="row100 body border-bottom" style="height: 120px">
                                             <td rowspan="" class="cell100 employee_column3">{{$item->category->category}}</td>
                                             <td rowspan="" class="cell100 employee_column2">{{$item->category->standard}}</td>
                                             <td rowspan="" class="cell100 employee_column2">{{$item->goal}}</td>
@@ -104,8 +107,8 @@
                                         <tr class="row100 body" style="height: 80px;">
                                             <td rowspan="3" class="cell100 employee_column3 border-bottom">{{$item->category->category}}</td>
                                             <td rowspan="3" class="cell100 employee_column2 border-bottom">{{$item->category->standard}}</td>
-                                            <td class="cell100 employee_column2 text-right">被評価者</td>
-                                            <td class="cell100 employee_column2 text-center">
+                                            <td class="cell100 employee_column2 text-center" >被評価者</td>
+                                            <td class="cell100 employee_column2 text-center" >
                                                 @if($item->self_eva == "SS")
                                                     <label class="px-2"><input disabled checked type="radio">SS</label>
                                                 @else
@@ -133,24 +136,46 @@
                                                 @endif
                                             </td>
                                             <td rowspan="" class="cell100 employee_column2">
-                                                <textarea placeholder="" id="" style="resize: none;width:98%;height: 90px; color: #6c757d; border:none;" disabled>{{$item->self_comment}}</textarea>
+                                                <textarea placeholder="" id="" style="resize: none;width:98%;height: 90px; " disabled>{{$item->self_comment}}</textarea>
                                             </td>
                                         </tr>
-                                        <tr class="row100 body" style="background-color: #EFEFEF;height: 80px;">
-                                            <td class="cell100 employee_column2 text-right">１次評価者</td>
-                                            <td class="cell100 employee_column2 text-center">
-                                                <label class="px-2"><input name="boss1_eva[{{$n}}]" type="radio" value="5">SS</label>
-                                                <label class="px-2"><input name="boss1_eva[{{$n}}]" type="radio" value="4">S</label>
-                                                <label class="px-2"><input name="boss1_eva[{{$n}}]" type="radio" value="3">A</label>
-                                                <label class="px-2"><input name="boss1_eva[{{$n}}]" type="radio" value="2">B</label>
-                                                <label class="px-2"><input name="boss1_eva[{{$n}}]" type="radio" value="1">C</label>
-                                            </td>
-                                            <td rowspan="" class="cell100 employee_column2" style="color: lightgray">
-                                                <textarea name="boss1_comment[{{$n}}]" placeholder="" id="" style="resize: none;width:98%;height: 90px;color: #6c757d; border:dimgray 1.5px solid;"></textarea>
-                                            </td>
-                                        </tr>
+                                        @if($n%2 == 1)
+                                            <tr class="row100 body" style="background-color: white;height: 80px;">
+                                                <td class="cell100 employee_column2 text-center" >１次評価者</td>
+                                                <td class="cell100 employee_column2 text-center">
+                                                    <label class="px-2"><input required name="boss1_eva[{{$n}}]" value="5" type="radio">SS</label>
+                                                    <label class="px-2"><input required name="boss1_eva[{{$n}}]" value="4" type="radio">S</label>
+                                                    <label class="px-2"><input required name="boss1_eva[{{$n}}]" value="3" type="radio">A</label>
+                                                    <label class="px-2"><input required name="boss1_eva[{{$n}}]" value="2" type="radio">B</label>
+                                                    <label class="px-2"><input required name="boss1_eva[{{$n}}]" value="1" type="radio">C</label>
+                                                </td>
+                                                <td class="cell100 employee_column4 text-center">
+                                                    @if ($errors->has("boss1_comment.$n"))
+                                                        <div class="alert alert-danger">{{$errors->first("boss1_comment.$n")}}</div>
+                                                    @endif
+                                                    <textarea name="boss1_comment[{{$n}}]" placeholder="" id="" style="resize: none;width:98%;height: 90px;color: #6c757d; border:dimgray 1.5px solid;"></textarea>
+                                                </td>
+                                            </tr>
+                                        @else
+                                            <tr class="row100 body" style="background-color: #EFEFEF;height: 80px;">
+                                                <td class="cell100 employee_column2 text-center">１次評価者</td>
+                                                <td class="cell100 employee_column2 text-center">
+                                                    <label class="px-2"><input required name="boss1_eva[{{$n}}]" value="5" type="radio">SS</label>
+                                                    <label class="px-2"><input required name="boss1_eva[{{$n}}]" value="4" type="radio">S</label>
+                                                    <label class="px-2"><input required name="boss1_eva[{{$n}}]" value="3" type="radio">A</label>
+                                                    <label class="px-2"><input required name="boss1_eva[{{$n}}]" value="2" type="radio">B</label>
+                                                    <label class="px-2"><input required name="boss1_eva[{{$n}}]" value="1" type="radio">C</label>
+                                                </td>
+                                                <td class="cell100 employee_column4 text-center">
+                                                    @if ($errors->has("boss1_comment.$n"))
+                                                        <div class="alert alert-danger">{{$errors->first("boss1_comment.$n")}}</div>
+                                                    @endif
+                                                    <textarea name="boss1_comment[{{$n}}]" placeholder="" id="" style="resize: none;width:98%;height: 90px;color: #6c757d; border:dimgray 1.5px solid;"></textarea>
+                                                </td>
+                                            </tr>
+                                        @endif
                                         <tr class="row100 body border-bottom" style="height: 80px;">
-                                            <td class="cell100 employee_column2 text-right" style="color: lightgray">２次評価者</td>
+                                            <td class="cell100 employee_column2 text-center" style="color: lightgray">２次評価者</td>
                                             <td class="cell100 employee_column2 text-center" style="color: lightgray">
                                                 <label class="px-2"><input disabled type="radio">SS</label>
                                                 <label class="px-2"><input disabled type="radio">S</label>
@@ -159,7 +184,7 @@
                                                 <label class="px-2"><input disabled type="radio">C</label>
                                             </td>
                                             <td rowspan="" class="cell100 employee_column2" style="color: lightgray">
-                                                <textarea placeholder="" id="" style="resize: none;width:98%;height: 90px;border: none;color: #6c757d;" disabled></textarea>
+                                                <textarea placeholder="" id="" style="resize: none;width:98%;height: 90px;color: #6c757d;" disabled></textarea>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -175,70 +200,5 @@
                 </div>
             </div>
         </div>
-
-{{--        <div class="form-group">--}}
-{{--            <table class="roundedCorners text-center">--}}
-{{--                <tr>--}}
-{{--                    <th style="width: 10%;" >カテゴリー</th>--}}
-{{--                    <th style="width: 20%;" >評価基準</th>--}}
-{{--                    <th style="width: 20%;" >目標</th>--}}
-{{--                    <th style="width: 45%;" colspan="3">評価</th>--}}
-{{--                </tr>--}}
-{{--                @php--}}
-{{--                    $items = $evaluation->evaluations;--}}
-{{--                    $n = 0;--}}
-{{--                @endphp--}}
-{{--                @foreach($items as $item)--}}
-{{--                    <input type="hidden" value="{{$n++}}">--}}
-{{--                    <input type="hidden" name="id[{{$n}}]"value="{{$item->id}}">--}}
-{{--                    <tr>--}}
-{{--                        <td rowspan="3" style="background-color: #b5dee5;color: white;">{{$n}} {{$item->category->category}}</td>--}}
-{{--                        <td rowspan="3" class="text-left">{{$item->category->standard}}</td>--}}
-{{--                        <td rowspan="3" class="text-left" >{{$item->goal}}</td>--}}
-{{--                        <td style="background-color: #b5dee5;color: white;">被評価者</td>--}}
-{{--                        <td>{{$item->self_eva}}</td>--}}
-{{--                        <td class="p-0 m-0">{{$item->self_comment}}</td>--}}
-{{--                    </tr>--}}
-{{--                    <tr>--}}
-{{--                        <td style="background-color: #b5dee5;color: white;">１次評価者</td>--}}
-{{--                        <td>--}}
-{{--                            <div class="radio">--}}
-{{--                                <label><input type="radio" name="boss1_eva[{{$n}}]" value="5">SS</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="radio">--}}
-{{--                                <label><input type="radio" name="boss1_eva[{{$n}}]" value="4">S</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="radio disabled">--}}
-{{--                                <label><input type="radio" name="boss1_eva[{{$n}}]" value="3">A</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="radio disabled">--}}
-{{--                                <label><input type="radio" name="boss1_eva[{{$n}}]" value="2">B</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="radio disabled">--}}
-{{--                                <label><input type="radio" name="boss1_eva[{{$n}}]" value="1">C</label>--}}
-{{--                            </div>--}}
-{{--                        </td>--}}
-{{--                        <td class="p-0 m-0">--}}
-{{--                            <textarea placeholder="ここにコメントを入力" name="boss1_comment[{{$n}}]" id="" style="resize: none;width:98%;height: 160px;border: none;color: #6c757d;"></textarea>--}}
-{{--                        </td>                    </tr>--}}
-{{--                    <tr>--}}
-{{--                        <td style="background-color: #b5dee5;color: white;">２次評価者</td>--}}
-{{--                        <td>未設定</td>--}}
-{{--                        <td>未設定--}}
-{{--                        </td>--}}
-{{--                    </tr>--}}
-{{--                @endforeach--}}
-{{--            </table>--}}
-{{--            @if($root >=6)--}}
-{{--                <div class="pb-5 pt-3 text-center">--}}
-{{--                    <a href="/boss" class="btn btn-primary col-1 py-2 m-3">戻る</a>--}}
-{{--                </div>--}}
-{{--            @else--}}
-{{--                <div class="pb-5 pt-3 text-center">--}}
-{{--                    <a href="/boss" class="btn btn-primary col-1 py-2 m-3">戻る</a>--}}
-{{--                    <button type="submit" class="btn btn-primary col-1 py-2 m-3">登録する</button>--}}
-{{--                </div>--}}
-{{--            @endif--}}
-{{--        </div>--}}
     </form>
 @endsection

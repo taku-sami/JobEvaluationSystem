@@ -132,7 +132,7 @@
                                 @if($column->progress == null || $column->progress < 7)
                                     <td class="cell100 boss_column2"></td>
                                 @else
-                                    <td class="cell100 boss_column2 text-info">{{$column->evaluation}}({{$column->point}}ポイント)</td>
+                                    <td class="cell100 boss_column2 text-info">{{$column->evaluation}}({{$column->point}}ポイント/5)</td>
                                 @endif
                                 @if($column->progress == null || $column->progress < 2)
                                     <td class="cell100 boss_column2"></td>

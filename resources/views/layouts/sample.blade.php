@@ -100,7 +100,7 @@
         data:{
             categories:[
                 {
-                    name:'',
+                    title:'',
                     standard:''
                 }
             ]
@@ -110,7 +110,7 @@
                 this.categories.push({
                     // title:'title' + (this.categories.length+1),
                     // detail:'detail' + (this.categories.length+1),
-                    name:'',
+                    title:'',
                     standard:''
                 })
             },

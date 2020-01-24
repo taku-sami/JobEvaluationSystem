@@ -14,15 +14,21 @@
                 @csrf
                 <div class="form-group row">
                     <div class="col-md-5 mx-auto">
-                        <label for="email" class="">役職名</label>
-                        <input type="text" class="form-control border" name="class_name" value="{{ old('class_name') }}" required placeholder="役職名を入力してください">
+                        <label for="class_name" class="">役職名</label>
+                        @if ($errors->has('class_name'))
+                            <div class="alert alert-danger">{{$errors->first('class_name')}}</div>
+                        @endif
+                        <input type="text" class="form-control border" name="class_name" value="{{ old('class_name') }}"  placeholder="役職名を入力してください">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-5 mx-auto">
-                        <label for="email" class="">権限</label>
+                        @if ($errors->has('class_auth'))
+                            <div class="alert alert-danger">{{$errors->first('class_auth')}}</div>
+                        @endif
+                        <label for="class_auth" class="">権限</label>
                         <select class="form-control md-form" name="class_auth" id="">
-                            <option value="" selected disabled>権限を選択してください</option>
+                            <option value="" selected>権限を選択してください</option>
                             <option value="staff">被評価者</option>
                             <option value="boss1">１次評価者</option>
                             <option value="boss2">２次評価者</option>

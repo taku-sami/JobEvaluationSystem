@@ -11,9 +11,9 @@
     <div class="row ml-2">
         <div class="">
             @if($image)
-                <img class="d-flex mr-3" src="data:image/png;base64,<?= $image ?>" style="width: 128px;height: 128px;">
+                <img class="d-flex mr-3" src="data:image/png;base64,<?= $image ?>" style="width: 150px;height: 150px;">
             @else
-                <img class="d-flex mr-3" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style="width: 128px;height: 128px;">
+                <img class="d-flex mr-3" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style="width: 150px;height: 150px;">
             @endif
 
         </div>
@@ -167,7 +167,7 @@
                                     <td class="cell100 staff_column1">評価済み</td>
                                     <td class="cell100 staff_column1">{{$boss1_dep->name}}</td>
                                     <td class="cell100 staff_column1">{{$boss2_dep->name}}</td>
-                                    <td class="cell100 staff_column1 text-info">{{$column->evaluation}}({{$column->point}}ポイント)</td>
+                                    <td class="cell100 staff_column1 text-info">{{$column->evaluation}}({{$column->point}}ポイント/5)</td>
                                     <td class="cell100 staff_column1">{{$column->updated_at->format('Y/m/d')}}</td>
                                 </tr>
                         @endif

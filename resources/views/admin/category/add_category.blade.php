@@ -1,5 +1,4 @@
 @extends('layouts.sample')
-
 @section('content')
     <div class="my-2">
         <div class="h5">考課新規登録</div>
@@ -16,24 +15,32 @@
                 <div class="col-md-6  mx-auto" style="border-radius: 15px;">
                     <div id="sample">
                         <div class="text-right mb-3 mr-3">
-                            <button class="btn btn-default" v-on:click="addNewCategoryForm">項目を追加</button>
+                            <div class="btn btn-default" v-on:click="addNewCategoryForm">項目を追加</div>
                         </div>
                         <div v-for="(category, index) in categories">
                             <span class="float-right m-3" style="coursor:pointer" v-on:click="deleteCategoryForm(index)">X</span>
                             <div class="category-form bg-light p-3 border">
                                 <div class="my-4" >考課(@{{index+1}})</div>
+                                @if ($errors->has('title[0]'))
+                                    <div class="alert alert-danger">{{$errors->first('title[0]')}}</div>
+                                @endif
                                 <div class="form-group row ">
                                     <label class="col-sm-3 col-form-label text-right ">考課名：</label>
                                     <div class="col-sm-9">
-                                        <input type="text" v-bind:name="'name[' + index + ']'" class="form-control" required placeholder="考課名を入力" v-model="category.name">
-                                        <p class="alert-warning">@{{category.name}}</p>
+                                        <input type="text" v-bind:name="'title[' + index + ']'" class="form-control border" required placeholder="考課名を入力" v-model="category.title">
+{{--                                        <p class="alert-warning">@{{category.name}}</p>--}}
+
                                     </div>
                                 </div>
+                                @if ($errors->has('standard[0]'))
+                                    <div class="alert alert-danger">{{$errors->first('standard[0]')}}</div><br>
+                                @endif
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label text-right">考課基準：</label>
                                     <div class="col-sm-9">
-                                        <input type="text" v-bind:name="'standard[' + index + ']'" class="form-control"  required placeholder="考課基準を入力" v-model="category.standard">
-                                        <p class="alert-warning">@{{category.standard}}</p>
+                                        <input type="text" v-bind:name="'standard[' + index + ']'" class="form-control border" required placeholder="考課基準を入力" v-model="category.standard">
+{{--                                        <p class="alert-warning">@{{category.standard}}</p>--}}
+
                                     </div>
                                 </div>
                             </div>

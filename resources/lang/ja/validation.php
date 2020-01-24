@@ -2,17 +2,6 @@
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | バリデーション言語行
-    |--------------------------------------------------------------------------
-    |
-    | 以下の言語行はバリデタークラスにより使用されるデフォルトのエラー
-    | メッセージです。サイズルールのようにいくつかのバリデーションを
-    | 持っているものもあります。メッセージはご自由に調整してください。
-    |
-    */
-
     'accepted'             => ':attributeを承認してください。',
     'active_url'           => ':attributeが有効なURLではありません。',
     'after'                => ':attributeには、:dateより後の日付を指定してください。',
@@ -36,7 +25,7 @@ return [
     'different'            => ':attributeと:otherには、異なった内容を指定してください。',
     'digits'               => ':attributeは:digits桁で指定してください。',
     'digits_between'       => ':attributeは:min桁から:max桁の間で指定してください。',
-    'dimensions'           => ':attributeの図形サイズが正しくありません。',
+    'dimensions'           => ':attributeのサイズは320×240以内にしてください。',
     'distinct'             => ':attributeには異なった値を指定してください。',
     'email'                => ':attributeには、有効なメールアドレスを指定してください。',
     'exists'               => '選択された:attributeは正しくありません。',
@@ -141,6 +130,27 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => '名前',
+        'email' => 'eメール',
+        'dep_name' => '所属名',
+        'department' => '所属部署',
+        'class_name' => '役職名',
+        'class' => '役職',
+        'class_auth' => '権限',
+        'year' => '年度',
+        'title' => '考課名',
+        'standard' => '基準名',
+        'image' => '顔写真',
+        'photo' => '顔写真',
+        'file' => 'CSVデータ',
+        'goal.*' => '目標',
+        'self_comment.*' => '評価コメント',
+        'boss1_comment.*' => '評価コメント',
+        'boss2_comment.*' => '評価コメント',
+
+
+
+    ],
 
 ];

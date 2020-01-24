@@ -12,9 +12,9 @@ class CsvTemplateSeeder extends Seeder
     public function run()
     {
         DB::table('csv_templates')->insert([
-            'year' => 'year',
-            'category' => 'category',
-            'standard' => 'standard',
+            'year' => '年',
+            'category' => '考課名',
+            'standard' => '考課基準',
         ]);
     }
 }

@@ -15,7 +15,7 @@ class CreateStaffClassesTable extends Migration
     {
         Schema::create('staff_classes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('class_name');
+            $table->string('class_name')->unique();
             $table->string('class_auth');
             $table->timestamps();
         });

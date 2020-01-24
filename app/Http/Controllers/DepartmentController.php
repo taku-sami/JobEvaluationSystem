@@ -8,6 +8,10 @@ use App\Department;
 class DepartmentController extends Controller
 {
     public function store(Request $request){
+        $validatedData = $request->validate([
+            'dep_name' => 'required|unique:staff_classes|max:10',
+        ]);
+
         $department = new Department;
         $department->dep_name = $request->dep_name;
         $department->save();

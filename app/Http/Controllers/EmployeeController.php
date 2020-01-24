@@ -15,6 +15,14 @@ class EmployeeController extends Controller
 {
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'name' => 'required|max:10',
+            'email' => 'required|unique:users|email:rfc,dns',
+            'department' => 'required',
+            'class' => 'required',
+            'image' => 'nullable|max:2048|image|mimes:jpg',
+        ]);
+
         $user = new User;
         $user->name = $request->name;
         $user->email = $request->email;
@@ -29,7 +37,6 @@ class EmployeeController extends Controller
         {
             $image = base64_encode(file_get_contents($request->image->getRealPath()));
             $user->image = $image;
-//          $user->image_url = $request->image_url->storeAs('public/images', Carbon::now() . '_' . $request->name . '.jpg');
         }
         $user->save();
         $email = new EmailVerification($user);

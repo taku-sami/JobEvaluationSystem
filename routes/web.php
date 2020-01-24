@@ -51,7 +51,7 @@ Route::group(['middleware' => 'auth'], function() {
 //      following is for Category
     Route::get('/categories','CategoryController@index');
     Route::get('/copy_create','CategoryController@copy_create');
-    Route::get('/add_category',function(){return view('admin/category/add_category');});
+    Route::get('/add_category/{year}','CategoryController@show_add_category')->name('add_category');
     Route::get('/edit_category/{id}','CategoryController@show');
     Route::get('/del_category/{id}','CategoryController@delete');
 

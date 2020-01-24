@@ -9,11 +9,10 @@ class StaffClassController extends Controller
 {
     public function store(Request $request)
     {
-//        $validate_rule = [
-//            'class_name' => 'required',
-//            'class_auth' => 'required',
-//        ];
-//        $this->validate($request, $validate_rule);
+        $validatedData = $request->validate([
+            'class_name' => 'required|unique:staff_classes|max:10',
+            'class_auth' => 'required',
+        ]);
 
         $class = new StaffClass;
         $class->class_name = $request->class_name;
