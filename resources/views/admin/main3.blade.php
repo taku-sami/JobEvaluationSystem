@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+
     <div class="my-2 h5">{{$year}}年度考課残一覧</div>
     <hr>
     <div class="form-group d-flex align-items-center my-3">
@@ -77,7 +78,7 @@
                                 }
                             @endphp
                             <td class="cell100 class_column1">{{$boss->class}}</td>
-                            @if(($count_approval) >= 1)
+                        @if(($count_approval) >= 1)
                                 <td class="cell100 class_column1 text-danger">{{$count_approval}}名</td>
                             @else
                                 <td class="cell100 class_column1">{{$count_approval}}名</td>
@@ -120,4 +121,6 @@
         @endforeach
     </div>
     <br id="page-content-wrapper">
+
+
 @endsection

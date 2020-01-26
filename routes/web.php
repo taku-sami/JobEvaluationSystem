@@ -18,7 +18,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::group(['middleware' => 'check.admin'], function() {
 
         Route::get('/main','EvaluationController@show_for_admin');
-        Route::post('/main', 'EvaluationController@show_for_admin_selected');
+
     Route::get('/sample', function () {
         return view('admin/sample');  // ここを編集 (welcome->sample)
     });

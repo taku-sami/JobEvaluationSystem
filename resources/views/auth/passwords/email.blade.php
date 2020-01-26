@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('パスワードリセット') }}</div>
+                <div class="card-header" style="color: #fff; background-color: #1abc9c;">{{ __('パスワードリセット') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -21,7 +21,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('メールアドレス') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="form-control border @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -32,7 +32,7 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 mx-auto my-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('パスワード再設定用のリンクを送信します') }}
                                 </button>

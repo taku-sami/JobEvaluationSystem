@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('パスワードリセット') }}</div>
+                <div class="card-header" style="color: #fff; background-color: #1abc9c;">{{ __('パスワードリセット') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">

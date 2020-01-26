@@ -103,44 +103,7 @@ input[name="tab_item"] {
     border: 2px solid white; /* should match background, can't be transparent */
     background-color: rgba(0, 0, 0, .5);
 }
-/*td{*/
-/*    word-break : break-all;*/
-/*}*/
 
-/*table {*/
-/*    border-collapse: collapse;*/
-/*    margin: 0 auto;*/
-/*    padding: 0;*/
-/*    table-layout: fixed;*/
-/*}*/
-
-/*table tr {*/
-/*    background-color: #e6f2f5;*/
-/*    padding: .35em;*/
-/*    border-bottom: 1px solid #BEBEBE;*/
-/*}*/
-/*table th,*/
-/*table td {*/
-/*    padding: 1em 10px 1em 1em;*/
-/*    border-right: 2px solid #E3FBFF;*/
-/*}*/
-/*table th {*/
-/*    font-size: .85em;*/
-/*}*/
-/*table thead tr{*/
-/*    background-color: #167F92;*/
-/*    color:#fff;*/
-/*}*/
-/*table tbody th {*/
-/*    background: #78bbc7;*/
-/*    color: #fff;*/
-/*}*/
-/*table {*/
-/*    border-collapse: separate!important;*/
-/*    border-spacing: 0px 3px;*/
-/*    border-radius: 3px;*/
-
-/*}*/
 .txt{
     text-align: left;
     font-size: .85em;

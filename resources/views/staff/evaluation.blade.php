@@ -101,13 +101,10 @@
                                         $n = 0;
                                     @endphp
                                     @foreach($items as $item)
-                                        @php
-                                            $n++;
-                                        @endphp
-
                                         <tr class="row100 body" style="height: 80px;">
                                             <input type="hidden" value="{{$n++}}">
-                                            <input type="hidden" name="id[{{$n}}]" value="{{$item->id}}">                                            <td rowspan="3" class="cell100 employee_column3 border-bottom">{{$item->category->category}}</td>
+                                            <input type="hidden" name="id[{{$n}}]" value="{{$item->id}}">
+                                            <td rowspan="3" class="cell100 employee_column3 border-bottom">{{$item->category->category}}</td>
                                             <td rowspan="3" class="cell100 employee_column2 border-bottom">{{$item->category->standard}}</td>
                                             <td class="cell100 employee_column2 text-center">被評価者</td>
                                             <td class="cell100 employee_column2 text-center">

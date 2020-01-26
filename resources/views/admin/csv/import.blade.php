@@ -21,6 +21,7 @@
                     <input type="file" name="file" class="form-control m-3">
                     <button class="btn btn-embossed  btn-warning">CSVデータのインポート</button>
                 </form>
+
                 <br>
                 <p class="small text-secondary">テンプレートは<a href="{{ route('template_export') }}"><strong>こちら</strong></a>からダウンロードできます。</p>
             </div>

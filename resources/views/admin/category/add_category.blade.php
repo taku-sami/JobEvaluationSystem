@@ -1,4 +1,4 @@
-@extends('layouts.sample')
+@extends('layouts.admin')
 @section('content')
     <div class="my-2">
         <div class="h5">考課新規登録</div>

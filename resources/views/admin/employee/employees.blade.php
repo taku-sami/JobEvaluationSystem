@@ -36,35 +36,56 @@
             <div class="table100-body js-pscroll">
                 <table>
                     <tbody>
+                    @php
+                    $n =0;
+                    @endphp
                     @foreach( $columns as $column)
-                            @if($column->auth === 'staff')
-                                @php
-                                    $auth = "被評価者";
-                                @endphp
-                            @elseif($column->auth === 'boss1')
-                                @php
-                                    $auth = "１次評価者";
-                                @endphp
-                            @elseif($column->auth === 'boss2')
-                                @php
-                                    $auth = "２次評価者";
-                                @endphp
-                            @elseif($column->auth === 'admin')
-                                @php
-                                    $auth = "システム管理者";
-                                @endphp
-                            @endif
-                            <tr class="row100 body">
-                                <td class="cell100 employee_column1">{{$column->id}}</td>
-                                <td class="cell100 employee_column2">{{$column->name}}</td>
-                                <td class="cell100 employee_column2">{{$column->department}}</td>
-                                <td class="cell100 employee_column2">{{$auth}}</td>
-                                <td class="cell100 employee_column2">{{$column->email}}</td>
-                                <td class="cell100 class_column3 text-center p-0">
-                                    <a href="{{ action('EmployeeController@show', $column->id)}}"><i class="fas fa-edit text-info fa-lg px-2"></i></a>
-                                    <a href="{{ action('EmployeeController@delete', $column->id)}}"><i class="far fa-trash-alt text-danger fa-lg px-2"></i></a>
-                                </td>
-                            </tr>
+                        @if($column->auth === 'staff')
+                            @php
+                                $auth = "被評価者";
+                            @endphp
+                        @elseif($column->auth === 'boss1')
+                            @php
+                                $auth = "１次評価者";
+                            @endphp
+                        @elseif($column->auth === 'boss2')
+                            @php
+                                $auth = "２次評価者";
+                            @endphp
+                        @elseif($column->auth === 'admin')
+                            @php
+                                $auth = "システム管理者";
+                            @endphp
+                        @endif
+                        <tr class="row100 body">
+                            <td class="cell100 employee_column1">{{$column->id}}</td>
+                            <td class="cell100 employee_column2">{{$column->name}}</td>
+                            <td class="cell100 employee_column2">{{$column->department}}</td>
+                            <td class="cell100 employee_column2">{{$auth}}</td>
+                            <td class="cell100 employee_column2">{{$column->email}}</td>
+                            <td class="cell100 class_column3 text-center p-0">
+                                <a href="{{ action('EmployeeController@show', $column->id)}}"><i class="fas fa-edit text-info fa-lg px-2"></i></a>
+                                <button type="button" class="text-light" data-toggle="modal" data-target="#delete_modal{{$n}}" ><i class="far fa-trash-alt text-danger fa-lg px-2"></i></button>
+                            </td>
+                        </tr>
+                            <div class="modal" id="delete_modal{{$n}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalCenterTitle">削除確認画面</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body my-3"><strong>{{$column->name}}さん</strong>を削除しますか？</div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                                            <a href="{{ action('EmployeeController@delete', $column->id)}}" class="btn btn-danger">削除する</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <input type="hidden" value="{{$n++}}">
                     @endforeach
                     </tbody>
                 </table>

@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @php
-print_r($errors)
 @endphp
 @section('content')
     <div class="my-2">
@@ -12,7 +11,7 @@ print_r($errors)
             社員新規登録
         </div>
         <div class="card-body">
-            <form method="POST" action="/addemployee">
+            <form method="POST" action="/addemployee" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group row">
                     <div class="col-md-5 mx-auto">
@@ -66,9 +65,10 @@ print_r($errors)
                             <div class="alert alert-danger">{{$errors->first('image')}}</div>
                         @endif
                         <label for="image" class="">顔写真</label>
-                        <input type="file" class="form-control　md-form" name="image">
+                        <input type="file" class="form-control　md-form" name="image" accept="image/*">
                         {{ csrf_field() }}
                     </div>
+                    <div class="preview"></div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6 mx-auto text-center">
@@ -79,3 +79,38 @@ print_r($errors)
         </div>
     </div>
 @endsection
+<script>
+    $(function(){
+        //画像ファイルプレビュー表示のイベント追加 fileを選択時に発火するイベントを登録
+        $('form').on('change', 'input[type="file"]', function(e) {
+            var file = e.target.files[0],
+                reader = new FileReader(),
+                $preview = $(".preview");
+            t = this;
+
+            // 画像ファイル以外の場合は何もしない
+            if(file.type.indexOf("image") < 0){
+                return false;
+            }
+
+            // ファイル読み込みが完了した際のイベント登録
+            reader.onload = (function(file) {
+                return function(e) {
+                    //既存のプレビューを削除
+                    $preview.empty();
+                    // .prevewの領域の中にロードした画像を表示するimageタグを追加
+                    $preview.append($('<img>').attr({
+                        src: e.target.result,
+                        width: "150px",
+                        class: "preview",
+                        title: file.name
+                    }));
+                };
+            })(file);
+
+            reader.readAsDataURL(file);
+        });
+    });
+
+
+</script>

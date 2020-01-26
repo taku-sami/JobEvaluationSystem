@@ -4,7 +4,7 @@
 @section('content')
 
     <div class="my-5">
-        <div class="h5">{{$year}}年度 目標・評価一覧</div>
+        <div class="h5">{{$year}}年度 考課一覧</div>
     </div>
     <hr>
     <div class="row">

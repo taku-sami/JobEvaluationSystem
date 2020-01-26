@@ -1,7 +1,14 @@
 @extends('layouts.login')
 
 @section('content')
-    <div class="full-page">
+    <div class="full-page text-right p-3">
+        <!-- Button trigger modal -->
+        <button type="button" class="text-white" data-toggle="modal" data-target=".bd-example-modal-lg">
+            <i class="far fa-question-circle fa-2x"></i>
+        </button>
+        <!-- Modal -->
+
+
         <div class="container-fluid" style=" padding-top:100px;">
             <div class="text-center h3 mb-5">Web 人事考課システム</div>
             <div class="row justify-content-center">

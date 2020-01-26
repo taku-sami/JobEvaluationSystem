@@ -80,7 +80,7 @@ class UsersTableSeeder extends Seeder
             ],
             [
                 'name' => $faker->name,
-                'email' => 'sall_staff1@gmail.com',
+                'email' => 'sell_staff1@gmail.com',
                 'department' => "営業部",
                 'class' => 'スタッフ',
                 'auth' => 'staff',
@@ -90,7 +90,7 @@ class UsersTableSeeder extends Seeder
             ],
             [
                 'name' => $faker->name,
-                'email' => 'sall_staff2@gmail.com',
+                'email' => 'sell_staff2@gmail.com',
                 'department' => "営業部",
                 'class' => 'スタッフ',
                 'auth' => 'staff',
@@ -100,7 +100,7 @@ class UsersTableSeeder extends Seeder
             ],
             [
                 'name' => $faker->name,
-                'email' => 'sall_staff3@gmail.com',
+                'email' => 'sell_staff3@gmail.com',
                 'department' => "営業部",
                 'class' => 'スタッフ',
                 'auth' => 'staff',
@@ -110,7 +110,7 @@ class UsersTableSeeder extends Seeder
             ],
             [
                 'name' => $faker->name,
-                'email' => 'sall_boss1@gmail.com',
+                'email' => 'sell_boss1@gmail.com',
                 'department' => "営業部",
                 'class' => '課長',
                 'auth' => 'boss1',
@@ -120,7 +120,7 @@ class UsersTableSeeder extends Seeder
             ],
             [
                 'name' => $faker->name,
-                'email' => 'sall_boss2@gmail.com',
+                'email' => 'sell_boss2@gmail.com',
                 'department' => "営業部",
                 'class' => '部長',
                 'auth' => 'boss2',

@@ -20,7 +20,7 @@ class EmployeeController extends Controller
             'email' => 'required|unique:users|email:rfc,dns',
             'department' => 'required',
             'class' => 'required',
-            'image' => 'nullable|max:2048|image|mimes:jpg',
+            'image' => 'nullable|max:2048|image|',
         ]);
 
         $user = new User;

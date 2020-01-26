@@ -84,7 +84,24 @@
                         <div class="pb-5 pt-3 text-center">
                             <form action="/denial" method="post" class="d-inline">
                                 @csrf
-                                <button type="submit" class="btn btn-danger col-1 py-2 m-3">差 戻</button>
+                                <button type="button" class="text-light btn btn-danger col-1 py-2 m-3" data-toggle="modal" data-target="#denial_modal" >差 戻</button>
+                                <div class="modal" id="denial_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalCenterTitle">確認画面</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body my-3">目標を差し戻ししますか？</div>
+                                            <div class="modal-footer mx-auto">
+                                                <button type="button" class="mx-4 btn btn-secondary" data-dismiss="modal">閉じる</button>
+                                                <button type="submit" class="mx-4 btn btn-danger">差　戻</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </form>
                             <form action="/approval" method="post" class="d-inline">
                                 @csrf
@@ -93,8 +110,24 @@
                                 <input type="hidden" name="target_name" value="{{$evaluation->user->name}}">
                                 <input type="hidden" name="class" value="{{$user->class}}">
                                 <input type="hidden" name="year" value="{{$evaluation->year}}">
-                                <button type="submit" class="btn btn-primary col-1 py-2 m-3">承 認</button>
-                            </form>
+                                <button type="button" class="text-light btn btn-primary col-1 py-2 m-3" data-toggle="modal" data-target="#approval_modal" >承 認</button>
+                                <div class="modal" id="approval_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalCenterTitle">確認画面</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body my-3">目標を承認しますか？</div>
+                                            <div class="modal-footer mx-auto">
+                                                <button type="button" class="mx-4 btn btn-secondary" data-dismiss="modal">閉じる</button>
+                                                <button type="submit" class="mx-4 btn btn-primary">承　認</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                            </form>
                         </div>
                     @else
                         <div class="pb-5 pt-3 text-center">
