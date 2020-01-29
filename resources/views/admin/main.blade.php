@@ -6,7 +6,6 @@
     <div class="form-group d-flex align-items-center my-3">
         <form action="/main" method="post">
             @csrf
-
             <select class="form-control" style="width: 200px" name="year" onChange="this.form.submit()">
                 <option value="" disabled　selected>期間を選択してください</option>
                 @foreach($categories as $category)

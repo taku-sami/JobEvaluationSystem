@@ -1,4 +1,4 @@
-@extends('layouts.employee')
+@extends('layouts.boss')
 @php
     @endphp
 @section('content')

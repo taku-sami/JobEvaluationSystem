@@ -9,7 +9,6 @@
 
     <title>{{ config('Web人事考課システム', 'Web人事考課システム') }}</title>
 
-    <!-- Scripts -->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,10 +20,55 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" >
     <link href="{{ asset('css/flat-ui.css') }}" rel="stylesheet" >
 
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
     <script src="{{ asset('js/chart-js-config.js')}}"></script>
 </head>
 <body>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">ヘルプ</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-left">
+                <p class="text-primary">TOP</p>
+                <img src="{{asset('images/boss/boss_top.png')}}" alt=""><br>
+                <hr>
+                <p>上長画面のTOPページです。</p>
+                <p>同じ所属内のスタッフの目標・評価の進捗確認ができます。</p>
+                <p>スタッフの目標承認、評価ページや社員検索へはこのページから行います。</p>
+                <hr>
+                <p class="text-primary">目標承認画面</p>
+                <img src="{{asset('images/boss/boss_aproval.png')}}" alt="" ><br>
+                <hr>
+                <p>スタッフが登録した目標に対して「差し戻し」「承認」を行います。</p>
+                <p>差し戻し後はスタッフが目標を再登録する必要があります。</p>
+                <hr>
+                <p class="text-primary">評価登録画面</p>
+                <img src="{{asset('images/boss/boss_eva.png')}}" alt="" ><br>
+                <hr>
+                <p>スタッフの評価を行います。</p>
+                <p>評価は考課科目ごとに「SS(高)〜C(低)」を選択するとともに、評価コメントを入力します。</p>
+                <p>最終評価は１次評価者と２次評価者の評価結果の平均から算出されます。</p>
+                <hr>
+                <p class="text-primary">社員検索画面</p>
+                <img src="{{asset('images/boss/boss_search.png')}}" alt="" ><br>
+                <hr>
+                <p>TOPページの検索窓から社員を検索できます。</p>
+                <p>検索文字に対し、社員の氏名とメールアドレスを対象に検索します。</p>
+                <p>絞り出した社員一覧から、社員の個別ページにジャンプすることができます。</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+            </div>
+
+        </div>
+    </div>
+</div>
 <div class="full-page">
     <div id="app">
         <nav class="navbar navbar-expand-md mb-3">
@@ -44,10 +88,13 @@
                             <ul class="navbar-nav ml-auto">
                                 <!-- Authentication Links -->
                                 <li class="nav-item">
-                                    <a class="nav-link">
+                                    <a class="nav-link text-secondary">
                                         こんにちは {{ Auth::user()->name }} さん <span class="caret"></span>
                                     </a>
                                 </li>
+                                <button type="button" class="text-secondary" data-toggle="modal" data-target=".bd-example-modal-lg">
+                                    <i class="far fa-question-circle fa-lg"></i>
+                                </button>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

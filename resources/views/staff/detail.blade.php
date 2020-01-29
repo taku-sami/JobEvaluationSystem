@@ -1,4 +1,4 @@
-@extends('layouts.employee')
+@extends('layouts.staff')
 @php
     $user = Auth::user();
 @endphp

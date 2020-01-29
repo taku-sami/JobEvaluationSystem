@@ -1,11 +1,11 @@
-@extends('layouts.employee')
+@extends('layouts.staff')
 @php
     $user = Auth::user();
 @endphp
 @section('content')
 
     <div class="my-2">
-        <div class="h5">社員専用画面</div>
+        <div class="h5">人事考課一覧</div>
     </div>
     <hr>
     <div class="row ml-2">

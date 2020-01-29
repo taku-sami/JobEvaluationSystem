@@ -2,56 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e788081-e540-4514-a63a-9ad147eda4db" name="Default Changelist" comment="this is sample commit">
-      <change afterPath="$PROJECT_DIR$/public/css/spur.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CSV_sample1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/admin_page.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/admin_sample.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/boss_page.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/category_sample1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/category_sample2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/class_sample1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/class_sample2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/department_sample1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/department_sample2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/employee_sample1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/employee_sample2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/employee_sample3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/employee_sample4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/login_page.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/staff_page.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/chart-js-config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/spur.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/main3.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/admin3.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/boss/boss_aproval.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/boss/boss_eva.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/boss/boss_search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/boss/boss_top.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/login/adminpage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/login/bosspage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/login/staffpage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/staff/staff_eva.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/staff/staff_goal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/staff/staff_top.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/boss.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EvaluationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EvaluationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/add_category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/add_category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/categories.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/class/classes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/class/classes.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/csv/import.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/csv/import.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/department/department.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/department/department.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/employee/add_employee.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/employee/add_employee.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/employee/employees.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/employee/employees.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/CSV_sample1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/admin/CSV_sample1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/admin_page.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/admin/admin_page.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/admin_sample.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/admin/admin_sample.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/boss_page.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/admin/boss_page.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/category_sample1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/admin/category_sample1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/category_sample2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/admin/category_sample2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/class_sample1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/admin/class_sample1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/class_sample2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/admin/class_sample2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/department_sample1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/admin/department_sample1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/department_sample2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/admin/department_sample2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/employee_sample1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/admin/employee_sample1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/employee_sample2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/admin/employee_sample2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/employee_sample3.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/admin/employee_sample3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/employee_sample4.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/admin/employee_sample4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/login_page.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/login/login_page.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/staff_page.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/admin/staff_page.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/user.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/user.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register_check.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register_check.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/boss/boss1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/boss/boss1.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/boss/boss2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/boss/boss2.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/boss/check_boss1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/boss/check_boss1.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/boss/check_boss2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/boss/check_boss2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/boss/eva_boss1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/boss/eva_boss1.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/boss/eva_boss2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/boss/eva_boss2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/boss/result.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/boss/result.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/boss/staff.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/boss/staff.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/employee.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/employee.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/employee.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/staff.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/staff/check.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/staff/check.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/staff/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/staff/detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/staff/evaluation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/staff/evaluation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/staff/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/staff/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/staff/registered.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/staff/registered.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/staff/staff.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/staff/staff.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,18 +275,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images/login" />
+      <recent name="$PROJECT_DIR$/public/images/boss" />
+      <recent name="$PROJECT_DIR$/public/images/staff" />
+      <recent name="$PROJECT_DIR$/public/images/admin" />
       <recent name="$PROJECT_DIR$/public/images" />
-      <recent name="$PROJECT_DIR$/public/js" />
-      <recent name="$PROJECT_DIR$/public/css" />
-      <recent name="$PROJECT_DIR$/resources/js/components" />
-      <recent name="$PROJECT_DIR$/resources/assets/js" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/resources/views/layouts" />
       <recent name="$PROJECT_DIR$/resources/js" />
       <recent name="$PROJECT_DIR$/public/css" />
       <recent name="$PROJECT_DIR$/resources/views/admin" />
-      <recent name="$PROJECT_DIR$/resources/views/layouts" />
     </key>
   </component>
   <component name="RunManager">
@@ -348,7 +346,10 @@
       <workItem from="1579665757470" duration="1126000" />
       <workItem from="1579668460844" duration="1396000" />
       <workItem from="1579781993621" duration="33755000" />
-      <workItem from="1579880947056" duration="21882000" />
+      <workItem from="1579880947056" duration="22080000" />
+      <workItem from="1580013011791" duration="1158000" />
+      <workItem from="1580017502710" duration="2336000" />
+      <workItem from="1580019914277" duration="2416000" />
     </task>
     <task id="LOCAL-00001" summary="this is sample commit">
       <created>1579153271356</created>
@@ -417,10 +418,11 @@
     </state>
     <state x="525" y="288" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1578439233406" />
     <state x="2140" y="361" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.877/1440.23.1920.1057@1440.23.1920.1057" timestamp="1577886742844" />
-    <state x="407" y="187" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578710871618">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="1983" y="243" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580017443440">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="407" y="187" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1440.900@0.0.1440.900" timestamp="1578710871618" />
+    <state x="1983" y="243" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1440.877/1440.23.1920.1057@1440.23.1920.1057" timestamp="1580017443440" />
     <state x="481" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1578625543525">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -452,23 +454,24 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="448" y="141" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1440.900@0.0.1440.900" timestamp="1578904416406" />
-    <state x="0" y="23" width="1440" height="877" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1579849909761">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="1440" y="50" width="1920" height="1030" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580021293365">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="1706" y="70" width="1654" height="840" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1579614680592" />
     <state x="199" y="58" width="1241" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900/1440.23.1920.1057@0.0.1440.900" timestamp="1579616289842" />
     <state x="0" y="23" width="1440" height="877" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1579849909761" />
+    <state x="1440" y="50" width="1920" height="1030" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.877/1440.23.1920.1057@1440.23.1920.1057" timestamp="1580021293365" />
     <state x="-79" y="615" width="1440" height="877" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.877@0.23.1440.877" timestamp="1579849650262" />
-    <state x="766" y="319" key="com.intellij.ide.util.TipDialog" timestamp="1579880947115">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="2555" y="383" key="com.intellij.ide.util.TipDialog" timestamp="1580019915048">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="2555" y="383" key="com.intellij.ide.util.TipDialog/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1578568097368" />
     <state x="766" y="319" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1579880947115" />
     <state x="766" y="322" key="com.intellij.ide.util.TipDialog/0.23.1440.877/1440.0.1920.1080@1440.0.1920.1080" timestamp="1578919022434" />
     <state x="766" y="322" key="com.intellij.ide.util.TipDialog/0.23.1440.877/1440.23.1920.1057@0.23.1440.877" timestamp="1579483883389" />
     <state x="2555" y="383" key="com.intellij.ide.util.TipDialog/0.23.1440.877/1440.23.1920.1057@1440.0.1920.1080" timestamp="1578444698459" />
-    <state x="2555" y="383" key="com.intellij.ide.util.TipDialog/0.23.1440.877/1440.23.1920.1057@1440.23.1920.1057" timestamp="1578810415569" />
-    <state x="766" y="322" key="com.intellij.ide.util.TipDialog/0.23.1440.877@0.23.1440.877" timestamp="1579781994769" />
+    <state x="2555" y="383" key="com.intellij.ide.util.TipDialog/0.23.1440.877/1440.23.1920.1057@1440.23.1920.1057" timestamp="1580019915047" />
+    <state x="766" y="322" key="com.intellij.ide.util.TipDialog/0.23.1440.877@0.23.1440.877" timestamp="1580013011356" />
     <state x="495" y="384" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578799527238">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

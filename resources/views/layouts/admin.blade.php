@@ -79,7 +79,7 @@
                 <p>実装方法：Vue.js</p>
                 <hr>
                 <p class="text-primary">CSVマスタ</p>
-                <img src="{{asset('images/csv_sample1.png')}}" alt=""><br>
+                <img src="{{asset('images/csv_sample1.png')}}" alt="">
                 <hr>
                 <p>CSVから特定のDBを操作できます。</p>
                 <p>考課科目を一括登録、評価結果の一覧出力をCSVで行えます。</p>
@@ -113,18 +113,18 @@
             </a>
 
             <div class="tools">
-                <a class="nav-link">
+                <a class="nav-link text-secondary">
                     こんにちは {{ Auth::user()->name }} さん <span class="caret"></span>
                 </a>
-                <a class="nav-link" href="{{ route('logout') }}"
+                <button type="button" class="text-secondary" data-toggle="modal" data-target=".bd-example-modal-lg">
+                    <i class="far fa-question-circle fa-lg"></i>
+                </button>
+                <a class="nav-link text-primary" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">{{ __('ログアウト') }}</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
-                <button type="button" class="text-secondary" data-toggle="modal" data-target=".bd-example-modal-lg">
-                    <i class="far fa-question-circle fa-2x"></i>
-                </button>
                 <!-- Modal -->
 
 

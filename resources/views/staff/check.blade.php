@@ -1,4 +1,4 @@
-@extends('layouts.employee')
+@extends('layouts.staff')
 @php
     $user = Auth::user();
 
@@ -76,11 +76,11 @@
                             <table >
                                 <tbody >
                                 <tr class="row100 body my-2" >
-                                    <th class="cell100 employee_column3" style="background-color: #a1a7ad; font-size: 15px">考課名</th>
-                                    <th class="cell100 employee_column2" style="background-color: #a1a7ad; font-size: 15px">評価基準</th>
-                                    <th class="cell100 employee_column4 text-center" style="background-color: #a1a7ad; font-size: 15px">評価者</th>
-                                    <th class="cell100 employee_column4 text-center" style="background-color: #a1a7ad; font-size: 15px">ランク</th>
-                                    <th class="cell100 employee_column4 text-center" style="background-color: #a1a7ad; font-size: 15px">コメント</th>
+                                    <th class="cell100 employee_column3" style="background-color: #a1a7ad; font-size: 15px">考 課 名</th>
+                                    <th class="cell100 employee_column2" style="background-color: #a1a7ad; font-size: 15px">評 価 基 準</th>
+                                    <th class="cell100 employee_column4 text-center" style="background-color: #a1a7ad; font-size: 15px">評 価 者</th>
+                                    <th class="cell100 employee_column4 text-center" style="background-color: #a1a7ad; font-size: 15px">ラ ン ク</th>
+                                    <th class="cell100 employee_column4 text-center" style="background-color: #a1a7ad; font-size: 15px">コ メ ン ト</th>
                                 </tr>
                             </table>
                         </div>
