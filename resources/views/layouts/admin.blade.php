@@ -37,31 +37,31 @@
             </div>
             <div class="modal-body text-left">
                 <p class="text-primary">TOP</p>
-                <img src="{{asset('images/admin_sample.png')}}" alt=""><br>
+                <img src="https://drive.google.com/uc?export=view&id==1SYK6NLdASBL8t2qUNRpfm-envRCmcT8V" alt=""><br>
                 <hr>
                 <p>管理者画面のTOPページです。</p>
                 <p>各所属の承認者のタスク進捗確認やシステムログを確認できます。</p>
                 <hr>
                 <p class="text-primary">所属マスタ</p>
-                <img src="{{asset('images/department_sample1.png')}}" alt="" style="width: 45%">
-                <img src="{{asset('images/department_sample2.png')}}" alt="" style="width: 45%"><br>
+                <img src="https://drive.google.com/uc?export=view&id=1HkgLquu6LAulGGWt8L54p0R-Zi6iGp-5" alt="" style="width: 45%">
+                <img src="https://drive.google.com/uc?export=view&id=1oSpybbLbKL_kmjxWq3eZ8z4KwfjOrCFS" alt="" style="width: 45%"><br>
                 <hr>
                 <p>所属の追加、編集、削除ができます。</p>
                 <p>初期状態では「開発部」「人事部」「営業部」の３つです。</p>
                 <hr>
                 <p class="text-primary">役職マスタ</p>
-                <img src="{{asset('images/class_sample1.png')}}" alt="" style="width: 45%">
-                <img src="{{asset('images/class_sample2.png')}}" alt="" style="width: 45%"><br>
+                <img src="https://drive.google.com/uc?export=view&id=1Gq_y60XNfz845iB9pA63OcEYACxrm7YS" alt="" style="width: 45%">
+                <img src="https://drive.google.com/uc?export=view&id=1mj8e8p-Uq1v9J2iEiU7KZ2i3KCCdoysN" alt="" style="width: 45%"><br>
                 <hr>
                 <p>役職の追加、編集、削除ができます。</p>
                 <p>初期状態では「スタッフ（被評価者）」「課長（１次承認者）」「部長（２次承認者）」の３つです。</p>
                 <hr>
                 <p class="text-primary">社員マスタ</p>
-                <img src="{{asset('images/employee_sample1.png')}}" alt="" style="width: 45%">
-                <img src="{{asset('images/employee_sample2.png')}}" alt="" style="width: 45%">
+                <img src="https://drive.google.com/uc?export=view&id=1A_pa3x0DlMKQDpdg6sb09UNgc20VWgMm" alt="" style="width: 45%">
+                <img src="https://drive.google.com/uc?export=view&id=1SAcaNnBvEWMzPUt6Vo7vW5hC5MYbxUrr" alt="" style="width: 45%">
                 <hr>
-                <img src="{{asset('images/employee_sample3.png')}}" alt="" style="width: 45%">
-                <img src="{{asset('images/employee_sample4.png')}}" alt="" style="width: 45%">
+                <img src="https://drive.google.com/uc?export=view&id=1bEtAhzK2xndML4-zIHZECmHWIbhKQDcL" alt="" style="width: 45%">
+                <img src="https://drive.google.com/uc?export=view&id=17NME0SSJzDR4HrhVOUI8MswUkM64Y6QV" alt="" style="width: 45%">
                 <hr>
                 <p>社員の追加、編集、削除ができます。</p>
                 <p>社員を追加した場合は、登録したメールアドレス宛に認証メールが送信されます。（トークン認証）</p>
@@ -71,15 +71,15 @@
                 <p>実装方法：Mailgun</p>
                 <hr>
                 <p class="text-primary">考課マスタ</p>
-                <img src="{{asset('images/category_sample1.png')}}" alt="" style="width: 45%">
-                <img src="{{asset('images/category_sample2.png')}}" alt="" style="width: 45%"><br>
+                <img src="https://drive.google.com/uc?export=view&id=1_JZGm6LujlTe5ut-b40XDsUuVHhsZL0d" alt="" style="width: 45%">
+                <img src="https://drive.google.com/uc?export=view&id=11WAqeh_b4pj_RYXHTOI2CQnAFom-jTiS" alt="" style="width: 45%"><br>
                 <hr>
                 <p>考課の追加、編集、削除をができます。</p>
                 <p>考課数は動的に登録可能です。</p>
                 <p>実装方法：Vue.js</p>
                 <hr>
                 <p class="text-primary">CSVマスタ</p>
-                <img src="{{asset('images/csv_sample1.png')}}" alt="">
+                <img src="https://drive.google.com/uc?export=view&id=11pmuqPkXVKVxyHl2AUsUiU8DCriP1PQz" alt="">
                 <hr>
                 <p>CSVから特定のDBを操作できます。</p>
                 <p>考課科目を一括登録、評価結果の一覧出力をCSVで行えます。</p>

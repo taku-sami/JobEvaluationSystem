@@ -36,20 +36,20 @@
             </div>
             <div class="modal-body text-left">
                 <p class="text-primary">TOP</p>
-                <img src="{{asset('images/staff/staff_top.png')}}" alt=""><br>
+                <img src="https://drive.google.com/uc?export=view&id=1PrSC0QBeWzhmPXnnFw0eKniSdrskvLMB" alt=""><br>
                 <hr>
                 <p>スタッフ画面のTOPページです。</p>
                 <p>自分の目標・評価の進捗確認や最終評価結果の確認ができます。</p>
                 <hr>
                 <p class="text-primary">目標登録画面</p>
-                <img src="{{asset('images/staff/staff_goal.png')}}" alt="" >
+                <img src="https://drive.google.com/uc?export=view&id=1lzkerB-glGmUepOiC1oUL4uzjEAMxdyk" alt="" >
                 <br>
                 <hr>
                 <p>目標の登録ができます。目標は考課ごとに登録します。</p>
                 <p>上長は目標の確認を行い、差し戻しされれば目標の再登録が必要となります。</p>
                 <hr>
                 <p class="text-primary">評価登録画面</p>
-                <img src="{{asset('images/staff/staff_eva.png')}}" alt="" >
+                <img src="https://drive.google.com/uc?export=view&id=1O4bgtxogyxC86WwHPmusVWAp1z69HtLD" alt="" >
                 <br>
                 <hr>
                 <p>目標に対する評価を登録できます。</p>

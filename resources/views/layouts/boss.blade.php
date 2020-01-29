@@ -36,27 +36,27 @@
             </div>
             <div class="modal-body text-left">
                 <p class="text-primary">TOP</p>
-                <img src="{{asset('images/boss/boss_top.png')}}" alt=""><br>
+                <img src="https://drive.google.com/uc?export=view&id=1ewvv0No-iBemA5v8bqmD4IV-sC38Qatj" alt=""><br>
                 <hr>
                 <p>上長画面のTOPページです。</p>
                 <p>同じ所属内のスタッフの目標・評価の進捗確認ができます。</p>
                 <p>スタッフの目標承認、評価ページや社員検索へはこのページから行います。</p>
                 <hr>
                 <p class="text-primary">目標承認画面</p>
-                <img src="{{asset('images/boss/boss_aproval.png')}}" alt="" ><br>
+                <img src="https://drive.google.com/uc?export=view&id=1n6qZLWC5EpiRVSA1_P2MRGsNtkbJaYf1" alt="" ><br>
                 <hr>
                 <p>スタッフが登録した目標に対して「差し戻し」「承認」を行います。</p>
                 <p>差し戻し後はスタッフが目標を再登録する必要があります。</p>
                 <hr>
                 <p class="text-primary">評価登録画面</p>
-                <img src="{{asset('images/boss/boss_eva.png')}}" alt="" ><br>
+                <img src="https://drive.google.com/uc?export=view&id=1mMnt4dlsl6-KKXalzwPmWXsYKHajsWP9" alt="" ><br>
                 <hr>
                 <p>スタッフの評価を行います。</p>
                 <p>評価は考課科目ごとに「SS(高)〜C(低)」を選択するとともに、評価コメントを入力します。</p>
                 <p>最終評価は１次評価者と２次評価者の評価結果の平均から算出されます。</p>
                 <hr>
                 <p class="text-primary">社員検索画面</p>
-                <img src="{{asset('images/boss/boss_search.png')}}" alt="" ><br>
+                <img src="https://drive.google.com/uc?export=view&id=12thfuex4oBEqce8An8Lx6ZwEIX7x-p_6" alt="" ><br>
                 <hr>
                 <p>TOPページの検索窓から社員を検索できます。</p>
                 <p>検索文字に対し、社員の氏名とメールアドレスを対象に検索します。</p>

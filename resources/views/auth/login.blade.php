@@ -24,7 +24,7 @@
                         <p>「ログイン画面」「管理者画面」「被評価者画面」「承認者画面」の３つの画面で構成されています。</p>
                         <hr>
                         <p class="text-primary">ログイン画面</p>
-                        <img src="{{asset('images/login/login_page.png')}}" alt=""><br>
+                        <img src="https://drive.google.com/uc?export=view&id=1Obq2nA7a6UxaP50JV_0xp8UXXoU_9vmH" alt=""><br>
                         <p>ログインページです。認証はメールアドレス、パスワードで行います。</p>
                         <p>パスワードの再設定もこのページで行うことができます。</p>
                         <p>初回ログインはデモユーザーでご利用ください。デモユーザーのメールアドレス、ロールは以下です。</p>
@@ -81,17 +81,17 @@
                         <p>これらでログインする場合はアドレスの「dev」の部分をそれぞれ「sell」もしくは「hr」としてください。</p>
                         <hr>
                         <p class="text-primary">管理者画面</p><br>
-                        <img src="{{asset('images/login/adminpage.png')}}" alt="">
+                        <img src="https://drive.google.com/uc?export=view&id=1qjp1tV-Bp6ZjSoM7z5Clnik8v0USVt_D" alt="">
                         <p>ロール「システム管理者」専用画面です。</p>
                         <p>考課登録や社員登録などのDB操作・確認を行います。</p>
                         <hr>
                         <p class="text-primary">被評価者画面</p>
-                        <img src="{{asset('images/login/staffpage.png')}}" alt=""><br>
+                        <img src="https://drive.google.com/uc?export=view&id=1tk6JgzZqk94FLX6183PKnyWDv9G-NpwB" alt=""><br>
                         <p>ロール「スタッフ」専用画面です。</p>
                         <p>自身の目標登録、評価登録を行います。</p>
                         <hr>
                         <p class="text-primary">承認者画面</p><br>
-                        <img src="{{asset('images/login/bosspage.png')}}" alt="">
+                        <img src="https://drive.google.com/uc?export=view&id=1-0KoTFo4gG8SS_EkShkHg61Pqb2TFtjp" alt="">
                         <p>ロール「課長 / 部長」専用画面です。</p>
                         <p>同じ部署に所属するスタッフの目標承認、評価を行います。</p>
                     </div>
