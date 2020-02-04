@@ -8,10 +8,10 @@ jobs:
       - checkout
       - run: sudo apt install -y libpng-dev
 
-#      - run: |
-#          set +o pipefail
-#          composer check-platform-reqs --no-ansi | grep missing | awk '{print $1}' | sed 's|^ext-||' | \ xargs -I@ sh -c 'sudo -E docker-php-ext-install @'
-#          set -o pipefail run: sudo apt update
+      - run: set +o pipefail
+      - run: composer check-platform-reqs --no-ansi | grep missing | awk '{print $1}' | sed 's|^ext-||' | \ xargs -I@ sh -c 'sudo -E docker-php-ext-install @'
+      - run: set -o pipefail
+      - run: sudo apt update
 
       - run: sudo docker-php-ext-install zip
 
