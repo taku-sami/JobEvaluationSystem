@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e788081-e540-4514-a63a-9ad147eda4db" name="Default Changelist" comment="this is sample commit">
-      <change afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+    <list default="true" id="4e788081-e540-4514-a63a-9ad147eda4db" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -310,7 +310,7 @@
       <workItem from="1580454677956" duration="641000" />
       <workItem from="1580713608217" duration="595000" />
       <workItem from="1580724694868" duration="23000" />
-      <workItem from="1580802816520" duration="728000" />
+      <workItem from="1580802816520" duration="1083000" />
     </task>
     <task id="LOCAL-00001" summary="this is sample commit">
       <created>1579153271356</created>
@@ -319,7 +319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579153271356</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add config.yml file">
+      <created>1580805879113</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1580805879113</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,7 +374,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="this is sample commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="this is sample commit" />
+    <MESSAGE value="add config.yml file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add config.yml file" />
   </component>
   <component name="WindowStateProjectService">
     <state x="319" y="114" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578714127113">
@@ -395,9 +403,10 @@
     <state x="1667" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1578447524944" />
     <state x="170" y="246" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1579323875022" />
     <state x="1666" y="312" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.877/1440.23.1920.1057@1440.23.1920.1057" timestamp="1577983998557" />
-    <state x="290" y="52" key="CommitChangelistDialog2" timestamp="1579189190804">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="290" y="74" key="CommitChangelistDialog2" timestamp="1580805878472">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
+    <state x="290" y="74" key="CommitChangelistDialog2/-960.266.960.681/0.23.1440.877@0.23.1440.877" timestamp="1580805878472" />
     <state x="290" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579189190804" />
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1579153226466">
       <screen x="0" y="0" width="1440" height="900" />
@@ -407,9 +416,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="531" y="379" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1579059932445" />
-    <state x="319" y="189" key="Vcs.Push.Dialog.v2" timestamp="1579617550599">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="319" y="207" key="Vcs.Push.Dialog.v2" timestamp="1580805945428">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
+    <state x="319" y="207" key="Vcs.Push.Dialog.v2/-960.266.960.681/0.23.1440.877@0.23.1440.877" timestamp="1580805945428" />
     <state x="319" y="189" key="Vcs.Push.Dialog.v2/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1579617550599" />
     <state x="448" y="141" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1578904416406">
       <screen x="0" y="0" width="1440" height="900" />
