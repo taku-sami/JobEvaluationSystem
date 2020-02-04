@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
 #      - run: sudo apt install -y libpng-dev
-      - run: sudo apt install php-gd.x86-64
+#      - run: sudo apt install php-gd.x86-64
 
 #      - run:
 #        name: Install missing PHP Extensions
