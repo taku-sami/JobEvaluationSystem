@@ -6,7 +6,7 @@ jobs:
 
     steps:
       - checkout
-      - run: apt-get update && apt-get install -y libzip-dev libpng-dev && docker-php-ext-install zip gd
+      - run: sudo apt-get update && apt-get install -y libzip-dev libpng-dev && docker-php-ext-install zip gd
 #      - run: sudo apt install -y libpng-dev
 #      - run: sudo apt install php-gd.x86-64
 
