@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e788081-e540-4514-a63a-9ad147eda4db" name="Default Changelist" comment="this is sample commit">
+      <change afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/boss.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/boss.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/staff.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/staff.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +218,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -231,19 +228,19 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/resources/views/layouts" />
+      <recent name="$PROJECT_DIR$/resources/js" />
+      <recent name="$PROJECT_DIR$/public/css" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/images/login" />
       <recent name="$PROJECT_DIR$/public/images/boss" />
       <recent name="$PROJECT_DIR$/public/images/staff" />
       <recent name="$PROJECT_DIR$/public/images/admin" />
       <recent name="$PROJECT_DIR$/public/images" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/images" />
-      <recent name="$PROJECT_DIR$/resources/views/layouts" />
-      <recent name="$PROJECT_DIR$/resources/js" />
-      <recent name="$PROJECT_DIR$/public/css" />
-      <recent name="$PROJECT_DIR$/resources/views/admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -307,7 +304,13 @@
       <workItem from="1580013011791" duration="1158000" />
       <workItem from="1580017502710" duration="2336000" />
       <workItem from="1580019914277" duration="2416000" />
-      <workItem from="1580280325089" duration="2003000" />
+      <workItem from="1580280325089" duration="2581000" />
+      <workItem from="1580395195766" duration="204000" />
+      <workItem from="1580439895928" duration="334000" />
+      <workItem from="1580454677956" duration="641000" />
+      <workItem from="1580713608217" duration="595000" />
+      <workItem from="1580724694868" duration="23000" />
+      <workItem from="1580802816520" duration="728000" />
     </task>
     <task id="LOCAL-00001" summary="this is sample commit">
       <created>1579153271356</created>
@@ -420,17 +423,18 @@
     <state x="0" y="23" width="1440" height="877" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1579849909761" />
     <state x="1440" y="50" width="1920" height="1030" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.877/1440.23.1920.1057@1440.23.1920.1057" timestamp="1580021293365" />
     <state x="-79" y="615" width="1440" height="877" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.877@0.23.1440.877" timestamp="1579849650262" />
-    <state x="766" y="322" key="com.intellij.ide.util.TipDialog" timestamp="1580280324956">
+    <state x="766" y="322" key="com.intellij.ide.util.TipDialog" timestamp="1580724694586">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="766" y="322" key="com.intellij.ide.util.TipDialog/-960.23.960.681/0.23.1440.877@0.23.1440.877" timestamp="1580280324956" />
+    <state x="766" y="322" key="com.intellij.ide.util.TipDialog/-960.266.960.681/0.23.1440.877@0.23.1440.877" timestamp="1580724694586" />
     <state x="2555" y="383" key="com.intellij.ide.util.TipDialog/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1578568097368" />
-    <state x="766" y="319" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1579880947115" />
+    <state x="766" y="319" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1580454678397" />
     <state x="766" y="322" key="com.intellij.ide.util.TipDialog/0.23.1440.877/1440.0.1920.1080@1440.0.1920.1080" timestamp="1578919022434" />
     <state x="766" y="322" key="com.intellij.ide.util.TipDialog/0.23.1440.877/1440.23.1920.1057@0.23.1440.877" timestamp="1579483883389" />
     <state x="2555" y="383" key="com.intellij.ide.util.TipDialog/0.23.1440.877/1440.23.1920.1057@1440.0.1920.1080" timestamp="1578444698459" />
     <state x="2555" y="383" key="com.intellij.ide.util.TipDialog/0.23.1440.877/1440.23.1920.1057@1440.23.1920.1057" timestamp="1580019915047" />
-    <state x="766" y="322" key="com.intellij.ide.util.TipDialog/0.23.1440.877@0.23.1440.877" timestamp="1580013011356" />
+    <state x="766" y="322" key="com.intellij.ide.util.TipDialog/0.23.1440.877@0.23.1440.877" timestamp="1580713608693" />
     <state x="495" y="384" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578799527238">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
