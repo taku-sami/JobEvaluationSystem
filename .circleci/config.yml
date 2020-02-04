@@ -2,12 +2,21 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/php:7.2-node-browsers
+      - image: circleci/php:7.3-node-browsers
 
     steps:
       - checkout
-      - run: sudo apt update
-      - run: sudo apt-get install php-zip
+      - run:
+        name: Install GD required dependencies
+        command: sudo apt install -y libpng-dev
+      - run:
+        name: Install missing PHP Extensions
+        command: |
+          set +o pipefail
+          composer check-platform-reqs --no-ansi | grep missing | awk '{print $1}' | sed 's|^ext-||' | \
+            xargs -I@ sh -c 'sudo -E docker-php-ext-install @'
+             set -o pipefail run: sudo apt update
+
       - run: sudo docker-php-ext-install zip
 
       - run: sudo pecl channel-update pecl.php.net
