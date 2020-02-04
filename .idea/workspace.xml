@@ -310,7 +310,7 @@
       <workItem from="1580454677956" duration="641000" />
       <workItem from="1580713608217" duration="595000" />
       <workItem from="1580724694868" duration="23000" />
-      <workItem from="1580802816520" duration="3667000" />
+      <workItem from="1580802816520" duration="4052000" />
     </task>
     <task id="LOCAL-00001" summary="this is sample commit">
       <created>1579153271356</created>
@@ -403,7 +403,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580810016242</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix config.yml file">
+      <created>1580810089567</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1580810089567</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,10 +488,10 @@
     <state x="1667" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1578447524944" />
     <state x="170" y="246" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1579323875022" />
     <state x="1666" y="312" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.877/1440.23.1920.1057@1440.23.1920.1057" timestamp="1577983998557" />
-    <state x="290" y="74" key="CommitChangelistDialog2" timestamp="1580810015709">
+    <state x="290" y="74" key="CommitChangelistDialog2" timestamp="1580810089117">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="290" y="74" key="CommitChangelistDialog2/-960.266.960.681/0.23.1440.877@0.23.1440.877" timestamp="1580810015709" />
+    <state x="290" y="74" key="CommitChangelistDialog2/-960.266.960.681/0.23.1440.877@0.23.1440.877" timestamp="1580810089117" />
     <state x="290" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579189190804" />
     <state x="290" y="74" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1580808585069" />
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1579153226466">
@@ -495,10 +502,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="531" y="379" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1579059932445" />
-    <state x="319" y="207" key="Vcs.Push.Dialog.v2" timestamp="1580810023938">
+    <state x="319" y="207" key="Vcs.Push.Dialog.v2" timestamp="1580810095168">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="319" y="207" key="Vcs.Push.Dialog.v2/-960.266.960.681/0.23.1440.877@0.23.1440.877" timestamp="1580810023938" />
+    <state x="319" y="207" key="Vcs.Push.Dialog.v2/-960.266.960.681/0.23.1440.877@0.23.1440.877" timestamp="1580810095168" />
     <state x="319" y="189" key="Vcs.Push.Dialog.v2/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1579617550599" />
     <state x="319" y="207" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1580808595728" />
     <state x="448" y="141" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1578904416406">
