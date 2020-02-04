@@ -18,7 +18,7 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "composer.json" }}
             - v1-dependencies-
-      - run: sudo apt install php-zip
+      - run: sudo apt-get install php-zip
       - run: composer install -n --prefer-dist
 
       - save_cache:
