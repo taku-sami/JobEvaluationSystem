@@ -6,16 +6,12 @@ jobs:
 
     steps:
       - checkout
-      - run:
-        name: Install GD required dependencies
-        command: sudo apt install -y libpng-dev
-      - run:
-        name: Install missing PHP Extensions
-        command: |
+      - run: sudo apt install -y libpng-dev
+
+      - run: |
           set +o pipefail
-          composer check-platform-reqs --no-ansi | grep missing | awk '{print $1}' | sed 's|^ext-||' | \
-            xargs -I@ sh -c 'sudo -E docker-php-ext-install @'
-             set -o pipefail run: sudo apt update
+          composer check-platform-reqs --no-ansi | grep missing | awk '{print $1}' | sed 's|^ext-||' | \ xargs -I@ sh -c 'sudo -E docker-php-ext-install @'
+          set -o pipefail run: sudo apt update
 
       - run: sudo docker-php-ext-install zip
 
