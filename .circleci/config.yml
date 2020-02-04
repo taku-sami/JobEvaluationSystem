@@ -2,12 +2,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/php:7.3-node-browsers
+      - image: circleci/php:7.2-node-browsers
 
     steps:
       - checkout
-      - run: sudo apt-get install php-zip
       - run: sudo apt update
+      - run: sudo apt-get install php-zip
       - run: sudo docker-php-ext-install zip
 
       - run: sudo pecl channel-update pecl.php.net
