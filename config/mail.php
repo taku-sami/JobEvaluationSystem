@@ -15,10 +15,6 @@ return [
     |            "postmark", "log", "array"
     |
     */
-    'mailgun' => [
-        'domain' => 'sandbox2e50082624a0430a99778b6e5df5a844.mailgun.org',
-        'secret' => '26589ab837b609109da406fb08dd9798-713d4f73-1694b67b',
-    ],
 
     'postmark' => [
         'token' => 'your-postmark-token',
