@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e788081-e540-4514-a63a-9ad147eda4db" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -329,7 +330,7 @@
       <workItem from="1581040206375" duration="4807000" />
       <workItem from="1581058900659" duration="7850000" />
       <workItem from="1581080558441" duration="3802000" />
-      <workItem from="1581087051767" duration="8806000" />
+      <workItem from="1581087051767" duration="8995000" />
     </task>
     <task id="LOCAL-00001" summary="this is sample commit">
       <created>1579153271356</created>
@@ -506,7 +507,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581129294889</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="delete testcode">
+      <created>1581129497921</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1581129497921</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,11 +614,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="356" y="105" key="#phpunit.xml/-960.243.960.704/0.0.1440.900@0.0.1440.900" timestamp="1580870037635" />
-    <state x="290" y="52" key="CommitChangelistDialog2" timestamp="1581129294535">
+    <state x="290" y="52" key="CommitChangelistDialog2" timestamp="1581129497561">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="290" y="74" key="CommitChangelistDialog2/-960.266.960.681/0.23.1440.877@0.23.1440.877" timestamp="1580810089117" />
-    <state x="290" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1581129294535" />
+    <state x="290" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1581129497561" />
     <state x="290" y="74" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1580812749855" />
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1579153226466">
       <screen x="0" y="0" width="1440" height="900" />
@@ -629,12 +637,12 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="565" height="450" key="SwitcherDM/0.23.1440.877@0.23.1440.877" timestamp="1580952374150" />
-    <state x="319" y="189" key="Vcs.Push.Dialog.v2" timestamp="1581129296389">
+    <state x="319" y="189" key="Vcs.Push.Dialog.v2" timestamp="1581129499354">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="319" y="207" key="Vcs.Push.Dialog.v2/-960.266.960.681/0.23.1440.877@0.23.1440.877" timestamp="1580810095168" />
     <state x="319" y="189" key="Vcs.Push.Dialog.v2/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1579617550599" />
-    <state x="319" y="189" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1581129296389" />
+    <state x="319" y="189" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1581129499354" />
     <state x="319" y="207" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1580812757626" />
     <state x="448" y="141" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1578904416406">
       <screen x="0" y="0" width="1440" height="900" />
