@@ -35,12 +35,11 @@
                                 background-position: right 10px center;
                                 background-color: lightgray;">
                             <option value="" selected disabled>年度</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
-                            <option value="2026">2026</option>
+                            @foreach( $years as $year)
+                            <option value="{{$year}}">{{$year}}</option>
+                            @endforeach
                         </select>
+                        <p class="text-secondary small">※考課登録済みの年度は削除後に再登録できます。</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>

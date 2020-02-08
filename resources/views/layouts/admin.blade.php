@@ -99,11 +99,11 @@
         <a class="navbar-brand text-left" href="{{ url('/') }}" style=" font-size: 19px;color:#1ABC9C;">Web人事考課システム</a>
         <nav class="dash-nav-list">
             <a href="/main" class="dash-nav-item"><i class="fas fa-home fa-fw"></i>　TOP</a>
-            <a href="/department" class="dash-nav-item"><i class="fas fa-building fa-fw"></i>　所属マスタ</a>
-            <a href="/classes" class="dash-nav-item"><i class="fas fa-sitemap text-center"></i>　役職マスタ</a>
-            <a href="/employees" class="dash-nav-item"><i class="fas fa-address-book fa-fw"></i>　社員マスタ</a>
-            <a href="/categories" class="dash-nav-item"><i class="fas fa-tasks fa-fw"></i>　考課マスタ</a>
-            <a href="/importExportView" class="dash-nav-item"><i class="fas fa-file-csv fa-fw"></i>　CSVマスタ</a>
+            <a href="/department" class="dash-nav-item"><i class="fas fa-building fa-fw"></i>　所属管理</a>
+            <a href="/classes" class="dash-nav-item"><i class="fas fa-sitemap text-center"></i>　役職管理</a>
+            <a href="/employees" class="dash-nav-item"><i class="fas fa-address-book fa-fw"></i>　社員管理</a>
+            <a href="/categories" class="dash-nav-item"><i class="fas fa-tasks fa-fw"></i>　考課管理</a>
+            <a href="/importExportView" class="dash-nav-item"><i class="fas fa-table fa-fw"></i>　データ入出力</a>
         </nav>
     </div>
     <div class="dash-app">
@@ -125,24 +125,6 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
-                <!-- Modal -->
-
-
-{{--                <a href="#!" class="tools-item">--}}
-{{--                    <i class="fas fa-bell"></i>--}}
-{{--                    <i class="tools-item-count">4</i>--}}
-{{--                </a>--}}
-{{--                <div class="dropdown tools-item">--}}
-{{--                    <a href="#" class="" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                        <i class="fas fa-user"></i>--}}
-{{--                    </a>--}}
-{{--                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">--}}
-{{--                        <a class="dropdown-item" href="#!">Profile</a>--}}
-
-{{--                        <a class="dropdown-item" href="login.html">Logout</a>--}}
-{{--                    </div>--}}
-
-{{--                </div>--}}
             </div>
         </header>
         <main class="dash-content">

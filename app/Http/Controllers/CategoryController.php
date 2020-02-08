@@ -30,9 +30,33 @@ class CategoryController extends Controller
     }
     public function index()
     {
+        $years = array();
+        $small_number = CategoryYear::all()->first();
+        $get_numbers = CategoryYear::all();
+        $numbers = array();
+        foreach ($get_numbers as $get_number) {
+            $numbers[] = $get_number->year;
+        }
+
+        for($i = 0; $i < 5; $i++){
+            if($i === 0) {
+                $years[$i] = $small_number->year+1;
+                while(in_array($years[$i],$numbers)){
+                    echo $years[$i];
+                    $years[$i]++;
+                }
+            }else{
+                $years[$i] = $years[$i-1]+1;
+                while(in_array($years[$i],$numbers)){
+                    echo $years[$i];
+                    $years[$i]++;
+                }
+            }
+        }
         $columns = CategoryYear::all();
         return view('/admin/category/categories',[
             'columns' => $columns,
+            'years' => $years
         ]);
     }
     public function create(Request $request)
@@ -40,9 +64,6 @@ class CategoryController extends Controller
         $year = $request->year;
         return redirect()->route('add_category', ['year' => $year]);
 
-//        return view('admin/category/add_category',[
-//            'year' => $year,
-//        ]);
     }
     public function show_add_category($year)
     {

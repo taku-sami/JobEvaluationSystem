@@ -23,7 +23,6 @@ Route::group(['middleware' => 'auth'], function() {
         return view('admin/sample');  // ここを編集 (welcome->sample)
     });
 
-
 //      following is for Department
         Route::get('/department','DepartmentController@index');
         Route::get('/add_department',function(){
@@ -69,10 +68,12 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/editclass', 'StaffClassController@update');
 
 //    following is for CSV
-    Route::get('export', 'CsvController@export')->name('export');
-    Route::get('template_export', 'CsvController@template_export')->name('template_export');
+    Route::get('export', 'GoogleSpreadSheetController@export')->name('export');
+    Route::get('show_sheets', 'GoogleSpreadSheetController@show_sheets')->name('show_sheets');
+    Route::get('/register_category', 'GoogleSpreadSheetController@register_category')->name('register_category');
     Route::get('importExportView', 'CsvController@importExportView');
-    Route::post('import', 'CsvController@import')->name('import');
+    Route::get('import/check', function(){return view('admin/csv/check');});
+//    Route::post('import', 'CsvController@import')->name('import');
 
 });
 

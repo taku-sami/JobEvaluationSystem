@@ -98,24 +98,24 @@
                                 @endif
                                 <td class="cell100 boss_column2">{{$year}}</td>
                                 @if($column->progress == null)
-                                    <td class="cell100 boss_column2">未登録</td>
+                                    <td class="cell100 boss_column2 "><span class="badge-secondary p-1">未登録</span></td>
                                 @elseif($column->progress == 1)
-                                    <td class="cell100 boss_column2">差戻</td>
+                                    <td class="cell100 boss_column2"><span class="badge-danger p-1">差戻</span></td>
                                 @elseif($column->progress == 2)
-                                    <td class="cell100 boss_column2 text-warning">１次承認待ち</td>
+                                    <td class="cell100 boss_column2"><span class="badge-warning p-1 text-white">１次承認待ち</span></td>
                                 @elseif($column->progress == 3)
-                                    <td class="cell100 boss_column2">２次承認待ち</td>
+                                    <td class="cell100 boss_column2"><span class="badge-info p-1">２次承認待ち</span></td>
                                 @elseif($column->progress == 4)
-                                    <td class="cell100 boss_column2">評価未登録</td>
+                                    <td class="cell100 boss_column2"><span class="badge-info p-1">評価未登録</span></td>
                                 @elseif($column->progress == 5)
-                                    <td class="cell100 boss_column2 text-warning">１次評価待ち</td>
+                                    <td class="cell100 boss_column2 text-warning"><span class="badge-warning p-1 text-white">１次評価待ち</span></td>
                                 @elseif($column->progress == 6)
-                                    <td class="cell100 boss_column2">２次評価待ち</td>
+                                    <td class="cell100 boss_column2"><span class="badge-info p-1">２次評価待ち</span></td>
                                 @elseif($column->progress == 7)
-                                    <td class="cell100 boss_column2 text-info">評価終了</td>
+                                    <td class="cell100 boss_column2"><span class="badge-secondary p-1">評価終了</span></td>
                                 @endif
                                 @if($column->progress == null || $column->progress < 2)
-                                    <td class="cell100 boss_column2">未登録</td>
+                                    <td class="cell100 boss_column2"><span class="badge-secondary p-1">未登録</span></td>
                                 @elseif($column->progress == 5)
                                     <td class="cell100 boss_column2">
                                         <a href="{{ action('EvaluationController@eva_boss1', $column->id)}}">

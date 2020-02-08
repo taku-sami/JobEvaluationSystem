@@ -15,7 +15,7 @@ class CreateCategoryyearsTable extends Migration
     {
         Schema::create('category_years', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('year');
+            $table->integer('year')->unique();
             $table->timestamps();
         });
     }

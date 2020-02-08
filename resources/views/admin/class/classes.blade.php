@@ -5,7 +5,6 @@
     <div class="my-2">
         <div class="h5">役職マスタ</div>
     </div>
-{{--        <a href="/add_class" type="button" class="btn-pill col-1 py-2 hover1" style="text-decoration: none"><i class="fas fa-plus-circle"></i> 新規登録</a>--}}
     <hr>
     @php
         $n =0;

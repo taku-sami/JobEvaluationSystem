@@ -51,7 +51,7 @@
                             @if($boss1_dep ==null)
                                 <tr class="row100 body">
                                     <td class="cell100 staff_column1">{{$column->year}}</td>
-                                    <td class="cell100 staff_column1">未登録</td>
+                                    <td class="cell100 staff_column1 badge-warning text-white p-1">未登録</td>
                                     <td class="cell100 staff_column1"></td>
                                     <td class="cell100 staff_column1"></td>
                                     <td class="cell100 staff_column1"></td>
@@ -62,7 +62,7 @@
                                     <tr class="row100 body">
                                         <td class="cell100 staff_column1 ">{{$column->year}}</td>
                                         <td class="cell100 staff_column1 ">
-                                            <a href="{{ action('EvaluationController@regist', $column->year)}}" class="text-warning">
+                                            <a href="{{ action('EvaluationController@regist', $column->year)}}" class="badge-warning text-white p-1">
                                                 未登録 <i class="fas fa-external-link-alt"></i>
                                             </a>
                                         </td>
@@ -77,7 +77,7 @@
                                 <tr class="row100 body">
                                     <td class="cell100 staff_column1">{{$column->year}}</td>
                                     <td class="cell100 staff_column1">
-                                        <a href="{{ action('EvaluationController@regist', $column->year)}}" class="text-danger">
+                                        <a href="{{ action('EvaluationController@regist', $column->year)}}" class="badge-danger p-1">
                                             差し戻し <i class="fas fa-external-link-alt"></i>
                                         </a>
                                     </td>
@@ -91,7 +91,7 @@
                                 <tr class="row100 body">
                                     <td class="cell100 staff_column1">{{$column->year}}</td>
                                     <td class="cell100 staff_column1">
-                                        <a href="{{ action('EvaluationController@show', $column->id)}}">
+                                        <a href="{{ action('EvaluationController@show', $column->id)}}" class="badge-info p-1">
                                             １次承認 <i class="fas fa-external-link-alt"></i>
                                         </a>
                                     </td>
@@ -105,7 +105,7 @@
                                 <tr class="row100 body">
                                     <td class="cell100 staff_column1">{{$column->year}}</td>
                                     <td class="cell100 staff_column1">
-                                        <a href="{{ action('EvaluationController@show', $column->id)}}">
+                                        <a href="{{ action('EvaluationController@show', $column->id)}}" class="badge-info p-1">
                                             ２次承認 <i class="fas fa-external-link-alt"></i>
                                         </a>
                                     </td>
@@ -119,7 +119,7 @@
                                 <tr class="row100 body">
                                     <td class="cell100 staff_column1">{{$column->year}}</td>
                                     <td class="cell100 staff_column1">
-                                        <a href="{{ action('EvaluationController@evaluation', $column->id)}}" class="text-warning">
+                                        <a href="{{ action('EvaluationController@evaluation', $column->id)}}" class="badge-warning text-white p-1">
                                             評価報告 <i class="fas fa-external-link-alt"></i>
                                         </a>
                                     </td>
@@ -133,7 +133,7 @@
                                 <tr class="row100 body">
                                     <td class="cell100 staff_column1">{{$column->year}}</td>
                                     <td class="cell100 staff_column1">
-                                        <a href="{{ action('EvaluationController@show', $column->id)}}">
+                                        <a href="{{ action('EvaluationController@show', $column->id)}}" class="badge-info p-1">
                                             １次評価待ち <i class="fas fa-external-link-alt"></i>
                                         </a>
                                     </td>
@@ -146,7 +146,8 @@
                         @elseif($column->progress == 6)
                                 <tr class="row100 body">
                                     <td class="cell100 staff_column1">{{$column->year}}</td>
-                                    <td class="cell100 staff_column1"><a href="{{ action('EvaluationController@show', $column->id)}}">
+                                    <td class="cell100 staff_column1">
+                                        <a href="{{ action('EvaluationController@show', $column->id)}}" class="badge-info p-1">
                                             ２次評価待ち <i class="fas fa-external-link-alt"></i>
                                         </a>
                                     </td>
@@ -160,7 +161,7 @@
                                 <tr class="row100 body">
                                     <td class="cell100 staff_column1">{{$column->year}}</td>
                                     <td class="cell100 staff_column1">
-                                        <a href="{{ action('EvaluationController@show', $column->id)}}" class="text-info">
+                                        <a href="{{ action('EvaluationController@show', $column->id)}}" class="badge-secondary p-1">
                                             評価終了 <i class="fas fa-external-link-alt"></i>
                                         </a>
                                     </td>
